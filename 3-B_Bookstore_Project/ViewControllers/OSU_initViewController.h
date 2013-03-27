@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OSUViewController : UIViewController
+@interface OSU_initViewController : UIViewController
 
 @end

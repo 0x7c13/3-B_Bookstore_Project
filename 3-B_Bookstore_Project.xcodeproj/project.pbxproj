@@ -17,7 +17,12 @@
 		F775232317027DF6004D7A4D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F775232217027DF6004D7A4D /* Default@2x.png */; };
 		F775232517027DF6004D7A4D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F775232417027DF6004D7A4D /* Default-568h@2x.png */; };
 		F775232817027DF6004D7A4D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F775232617027DF6004D7A4D /* MainStoryboard.storyboard */; };
-		F775232B17027DF6004D7A4D /* OSUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F775232A17027DF6004D7A4D /* OSUViewController.m */; };
+		F7752336170282CA004D7A4D /* OSU_initViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7752335170282CA004D7A4D /* OSU_initViewController.m */; };
+		F7752341170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F7752340170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m */; };
+		F7752344170284BF004D7A4D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7752342170284BF004D7A4D /* libsqlite3.0.dylib */; };
+		F7752345170284BF004D7A4D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7752343170284BF004D7A4D /* libsqlite3.dylib */; };
+		F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F775234917028959004D7A4D /* OSU_3BBook.m */; };
+		F775234E17029B97004D7A4D /* 3BBooks.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F775234D17029B97004D7A4D /* 3BBooks.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +40,15 @@
 		F775232217027DF6004D7A4D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F775232417027DF6004D7A4D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F775232717027DF6004D7A4D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		F775232917027DF6004D7A4D /* OSUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSUViewController.h; sourceTree = "<group>"; };
-		F775232A17027DF6004D7A4D /* OSUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSUViewController.m; sourceTree = "<group>"; };
+		F7752334170282CA004D7A4D /* OSU_initViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_initViewController.h; sourceTree = "<group>"; };
+		F7752335170282CA004D7A4D /* OSU_initViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_initViewController.m; sourceTree = "<group>"; };
+		F775233F170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BSQLiteDatabaseHandler.h; sourceTree = "<group>"; };
+		F7752340170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BSQLiteDatabaseHandler.m; sourceTree = "<group>"; };
+		F7752342170284BF004D7A4D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		F7752343170284BF004D7A4D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F775234817028959004D7A4D /* OSU_3BBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BBook.h; sourceTree = "<group>"; };
+		F775234917028959004D7A4D /* OSU_3BBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BBook.m; sourceTree = "<group>"; };
+		F775234D17029B97004D7A4D /* 3BBooks.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3BBooks.sqlite; path = "3-B_Bookstore_Project/3BBooks.sqlite"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7752344170284BF004D7A4D /* libsqlite3.0.dylib in Frameworks */,
+				F7752345170284BF004D7A4D /* libsqlite3.dylib in Frameworks */,
 				F775230F17027DF6004D7A4D /* UIKit.framework in Frameworks */,
 				F775231117027DF6004D7A4D /* Foundation.framework in Frameworks */,
 				F775231317027DF6004D7A4D /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +70,9 @@
 		F775230217027DF6004D7A4D = {
 			isa = PBXGroup;
 			children = (
+				F775234D17029B97004D7A4D /* 3BBooks.sqlite */,
+				F7752342170284BF004D7A4D /* libsqlite3.0.dylib */,
+				F7752343170284BF004D7A4D /* libsqlite3.dylib */,
 				F775231417027DF6004D7A4D /* 3-B_Bookstore_Project */,
 				F775230D17027DF6004D7A4D /* Frameworks */,
 				F775230C17027DF6004D7A4D /* Products */,
@@ -86,8 +103,8 @@
 				F775231D17027DF6004D7A4D /* OSUAppDelegate.h */,
 				F775231E17027DF6004D7A4D /* OSUAppDelegate.m */,
 				F775232617027DF6004D7A4D /* MainStoryboard.storyboard */,
-				F775232917027DF6004D7A4D /* OSUViewController.h */,
-				F775232A17027DF6004D7A4D /* OSUViewController.m */,
+				F775233E170283C6004D7A4D /* 3BClasses */,
+				F7752333170282CA004D7A4D /* ViewControllers */,
 				F775231517027DF6004D7A4D /* Supporting Files */,
 			);
 			path = "3-B_Bookstore_Project";
@@ -105,6 +122,26 @@
 				F775232417027DF6004D7A4D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7752333170282CA004D7A4D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7752334170282CA004D7A4D /* OSU_initViewController.h */,
+				F7752335170282CA004D7A4D /* OSU_initViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F775233E170283C6004D7A4D /* 3BClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F775233F170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.h */,
+				F7752340170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m */,
+				F775234817028959004D7A4D /* OSU_3BBook.h */,
+				F775234917028959004D7A4D /* OSU_3BBook.m */,
+			);
+			path = 3BClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +201,7 @@
 				F775232317027DF6004D7A4D /* Default@2x.png in Resources */,
 				F775232517027DF6004D7A4D /* Default-568h@2x.png in Resources */,
 				F775232817027DF6004D7A4D /* MainStoryboard.storyboard in Resources */,
+				F775234E17029B97004D7A4D /* 3BBooks.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +214,9 @@
 			files = (
 				F775231B17027DF6004D7A4D /* main.m in Sources */,
 				F775231F17027DF6004D7A4D /* OSUAppDelegate.m in Sources */,
-				F775232B17027DF6004D7A4D /* OSUViewController.m in Sources */,
+				F7752336170282CA004D7A4D /* OSU_initViewController.m in Sources */,
+				F7752341170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m in Sources */,
+				F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

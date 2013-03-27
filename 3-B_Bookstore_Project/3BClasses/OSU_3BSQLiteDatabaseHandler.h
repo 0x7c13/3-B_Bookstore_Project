@@ -1,0 +1,24 @@
+//
+//  OSU_3BSQLiteDatabaseHandler.h
+//  3-B_Bookstore_Project
+//
+//  Created by FlyinGeek on 13-3-26.
+//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <sqlite3.h>
+#import "OSU_3BBook.h"
+
+@interface OSU_3BSQLiteDatabaseHandler : NSObject{
+    sqlite3 *_3BBooksDataBase;
+}
+
+@property (nonatomic, readonly) BOOL dataBaseLoadedCorrectly;
+
+// public methods
+
+- (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber;
+
+
+@end
