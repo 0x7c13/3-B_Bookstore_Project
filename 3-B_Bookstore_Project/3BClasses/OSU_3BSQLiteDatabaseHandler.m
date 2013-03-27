@@ -1,6 +1,6 @@
 //
 //  OSU_3BSQLiteDatabaseHandler.m
-//  3-B_Bookstore_Project
+//  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-3-26.
 //  Copyright (c) 2013年 The Ohio State University. All rights reserved.
@@ -71,6 +71,11 @@
 
 // methods ****************************************************************
 
+- (void)closeDatabase
+{
+    sqlite3_close (_3BBooksDataBase);
+}
+
 - (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber
 {
     OSU_3BBook *book = [[OSU_3BBook alloc] init];
@@ -94,8 +99,8 @@
             book.Titile = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)];
             book.Author = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)];
             book.Publisher = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 3)];
-            book.Year = [NSNumber numberWithInt:(int)sqlite3_column_int(statement, 4)];
-            book.Price = [NSNumber numberWithDouble:(double)sqlite3_column_double(statement, 5)];
+            book.Year = (int)sqlite3_column_int(statement, 4);
+            book.Price = [[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue];
             book.Category = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)];
             
         } 

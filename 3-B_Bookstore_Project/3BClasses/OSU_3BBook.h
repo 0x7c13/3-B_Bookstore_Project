@@ -1,6 +1,6 @@
 //
 //  OSU_3BBook.h
-//  3-B_Bookstore_Project
+//  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-3-26.
 //  Copyright (c) 2013年 The Ohio State University. All rights reserved.
@@ -14,8 +14,8 @@
 @property (strong, nonatomic) NSString *Titile;
 @property (strong, nonatomic) NSString *Author;
 @property (strong, nonatomic) NSString *Publisher;
-@property (strong, nonatomic) NSNumber *Year;
-@property (strong, nonatomic) NSNumber *Price;
+@property (nonatomic) NSInteger Year;
+@property (nonatomic) double Price;
 @property (strong, nonatomic) NSString *Category;
 
 

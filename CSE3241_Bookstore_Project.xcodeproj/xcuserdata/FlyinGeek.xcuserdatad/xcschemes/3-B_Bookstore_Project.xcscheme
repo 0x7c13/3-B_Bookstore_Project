@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F775230A17027DF6004D7A4D"
-               BuildableName = "3-B_Bookstore_Project.app"
+               BuildableName = "CSE3241_Bookstore_Project.app"
                BlueprintName = "CSE3241_Bookstore_Project"
                ReferencedContainer = "container:CSE3241_Bookstore_Project.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F775230A17027DF6004D7A4D"
-            BuildableName = "3-B_Bookstore_Project.app"
+            BuildableName = "CSE3241_Bookstore_Project.app"
             BlueprintName = "CSE3241_Bookstore_Project"
             ReferencedContainer = "container:CSE3241_Bookstore_Project.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F775230A17027DF6004D7A4D"
-            BuildableName = "3-B_Bookstore_Project.app"
+            BuildableName = "CSE3241_Bookstore_Project.app"
             BlueprintName = "CSE3241_Bookstore_Project"
             ReferencedContainer = "container:CSE3241_Bookstore_Project.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F775230A17027DF6004D7A4D"
-            BuildableName = "3-B_Bookstore_Project.app"
+            BuildableName = "CSE3241_Bookstore_Project.app"
             BlueprintName = "CSE3241_Bookstore_Project"
             ReferencedContainer = "container:CSE3241_Bookstore_Project.xcodeproj">
          </BuildableReference>

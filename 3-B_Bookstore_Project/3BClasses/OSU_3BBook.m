@@ -1,6 +1,6 @@
 //
 //  OSU_3BBook.m
-//  3-B_Bookstore_Project
+//  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-3-26.
 //  Copyright (c) 2013年 The Ohio State University. All rights reserved.
@@ -12,7 +12,7 @@
 
 - (void)printInformation
 {
-    NSLog(@"\n%@\n%@\n%@\n%@\n%@\n%@\n%@", self.ISBN, self.Titile, self.Author, self.Publisher, self.Year, self.Price, self.Category);
+    NSLog(@"\n%@\n%@\n%@\n%@\n%ld\n%.2f\n%@", self.ISBN, self.Titile, self.Author, self.Publisher, (long)self.Year, self.Price, self.Category);
 
 }
 

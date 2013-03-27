@@ -23,6 +23,7 @@
 		F7752345170284BF004D7A4D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7752343170284BF004D7A4D /* libsqlite3.dylib */; };
 		F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F775234917028959004D7A4D /* OSU_3BBook.m */; };
 		F775234E17029B97004D7A4D /* 3BBooks.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F775234D17029B97004D7A4D /* 3BBooks.sqlite */; };
+		F77523511702A8B2004D7A4D /* OSU_3BCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = F77523501702A8B2004D7A4D /* OSU_3BCustomer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		F775234817028959004D7A4D /* OSU_3BBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BBook.h; sourceTree = "<group>"; };
 		F775234917028959004D7A4D /* OSU_3BBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BBook.m; sourceTree = "<group>"; };
 		F775234D17029B97004D7A4D /* 3BBooks.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3BBooks.sqlite; path = "3-B_Bookstore_Project/3BBooks.sqlite"; sourceTree = "<group>"; };
+		F775234F1702A8B2004D7A4D /* OSU_3BCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BCustomer.h; sourceTree = "<group>"; };
+		F77523501702A8B2004D7A4D /* OSU_3BCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BCustomer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				F7752340170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m */,
 				F775234817028959004D7A4D /* OSU_3BBook.h */,
 				F775234917028959004D7A4D /* OSU_3BBook.m */,
+				F775234F1702A8B2004D7A4D /* OSU_3BCustomer.h */,
+				F77523501702A8B2004D7A4D /* OSU_3BCustomer.m */,
 			);
 			path = 3BClasses;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				F7752336170282CA004D7A4D /* OSU_initViewController.m in Sources */,
 				F7752341170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m in Sources */,
 				F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */,
+				F77523511702A8B2004D7A4D /* OSU_3BCustomer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

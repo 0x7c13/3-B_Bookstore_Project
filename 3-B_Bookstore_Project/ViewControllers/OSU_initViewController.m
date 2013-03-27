@@ -47,7 +47,7 @@
     if (databaseHandler.dataBaseLoadedCorrectly) {
         NSLog(@"Good to go!");
         
-        OSU_3BBook *book = [databaseHandler selectABookFromDatabaseWithISBN:@"782140661"];
+        OSU_3BBook *book = [databaseHandler selectABookFromDatabaseWithISBN:@"324113641"];
         
         if (book.ISBN) {
             [book printInformation];
@@ -56,6 +56,8 @@
     else {
         NSLog(@"Failed to load 3BBooksDatabase!");
     }
+    
+    [databaseHandler closeDatabase];
 }
 
 
