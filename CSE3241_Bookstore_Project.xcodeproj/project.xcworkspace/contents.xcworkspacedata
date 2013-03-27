@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:3-B_Bookstore_Project.xcodeproj">
+      location = "self:CSE3241_Bookstore_Project.xcodeproj">
    </FileRef>
 </Workspace>

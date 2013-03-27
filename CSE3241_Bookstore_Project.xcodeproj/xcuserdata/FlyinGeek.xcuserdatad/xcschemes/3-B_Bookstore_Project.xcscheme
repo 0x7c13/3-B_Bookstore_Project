@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F775230A17027DF6004D7A4D"
                BuildableName = "3-B_Bookstore_Project.app"
-               BlueprintName = "3-B_Bookstore_Project"
-               ReferencedContainer = "container:3-B_Bookstore_Project.xcodeproj">
+               BlueprintName = "CSE3241_Bookstore_Project"
+               ReferencedContainer = "container:CSE3241_Bookstore_Project.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F775230A17027DF6004D7A4D"
             BuildableName = "3-B_Bookstore_Project.app"
-            BlueprintName = "3-B_Bookstore_Project"
-            ReferencedContainer = "container:3-B_Bookstore_Project.xcodeproj">
+            BlueprintName = "CSE3241_Bookstore_Project"
+            ReferencedContainer = "container:CSE3241_Bookstore_Project.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F775230A17027DF6004D7A4D"
             BuildableName = "3-B_Bookstore_Project.app"
-            BlueprintName = "3-B_Bookstore_Project"
-            ReferencedContainer = "container:3-B_Bookstore_Project.xcodeproj">
+            BlueprintName = "CSE3241_Bookstore_Project"
+            ReferencedContainer = "container:CSE3241_Bookstore_Project.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F775230A17027DF6004D7A4D"
             BuildableName = "3-B_Bookstore_Project.app"
-            BlueprintName = "3-B_Bookstore_Project"
-            ReferencedContainer = "container:3-B_Bookstore_Project.xcodeproj">
+            BlueprintName = "CSE3241_Bookstore_Project"
+            ReferencedContainer = "container:CSE3241_Bookstore_Project.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

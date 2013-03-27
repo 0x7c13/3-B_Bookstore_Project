@@ -26,14 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F775230B17027DF6004D7A4D /* 3-B_Bookstore_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3-B_Bookstore_Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F775230B17027DF6004D7A4D /* CSE3241_Bookstore_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE3241_Bookstore_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F775230E17027DF6004D7A4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F775231017027DF6004D7A4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F775231217027DF6004D7A4D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F775231617027DF6004D7A4D /* 3-B_Bookstore_Project-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "3-B_Bookstore_Project-Info.plist"; sourceTree = "<group>"; };
+		F775231617027DF6004D7A4D /* CSE3241_Bookstore_Project-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSE3241_Bookstore_Project-Info.plist"; sourceTree = "<group>"; };
 		F775231817027DF6004D7A4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F775231A17027DF6004D7A4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F775231C17027DF6004D7A4D /* 3-B_Bookstore_Project-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "3-B_Bookstore_Project-Prefix.pch"; sourceTree = "<group>"; };
+		F775231C17027DF6004D7A4D /* CSE3241_Bookstore_Project-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSE3241_Bookstore_Project-Prefix.pch"; sourceTree = "<group>"; };
 		F775231D17027DF6004D7A4D /* OSUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSUAppDelegate.h; sourceTree = "<group>"; };
 		F775231E17027DF6004D7A4D /* OSUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSUAppDelegate.m; sourceTree = "<group>"; };
 		F775232017027DF6004D7A4D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		F775230C17027DF6004D7A4D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F775230B17027DF6004D7A4D /* 3-B_Bookstore_Project.app */,
+				F775230B17027DF6004D7A4D /* CSE3241_Bookstore_Project.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,10 +113,10 @@
 		F775231517027DF6004D7A4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F775231617027DF6004D7A4D /* 3-B_Bookstore_Project-Info.plist */,
+				F775231617027DF6004D7A4D /* CSE3241_Bookstore_Project-Info.plist */,
 				F775231717027DF6004D7A4D /* InfoPlist.strings */,
 				F775231A17027DF6004D7A4D /* main.m */,
-				F775231C17027DF6004D7A4D /* 3-B_Bookstore_Project-Prefix.pch */,
+				F775231C17027DF6004D7A4D /* CSE3241_Bookstore_Project-Prefix.pch */,
 				F775232017027DF6004D7A4D /* Default.png */,
 				F775232217027DF6004D7A4D /* Default@2x.png */,
 				F775232417027DF6004D7A4D /* Default-568h@2x.png */,
@@ -147,9 +147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F775230A17027DF6004D7A4D /* 3-B_Bookstore_Project */ = {
+		F775230A17027DF6004D7A4D /* CSE3241_Bookstore_Project */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F775232E17027DF6004D7A4D /* Build configuration list for PBXNativeTarget "3-B_Bookstore_Project" */;
+			buildConfigurationList = F775232E17027DF6004D7A4D /* Build configuration list for PBXNativeTarget "CSE3241_Bookstore_Project" */;
 			buildPhases = (
 				F775230717027DF6004D7A4D /* Sources */,
 				F775230817027DF6004D7A4D /* Frameworks */,
@@ -159,9 +159,9 @@
 			);
 			dependencies = (
 			);
-			name = "3-B_Bookstore_Project";
+			name = CSE3241_Bookstore_Project;
 			productName = "3-B_Bookstore_Project";
-			productReference = F775230B17027DF6004D7A4D /* 3-B_Bookstore_Project.app */;
+			productReference = F775230B17027DF6004D7A4D /* CSE3241_Bookstore_Project.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "The Ohio State University";
 			};
-			buildConfigurationList = F775230617027DF6004D7A4D /* Build configuration list for PBXProject "3-B_Bookstore_Project" */;
+			buildConfigurationList = F775230617027DF6004D7A4D /* Build configuration list for PBXProject "CSE3241_Bookstore_Project" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -186,7 +186,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F775230A17027DF6004D7A4D /* 3-B_Bookstore_Project */,
+				F775230A17027DF6004D7A4D /* CSE3241_Bookstore_Project */,
 			);
 		};
 /* End PBXProject section */
@@ -302,9 +302,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "3-B_Bookstore_Project/3-B_Bookstore_Project-Prefix.pch";
-				INFOPLIST_FILE = "3-B_Bookstore_Project/3-B_Bookstore_Project-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "3-B_Bookstore_Project/CSE3241_Bookstore_Project-Prefix.pch";
+				INFOPLIST_FILE = "3-B_Bookstore_Project/CSE3241_Bookstore_Project-Info.plist";
+				PRODUCT_NAME = CSE3241_Bookstore_Project;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -313,9 +313,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "3-B_Bookstore_Project/3-B_Bookstore_Project-Prefix.pch";
-				INFOPLIST_FILE = "3-B_Bookstore_Project/3-B_Bookstore_Project-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "3-B_Bookstore_Project/CSE3241_Bookstore_Project-Prefix.pch";
+				INFOPLIST_FILE = "3-B_Bookstore_Project/CSE3241_Bookstore_Project-Info.plist";
+				PRODUCT_NAME = CSE3241_Bookstore_Project;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -323,7 +323,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F775230617027DF6004D7A4D /* Build configuration list for PBXProject "3-B_Bookstore_Project" */ = {
+		F775230617027DF6004D7A4D /* Build configuration list for PBXProject "CSE3241_Bookstore_Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F775232C17027DF6004D7A4D /* Debug */,
@@ -332,13 +332,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F775232E17027DF6004D7A4D /* Build configuration list for PBXNativeTarget "3-B_Bookstore_Project" */ = {
+		F775232E17027DF6004D7A4D /* Build configuration list for PBXNativeTarget "CSE3241_Bookstore_Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F775232F17027DF6004D7A4D /* Debug */,
 				F775233017027DF6004D7A4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
