@@ -11,7 +11,7 @@
 #define _3BBooksDataBaseFileName @"3BBooks.sqlite"
 
 
-@interface OSU_3BSQLiteDatabaseHandler ()
+@interface OSU_3BSQLiteDatabaseHandler()
 
 @property (nonatomic, readwrite) BOOL dataBaseLoadedCorrectly;
 
@@ -20,6 +20,23 @@
 
 @implementation OSU_3BSQLiteDatabaseHandler
 
+// Singleton **************************************************************
+
++ (id)sharedInstance
+{
+
+    static dispatch_once_t p = 0;
+    
+    __strong static id _sharedObject = nil;
+    
+    dispatch_once(&p, ^{
+        _sharedObject = [[self alloc] init];
+    });
+    
+    return _sharedObject;
+}
+
+
 // init *******************************************************************
 
 - (id)init
@@ -27,8 +44,6 @@
     if (self = [super init]) {
         
         [self createEditableCopyOfDatabaseIfNeeded];
-        
-        [self loadSQLiteDatabase];
         
     }
     return self;
@@ -60,7 +75,7 @@
     NSString* databasePath = [documentsDirectory stringByAppendingPathComponent:_3BBooksDataBaseFileName];
     
     if(sqlite3_open([databasePath UTF8String], &_3BBooksDataBase) == SQLITE_OK) {
-        //NSLog(@"Opened sqlite database at %@", databasePath);
+        NSLog(@"Opened sqlite database at %@", databasePath);
         self.dataBaseLoadedCorrectly = YES;
     } else {
         NSLog(@"Failed to open database at %@ with error %s", databasePath, sqlite3_errmsg(_3BBooksDataBase));
@@ -69,7 +84,12 @@
     }
 }
 
-// methods ****************************************************************
+// public methods *********************************************************
+
+- (void)loadDatabase
+{
+    [self loadSQLiteDatabase];
+}
 
 - (void)closeDatabase
 {
@@ -89,7 +109,6 @@
         
         NSLog(@"sql problem occured with: %s", sql);
         NSLog(@"%s", sqlite3_errmsg(_3BBooksDataBase));
-        
     }
     else
     {
@@ -102,7 +121,7 @@
             book.Year = (int)sqlite3_column_int(statement, 4);
             book.Price = [[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue];
             book.Category = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)];
-            
+
         } 
     }
     sqlite3_finalize(statement);

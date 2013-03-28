@@ -16,8 +16,11 @@
 
 @property (nonatomic, readonly) BOOL dataBaseLoadedCorrectly;
 
-// public methods
+// Singleton
++ (id)sharedInstance;
 
+// public methods
+- (void)loadDatabase;
 - (void)closeDatabase;
 - (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber;
 

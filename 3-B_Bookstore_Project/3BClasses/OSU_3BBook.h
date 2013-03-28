@@ -19,6 +19,6 @@
 @property (strong, nonatomic) NSString *Category;
 
 
-- (void)printInformation;
+- (void)print;
 
 @end

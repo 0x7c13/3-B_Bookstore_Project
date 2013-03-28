@@ -17,11 +17,11 @@
 
 @implementation OSU_initViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
     
     // a small test case
     [self databaseHandlerTest];
@@ -34,30 +34,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 //************************************
-
 
 
 -(void)databaseHandlerTest
 {
-    OSU_3BSQLiteDatabaseHandler *databaseHandler = [[OSU_3BSQLiteDatabaseHandler alloc] init];
+    OSU_3BSQLiteDatabaseHandler *databaseHandler = [OSU_3BSQLiteDatabaseHandler sharedInstance];
     
     if (databaseHandler.dataBaseLoadedCorrectly) {
         NSLog(@"Good to go!");
         
-        OSU_3BBook *book = [databaseHandler selectABookFromDatabaseWithISBN:@"324113641"];
+        OSU_3BBook *book = [databaseHandler selectABookFromDatabaseWithISBN:@"451209532"];
         
         if (book.ISBN) {
-            [book printInformation];
+            [book print];
         }
     }
     else {
         NSLog(@"Failed to load 3BBooksDatabase!");
     }
-    
-    [databaseHandler closeDatabase];
 }
 
 

@@ -10,7 +10,7 @@
 
 @implementation OSU_3BBook
 
-- (void)printInformation
+- (void)print
 {
     NSLog(@"\n%@\n%@\n%@\n%@\n%ld\n%.2f\n%@", self.ISBN, self.Titile, self.Author, self.Publisher, (long)self.Year, self.Price, self.Category);
 

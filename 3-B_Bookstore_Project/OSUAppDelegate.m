@@ -7,12 +7,16 @@
 //
 
 #import "OSUAppDelegate.h"
+#import "OSU_3BSQLiteDatabaseHandler.h"
 
 @implementation OSUAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [[OSU_3BSQLiteDatabaseHandler sharedInstance] loadDatabase];
+    
     return YES;
 }
 							
@@ -41,6 +45,9 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    if([[OSU_3BSQLiteDatabaseHandler sharedInstance] dataBaseLoadedCorrectly]) {
+        [[OSU_3BSQLiteDatabaseHandler sharedInstance] closeDatabase];
+    }
 }
 
 @end
