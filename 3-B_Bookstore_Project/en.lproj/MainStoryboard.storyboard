@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -8,33 +8,26 @@
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="OSU_initViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
+                    <view key="view" contentMode="scaleToFill" id="3" userLabel="MenuView">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Best Book Buy Online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOI-pZ-0Oh">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="DSc-3l-pf7"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Best Book Buy Online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="eOI-pZ-0Oh">
+                                <rect key="frame" x="20" y="74" width="280" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.62609614158163263" green="0.62609614158163263" blue="0.62609614158163263" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="1" height="-1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3-B.com Online Bookstore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85B-sS-VHZ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="WGt-c6-2dw"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3-B.com Online Bookstore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="85B-sS-VHZ">
+                                <rect key="frame" x="20" y="125" width="280" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQf-LW-U7m">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="7Tn-ue-fQP"/>
-                                    <constraint firstAttribute="height" constant="39" id="Fa2-ey-LEr"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UQf-LW-U7m">
+                                <rect key="frame" x="55" y="210" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Search Only">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,11 +36,13 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchOnlyButtonPressed:" destination="2" eventType="touchUpInside" id="hKW-dQ-BYw"/>
+                                    <segue destination="Zmd-Q0-xQ2" kind="modal" id="dix-yy-iej"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecB-TO-VDE">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="ImX-vn-KwK"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ecB-TO-VDE">
+                                <rect key="frame" x="55" y="280" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="New Customer">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,10 +52,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryH-V0-exN">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="m9w-Pt-9A0"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ryH-V0-exN">
+                                <rect key="frame" x="55" y="350" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Returning Customer">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,10 +63,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJI-KT-Vdu">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="ZFp-BT-4Sn"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yJI-KT-Vdu">
+                                <rect key="frame" x="55" y="420" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Administrator">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,40 +74,97 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CSE 3241 Jiaqi Liu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="him-Y0-FsY">
+                                <rect key="frame" x="142" y="506" width="158" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yJI-KT-Vdu" firstAttribute="leading" secondItem="ryH-V0-exN" secondAttribute="leading" type="default" id="2th-gC-PY7"/>
-                            <constraint firstAttribute="trailing" secondItem="85B-sS-VHZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="A2s-CO-dac"/>
-                            <constraint firstItem="UQf-LW-U7m" firstAttribute="top" secondItem="3" secondAttribute="top" constant="210" id="DPX-Yv-zVy"/>
-                            <constraint firstItem="yJI-KT-Vdu" firstAttribute="top" secondItem="3" secondAttribute="top" constant="420" id="GW2-Cd-dDE"/>
-                            <constraint firstItem="eOI-pZ-0Oh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="74" id="MPT-uS-EQA"/>
-                            <constraint firstItem="85B-sS-VHZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PSg-pN-iPO"/>
-                            <constraint firstAttribute="trailing" secondItem="eOI-pZ-0Oh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QqM-qH-0bC"/>
-                            <constraint firstAttribute="bottom" secondItem="ryH-V0-exN" secondAttribute="bottom" constant="159" id="WLe-ZF-U6N"/>
-                            <constraint firstItem="ryH-V0-exN" firstAttribute="leading" secondItem="ecB-TO-VDE" secondAttribute="leading" type="default" id="ZeX-S4-PPa"/>
-                            <constraint firstItem="UQf-LW-U7m" firstAttribute="centerX" secondItem="85B-sS-VHZ" secondAttribute="centerX" type="default" id="aeu-KU-lXK"/>
-                            <constraint firstItem="85B-sS-VHZ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="125" id="qim-Le-swE"/>
-                            <constraint firstItem="eOI-pZ-0Oh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tQC-d6-epl"/>
-                            <constraint firstItem="ecB-TO-VDE" firstAttribute="leading" secondItem="UQf-LW-U7m" secondAttribute="leading" type="default" id="tfc-VX-6kf"/>
-                            <constraint firstItem="yJI-KT-Vdu" firstAttribute="trailing" secondItem="ryH-V0-exN" secondAttribute="trailing" type="default" id="vH9-yo-Miy"/>
-                            <constraint firstAttribute="bottom" secondItem="ecB-TO-VDE" secondAttribute="bottom" constant="229" id="wfs-8K-6gx"/>
-                            <constraint firstItem="ecB-TO-VDE" firstAttribute="trailing" secondItem="UQf-LW-U7m" secondAttribute="trailing" type="default" id="wkg-aK-XFu"/>
-                            <constraint firstItem="ryH-V0-exN" firstAttribute="trailing" secondItem="ecB-TO-VDE" secondAttribute="trailing" type="default" id="z9i-1G-cao"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="17"/>
+            <point key="canvasLocation" x="-582" y="25"/>
+        </scene>
+        <!--search View Controller-->
+        <scene sceneID="q5N-0d-AYI">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="Zmd-Q0-xQ2" customClass="OSU_searchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M9l-IA-cH4" userLabel="SearchView">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" id="iza-UC-gbq">
+                                <rect key="frame" x="124" y="20" width="176" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="backgroundTap:" destination="Zmd-Q0-xQ2" eventType="touchDown" id="CQI-Bz-FwA"/>
+                                    <action selector="searchButtonPressed:" destination="Zmd-Q0-xQ2" eventType="editingDidEndOnExit" id="8lV-gy-40D"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Search For" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zxo-Uo-fts">
+                                <rect key="frame" x="20" y="20" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2zW-in-nXt">
+                                <rect key="frame" x="214" y="499" width="86" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButtonPressed:" destination="Zmd-Q0-xQ2" eventType="touchUpInside" id="sRO-ml-lRd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="m4B-iY-mCl" appends="YES" id="fek-ax-024"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="searchField" destination="iza-UC-gbq" id="RQu-jC-iMV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gN9-CB-IOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="m4B-iY-mCl" userLabel="backgroundTap">
+                    <connections>
+                        <action selector="backgroundTap:" destination="Zmd-Q0-xQ2" id="uZq-dS-sU2"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-121" y="-306"/>
         </scene>
     </scenes>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="OSU_searchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_searchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTap:"/>
+                <relationship kind="action" name="exitButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="searchButtonPressed:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchField" candidateClass="UITextField"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

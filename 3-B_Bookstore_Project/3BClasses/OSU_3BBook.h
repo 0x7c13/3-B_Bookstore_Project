@@ -10,13 +10,13 @@
 
 @interface OSU_3BBook : NSObject
 
-@property (strong, nonatomic) NSString *ISBN;
-@property (strong, nonatomic) NSString *Titile;
-@property (strong, nonatomic) NSString *Author;
-@property (strong, nonatomic) NSString *Publisher;
+@property (copy, nonatomic) NSString *ISBN;
+@property (copy, nonatomic) NSString *Titile;
+@property (copy, nonatomic) NSString *Author;
+@property (copy, nonatomic) NSString *Publisher;
 @property (nonatomic) NSInteger Year;
 @property (nonatomic) double Price;
-@property (strong, nonatomic) NSString *Category;
+@property (copy, nonatomic) NSString *Category;
 
 
 - (void)print;

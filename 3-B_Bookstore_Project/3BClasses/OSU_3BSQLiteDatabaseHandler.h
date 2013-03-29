@@ -23,6 +23,6 @@
 - (void)loadDatabase;
 - (void)closeDatabase;
 - (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber;
-
+- (NSArray *)getCategoriesFromDatabase;
 
 @end

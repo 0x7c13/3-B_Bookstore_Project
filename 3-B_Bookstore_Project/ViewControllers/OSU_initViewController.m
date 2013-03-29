@@ -24,7 +24,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     // a small test case
-    [self databaseHandlerTest];
+    //[self databaseHandlerTest];
+    
     
 }
 
@@ -55,6 +56,12 @@
     }
 }
 
+
+- (IBAction)searchOnlyButtonPressed:(UIButton *)sender {
+    
+    
+    
+}
 
 
 @end

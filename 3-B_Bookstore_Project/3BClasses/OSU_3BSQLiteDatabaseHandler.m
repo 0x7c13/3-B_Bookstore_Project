@@ -133,6 +133,31 @@
 }
 
 
+- (NSArray *)getCategoriesFromDatabase;
+{
+    NSMutableArray *categories;
+    NSString *querystring = [NSString stringWithFormat:@"SELECT Distinct Category FROM Books"];
+    
+    const char *sql = [querystring UTF8String];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
+        
+        NSLog(@"sql problem occured with: %s", sql);
+        NSLog(@"%s", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    else
+    {
+        categories = [[NSMutableArray alloc] initWithCapacity:(NSInteger)sqlite3_column_count(statement)];
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            [categories addObject:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)]];
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return (NSArray *)categories;
+}
 
 
 @end

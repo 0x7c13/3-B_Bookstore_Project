@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F75680A51705CC8C0042BB55 /* OSU_searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680A41705CC8C0042BB55 /* OSU_searchViewController.m */; };
+		F75680AF1705DB0C0042BB55 /* AFPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680A81705DB0C0042BB55 /* AFPickerView.m */; };
+		F75680B01705DB0C0042BB55 /* pickerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680A91705DB0C0042BB55 /* pickerBackground.png */; };
+		F75680B11705DB0C0042BB55 /* pickerBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680AA1705DB0C0042BB55 /* pickerBackground@2x.png */; };
+		F75680B21705DB0C0042BB55 /* pickerGlass.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680AB1705DB0C0042BB55 /* pickerGlass.png */; };
+		F75680B31705DB0C0042BB55 /* pickerGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680AC1705DB0C0042BB55 /* pickerGlass@2x.png */; };
+		F75680B41705DB0C0042BB55 /* pickerShadows.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680AD1705DB0C0042BB55 /* pickerShadows.png */; };
+		F75680B51705DB0C0042BB55 /* pickerShadows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680AE1705DB0C0042BB55 /* pickerShadows@2x.png */; };
 		F775230F17027DF6004D7A4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775230E17027DF6004D7A4D /* UIKit.framework */; };
 		F775231117027DF6004D7A4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231017027DF6004D7A4D /* Foundation.framework */; };
 		F775231317027DF6004D7A4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231217027DF6004D7A4D /* CoreGraphics.framework */; };
@@ -26,6 +34,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F75680A31705CC8C0042BB55 /* OSU_searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_searchViewController.h; sourceTree = "<group>"; };
+		F75680A41705CC8C0042BB55 /* OSU_searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_searchViewController.m; sourceTree = "<group>"; };
+		F75680A71705DB0C0042BB55 /* AFPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPickerView.h; sourceTree = "<group>"; };
+		F75680A81705DB0C0042BB55 /* AFPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPickerView.m; sourceTree = "<group>"; };
+		F75680A91705DB0C0042BB55 /* pickerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerBackground.png; sourceTree = "<group>"; };
+		F75680AA1705DB0C0042BB55 /* pickerBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerBackground@2x.png"; sourceTree = "<group>"; };
+		F75680AB1705DB0C0042BB55 /* pickerGlass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerGlass.png; sourceTree = "<group>"; };
+		F75680AC1705DB0C0042BB55 /* pickerGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerGlass@2x.png"; sourceTree = "<group>"; };
+		F75680AD1705DB0C0042BB55 /* pickerShadows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerShadows.png; sourceTree = "<group>"; };
+		F75680AE1705DB0C0042BB55 /* pickerShadows@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerShadows@2x.png"; sourceTree = "<group>"; };
 		F775230B17027DF6004D7A4D /* CSE3241_Bookstore_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE3241_Bookstore_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F775230E17027DF6004D7A4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F775231017027DF6004D7A4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +85,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F75680A61705DB0C0042BB55 /* AFPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				F75680A71705DB0C0042BB55 /* AFPickerView.h */,
+				F75680A81705DB0C0042BB55 /* AFPickerView.m */,
+				F75680A91705DB0C0042BB55 /* pickerBackground.png */,
+				F75680AA1705DB0C0042BB55 /* pickerBackground@2x.png */,
+				F75680AB1705DB0C0042BB55 /* pickerGlass.png */,
+				F75680AC1705DB0C0042BB55 /* pickerGlass@2x.png */,
+				F75680AD1705DB0C0042BB55 /* pickerShadows.png */,
+				F75680AE1705DB0C0042BB55 /* pickerShadows@2x.png */,
+			);
+			path = AFPickerView;
+			sourceTree = "<group>";
+		};
 		F775230217027DF6004D7A4D = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +136,7 @@
 				F775231D17027DF6004D7A4D /* OSUAppDelegate.h */,
 				F775231E17027DF6004D7A4D /* OSUAppDelegate.m */,
 				F775232617027DF6004D7A4D /* MainStoryboard.storyboard */,
+				F75680A61705DB0C0042BB55 /* AFPickerView */,
 				F775233E170283C6004D7A4D /* 3BClasses */,
 				F7752333170282CA004D7A4D /* ViewControllers */,
 				F775231517027DF6004D7A4D /* Supporting Files */,
@@ -129,6 +163,8 @@
 			children = (
 				F7752334170282CA004D7A4D /* OSU_initViewController.h */,
 				F7752335170282CA004D7A4D /* OSU_initViewController.m */,
+				F75680A31705CC8C0042BB55 /* OSU_searchViewController.h */,
+				F75680A41705CC8C0042BB55 /* OSU_searchViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,6 +238,12 @@
 				F775232517027DF6004D7A4D /* Default-568h@2x.png in Resources */,
 				F775232817027DF6004D7A4D /* MainStoryboard.storyboard in Resources */,
 				F775234E17029B97004D7A4D /* 3BBooks.sqlite in Resources */,
+				F75680B01705DB0C0042BB55 /* pickerBackground.png in Resources */,
+				F75680B11705DB0C0042BB55 /* pickerBackground@2x.png in Resources */,
+				F75680B21705DB0C0042BB55 /* pickerGlass.png in Resources */,
+				F75680B31705DB0C0042BB55 /* pickerGlass@2x.png in Resources */,
+				F75680B41705DB0C0042BB55 /* pickerShadows.png in Resources */,
+				F75680B51705DB0C0042BB55 /* pickerShadows@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +259,8 @@
 				F7752336170282CA004D7A4D /* OSU_initViewController.m in Sources */,
 				F7752341170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m in Sources */,
 				F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */,
+				F75680A51705CC8C0042BB55 /* OSU_searchViewController.m in Sources */,
+				F75680AF1705DB0C0042BB55 /* AFPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
