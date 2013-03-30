@@ -98,7 +98,7 @@
 
 - (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber
 {
-    OSU_3BBook *book = [[OSU_3BBook alloc] init];
+    OSU_3BBook *book;
     NSString *querystring = [NSString stringWithFormat:@"SELECT * FROM Books WHERE ISBN = '%@'", ISBNNumber];
     
     const char *sql = [querystring UTF8String];
@@ -114,13 +114,13 @@
     {
         while (sqlite3_step(statement) == SQLITE_ROW) {
             
-            book.ISBN = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)];
-            book.Titile = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)];
-            book.Author = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)];
-            book.Publisher = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 3)];
-            book.Year = (int)sqlite3_column_int(statement, 4);
-            book.Price = [[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue];
-            book.Category = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)];
+            book = [[OSU_3BBook alloc] initWithISBN:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)]
+                                              Title:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)]
+                                             Author:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)]
+                                          Publisher:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 3)]
+                                               Year:(int)sqlite3_column_int(statement, 4)
+                                              Price:[[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue]
+                                           Category:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]];
 
         } 
     }
@@ -159,5 +159,71 @@
     return (NSArray *)categories;
 }
 
+
+- (OSU_3BBooks *)selectBooksFromDatabaseWithKeyword:(NSString *)keyword
+                                          Category:(NSString *)category
+                                           RowName:(NSString *)row
+{
+    OSU_3BBooks *books = [[OSU_3BBooks alloc]init];
+    
+    NSString *querystring;
+    
+    NSArray *titleOfRows = [NSArray arrayWithObjects:@"ISBN", @"Title", @"Author", @"Publisher", nil];
+    
+    if ([row isEqualToString:@"Keyword Anywhere"]) {
+        
+        querystring = [NSString stringWithFormat:@"SELECT * FROM Books"];
+        
+        bool controlFlag = YES;
+        for (NSString *rowName in titleOfRows) {
+            
+            if (controlFlag) {
+                querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" WHERE %@ LIKE '%%%@%%'", rowName, keyword]];
+                controlFlag = NO;
+            }
+            else {
+                querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" or %@ LIKE '%%%@%%'", rowName, keyword]];
+            }
+            
+        }
+    }
+    else {
+        querystring = [NSString stringWithFormat:@"SELECT * FROM Books WHERE %@ LIKE '%%%@%%'", row, keyword];
+    }
+
+    if (![category isEqualToString:@"All Categories"]){
+        querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" AND Category = '%@'", category]];
+    }
+    
+    //NSLog(@"%@",querystring);
+    
+    const char *sql = [querystring UTF8String];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
+        
+        NSLog(@"sql problem occured with: %s", sql);
+        NSLog(@"%s", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    else
+    {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            
+            OSU_3BBook *book = [[OSU_3BBook alloc] initWithISBN:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)]
+                                              Title:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)]
+                                             Author:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)]
+                                          Publisher:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 3)]
+                                               Year:(int)sqlite3_column_int(statement, 4)
+                                              Price:[[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue]
+                                           Category:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]];
+
+            [books addABook:book];
+        }
+    }
+    sqlite3_finalize(statement);
+
+    return books;
+}
 
 @end

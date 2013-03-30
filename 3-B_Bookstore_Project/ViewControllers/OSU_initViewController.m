@@ -54,6 +54,12 @@
     else {
         NSLog(@"Failed to load 3BBooksDatabase!");
     }
+    
+    OSU_3BBooks *books = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:@"SQL" Category:@"All Categories" RowName:@"Title"];
+    
+    for (int i = 0; i < books.count; i++) {
+        [[books objectAtIndexedSubscript:i] print];
+    }
 }
 
 

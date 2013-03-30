@@ -18,6 +18,14 @@
 @property (nonatomic) double Price;
 @property (copy, nonatomic) NSString *Category;
 
+// custom setter
+- (id)initWithISBN:(NSString *)ISBN
+             Title:(NSString *)Title
+            Author:(NSString *)Author
+         Publisher:(NSString *)Publisher
+              Year:(int)Year
+             Price:(double)Price
+          Category:(NSString *)Category;
 
 - (void)print;
 

@@ -15,6 +15,9 @@
 		F75680B31705DB0C0042BB55 /* pickerGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680AC1705DB0C0042BB55 /* pickerGlass@2x.png */; };
 		F75680B41705DB0C0042BB55 /* pickerShadows.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680AD1705DB0C0042BB55 /* pickerShadows.png */; };
 		F75680B51705DB0C0042BB55 /* pickerShadows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680AE1705DB0C0042BB55 /* pickerShadows@2x.png */; };
+		F75680B81705F4390042BB55 /* OSU_searchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680B71705F4390042BB55 /* OSU_searchResultViewController.m */; };
+		F75680BB170666660042BB55 /* OSU_3BBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680BA170666660042BB55 /* OSU_3BBooks.m */; };
+		F75680C117067D400042BB55 /* OSU_3BBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680C017067D400042BB55 /* OSU_3BBookCell.m */; };
 		F775230F17027DF6004D7A4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775230E17027DF6004D7A4D /* UIKit.framework */; };
 		F775231117027DF6004D7A4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231017027DF6004D7A4D /* Foundation.framework */; };
 		F775231317027DF6004D7A4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231217027DF6004D7A4D /* CoreGraphics.framework */; };
@@ -44,6 +47,12 @@
 		F75680AC1705DB0C0042BB55 /* pickerGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerGlass@2x.png"; sourceTree = "<group>"; };
 		F75680AD1705DB0C0042BB55 /* pickerShadows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerShadows.png; sourceTree = "<group>"; };
 		F75680AE1705DB0C0042BB55 /* pickerShadows@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerShadows@2x.png"; sourceTree = "<group>"; };
+		F75680B61705F4390042BB55 /* OSU_searchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_searchResultViewController.h; sourceTree = "<group>"; };
+		F75680B71705F4390042BB55 /* OSU_searchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_searchResultViewController.m; sourceTree = "<group>"; };
+		F75680B9170666660042BB55 /* OSU_3BBooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BBooks.h; sourceTree = "<group>"; };
+		F75680BA170666660042BB55 /* OSU_3BBooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BBooks.m; sourceTree = "<group>"; };
+		F75680BF17067D400042BB55 /* OSU_3BBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BBookCell.h; sourceTree = "<group>"; };
+		F75680C017067D400042BB55 /* OSU_3BBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BBookCell.m; sourceTree = "<group>"; };
 		F775230B17027DF6004D7A4D /* CSE3241_Bookstore_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE3241_Bookstore_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F775230E17027DF6004D7A4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F775231017027DF6004D7A4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -165,6 +174,10 @@
 				F7752335170282CA004D7A4D /* OSU_initViewController.m */,
 				F75680A31705CC8C0042BB55 /* OSU_searchViewController.h */,
 				F75680A41705CC8C0042BB55 /* OSU_searchViewController.m */,
+				F75680B61705F4390042BB55 /* OSU_searchResultViewController.h */,
+				F75680B71705F4390042BB55 /* OSU_searchResultViewController.m */,
+				F75680BF17067D400042BB55 /* OSU_3BBookCell.h */,
+				F75680C017067D400042BB55 /* OSU_3BBookCell.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,6 +189,8 @@
 				F7752340170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m */,
 				F775234817028959004D7A4D /* OSU_3BBook.h */,
 				F775234917028959004D7A4D /* OSU_3BBook.m */,
+				F75680B9170666660042BB55 /* OSU_3BBooks.h */,
+				F75680BA170666660042BB55 /* OSU_3BBooks.m */,
 			);
 			path = 3BClasses;
 			sourceTree = "<group>";
@@ -261,6 +276,9 @@
 				F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */,
 				F75680A51705CC8C0042BB55 /* OSU_searchViewController.m in Sources */,
 				F75680AF1705DB0C0042BB55 /* AFPickerView.m in Sources */,
+				F75680B81705F4390042BB55 /* OSU_searchResultViewController.m in Sources */,
+				F75680BB170666660042BB55 /* OSU_3BBooks.m in Sources */,
+				F75680C117067D400042BB55 /* OSU_3BBookCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

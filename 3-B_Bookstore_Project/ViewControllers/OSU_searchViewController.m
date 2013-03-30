@@ -8,6 +8,7 @@
 
 #import "OSU_searchViewController.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
+#import "OSU_searchResultViewController.h"
 
 @interface OSU_searchViewController () {
     
@@ -45,9 +46,10 @@
 
 - (void)addPickers;
 {
-    titleOfRows = [NSArray arrayWithObjects:@"Keyword Anywhere", @"ISBN", @"Titile", @"Author", @"Publisher", nil];
+    titleOfRows = [NSArray arrayWithObjects:@"Keyword Anywhere", @"ISBN", @"Title", @"Author", @"Publisher", nil];
     
-    titleOfCategories = [[OSU_3BSQLiteDatabaseHandler sharedInstance] getCategoriesFromDatabase];
+    titleOfCategories = [[NSArray alloc] initWithObjects:@"All Categories", nil];
+    titleOfCategories = [titleOfCategories arrayByAddingObjectsFromArray:[[OSU_3BSQLiteDatabaseHandler sharedInstance] getCategoriesFromDatabase]];
     
     self.databaseRowPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(30.0, 70.0, 196.0, 197.0)];
     self.databaseRowPicker.dataSource = self;
@@ -83,25 +85,22 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
 - (IBAction)searchButtonPressed:(UITextField *)sender {
-    
-    NSLog(@"%@", self.searchField.text);
-    
-    NSLog(@"%@", titleOfRows[indexOfRow]);
-    
-    if (indexOfCategory == 0) {
-        NSLog(@"All Categories");
-    }
-    else {
-        NSLog(@"%@", titleOfCategories[indexOfCategory - 1]);
-    }
-    
+
+    OSU_searchResultViewController *resultVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchResultSegue"];
+
+    resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:self.searchField.text
+                                                                                                   Category:titleOfCategories[indexOfCategory]
+                                                                                                    RowName:titleOfRows[indexOfRow]];
+    [self presentViewController:resultVC animated:YES completion:nil];
 }
 
 - (IBAction) backgroundTap:(id)sender
 {
     [self.searchField resignFirstResponder];
 }
+
 
 
 // protocols ********************
@@ -114,11 +113,9 @@
     if (pickerView == self.databaseRowPicker)
         return titleOfRows.count;
     else {
-        return titleOfCategories.count + 1;
+        return titleOfCategories.count;
     }
 }
-
-
 
 
 - (NSString *)pickerView:(AFPickerView *)pickerView titleForRow:(NSInteger)row
@@ -126,8 +123,7 @@
     if (pickerView == self.databaseRowPicker)
         return [titleOfRows objectAtIndex:row];
     else {
-        if (row == 0) return @"All Categories";
-        else return [titleOfCategories objectAtIndex:row - 1];
+        return [titleOfCategories objectAtIndex:row];
     }
 }
 

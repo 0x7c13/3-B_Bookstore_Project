@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 #import "OSU_3BBook.h"
+#import "OSU_3BBooks.h"
 
 @interface OSU_3BSQLiteDatabaseHandler : NSObject{
     sqlite3 *_3BBooksDataBase;
@@ -19,10 +20,17 @@
 // Singleton
 + (id)sharedInstance;
 
-// public methods
+
+// public methods   
 - (void)loadDatabase;
 - (void)closeDatabase;
-- (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber;
 - (NSArray *)getCategoriesFromDatabase;
+
+- (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber;
+
+- (OSU_3BBooks *)selectBooksFromDatabaseWithKeyword:(NSString *)keyword
+                                           Category:(NSString *)category
+                                            RowName:(NSString *)row;
+
 
 @end
