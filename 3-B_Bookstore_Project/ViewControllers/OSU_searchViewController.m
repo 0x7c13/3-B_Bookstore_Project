@@ -88,6 +88,7 @@
 
 - (IBAction)searchButtonPressed:(UITextField *)sender {
 
+    [self.searchField resignFirstResponder];
     OSU_searchResultViewController *resultVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchResultSegue"];
 
     resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:self.searchField.text

@@ -27,6 +27,7 @@
         _Year = Year;
         _Price = Price;
         _Category = Category;
+        _Quantity = 0;
     }
     return self;
 }

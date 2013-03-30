@@ -7,6 +7,7 @@
 //
 
 #import "OSU_3BBookCell.h"
+#import "OSU_3BShoppingCart.h"
 
 @implementation OSU_3BBookCell
 
@@ -24,6 +25,24 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+
+- (IBAction)addToCartButtonPressed:(UIButton *)sender {
+
+    [[OSU_3BShoppingCart sharedInstance] addItem:self.book withQuantity:1];
+    
+    self.addToCartButton.userInteractionEnabled = NO;
+    [self.addToCartButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    [self.delegate userDidPressAddToCartButton:self];
+
+    
+}
+
+- (IBAction)reviewsButtonPressed:(UIButton *)sender {
+ 
+    [self.delegate userDidPressReviewsButton:self];
 }
 
 @end

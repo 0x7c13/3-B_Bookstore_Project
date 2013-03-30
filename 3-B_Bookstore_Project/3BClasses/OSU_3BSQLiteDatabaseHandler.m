@@ -184,7 +184,6 @@
             else {
                 querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" or %@ LIKE '%%%@%%'", rowName, keyword]];
             }
-            
         }
     }
     else {
@@ -192,10 +191,10 @@
     }
 
     if (![category isEqualToString:@"All Categories"]){
-        querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" AND Category = '%@'", category]];
+        querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" INTERSECT SELECT * FROM Books WHERE Category = '%@'", category]];
     }
     
-    //NSLog(@"%@",querystring);
+    NSLog(@"%@",querystring);
     
     const char *sql = [querystring UTF8String];
     

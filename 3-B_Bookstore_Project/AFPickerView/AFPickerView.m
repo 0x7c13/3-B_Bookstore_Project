@@ -89,7 +89,7 @@
         
         // backgound
         UIImageView *bacground = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
-        bacground.image = [UIImage imageNamed:@"pickerBackground.png"];
+        bacground.image = [UIImage imageNamed:@"pickerBackground@2x.png"];
         [self addSubview:bacground];
         
         // content
@@ -111,8 +111,8 @@
         [self addSubview:shadows];
         
         // glass
-        UIImage *glassImage = [UIImage imageNamed:@"pickerGlass.png"];
-        glassImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 76.0, frame.size.width, glassImage.size.height)];
+        UIImage *glassImage = [UIImage imageNamed:@"pickerGlass@2x.png"];
+        glassImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 76.0, frame.size.width, glassImage.size.height/2.0)];
         glassImageView.image = glassImage;
         [self addSubview:glassImageView];
     }

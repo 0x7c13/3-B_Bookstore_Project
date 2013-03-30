@@ -9,11 +9,11 @@
             <objects>
                 <viewController id="2" customClass="OSU_initViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3" userLabel="MenuView">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Best Book Buy Online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="eOI-pZ-0Oh">
-                                <rect key="frame" x="20" y="61" width="280" height="36"/>
+                                <rect key="frame" x="20" y="73" width="280" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -21,13 +21,13 @@
                                 <size key="shadowOffset" width="1" height="-1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3-B.com Online Bookstore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="85B-sS-VHZ">
-                                <rect key="frame" x="20" y="104" width="280" height="27"/>
+                                <rect key="frame" x="20" y="125" width="280" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UQf-LW-U7m">
-                                <rect key="frame" x="55" y="173" width="210" height="40"/>
+                                <rect key="frame" x="55" y="209" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Search Only">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ecB-TO-VDE">
-                                <rect key="frame" x="55" y="231" width="210" height="40"/>
+                                <rect key="frame" x="55" y="279" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="New Customer">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,7 +53,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ryH-V0-exN">
-                                <rect key="frame" x="55" y="289" width="210" height="40"/>
+                                <rect key="frame" x="55" y="349" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Returning Customer">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +64,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yJI-KT-Vdu">
-                                <rect key="frame" x="55" y="347" width="210" height="40"/>
+                                <rect key="frame" x="55" y="419" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Administrator">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,17 +84,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-582" y="25"/>
+            <point key="canvasLocation" x="-585" y="22"/>
         </scene>
         <!--search View Controller-->
         <scene sceneID="q5N-0d-AYI">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="Zmd-Q0-xQ2" customClass="OSU_searchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M9l-IA-cH4" userLabel="SearchView">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" id="iza-UC-gbq">
@@ -136,6 +137,7 @@
                             <outletCollection property="gestureRecognizers" destination="m4B-iY-mCl" appends="YES" id="fek-ax-024"/>
                         </connections>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="searchField" destination="iza-UC-gbq" id="RQu-jC-iMV"/>
                     </connections>
@@ -154,7 +156,7 @@
             <objects>
                 <viewController storyboardIdentifier="searchResultSegue" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KLl-ic-tvh" customClass="OSU_searchResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NxM-a3-nQ7" userLabel="SearchResultView">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wSm-4j-tx8">
@@ -172,47 +174,47 @@
                                     <action selector="returnButtonPressed:" destination="KLl-ic-tvh" eventType="touchUpInside" id="hRR-ey-mgh"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" id="1sW-se-upa">
-                                <rect key="frame" x="0.0" y="48" width="320" height="333"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="136" sectionHeaderHeight="22" sectionFooterHeight="22" id="1sW-se-upa">
+                                <rect key="frame" x="0.0" y="48" width="320" height="421"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCell" rowHeight="110" id="2Nz-9f-SVv" customClass="OSU_3BBookCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="110"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCell" rowHeight="136" id="2Nz-9f-SVv" customClass="OSU_3BBookCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xQ9-ub-Gym">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xQ9-ub-Gym" userLabel="Label - Book Title">
                                                     <rect key="frame" x="20" y="9" width="280" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iuI-nX-AM4">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iuI-nX-AM4" userLabel="Label - Book Author">
                                                     <rect key="frame" x="51" y="31" width="249" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ywj-BD-oHY">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ywj-BD-oHY" userLabel="Label - Book Publisher">
                                                     <rect key="frame" x="102" y="53" width="198" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HWl-Yu-NoV">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HWl-Yu-NoV" userLabel="Label - Book ISBN">
                                                     <rect key="frame" x="68" y="75" width="92" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cn8-qb-gEc">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cn8-qb-gEc" userLabel="Label - Book Price">
                                                     <rect key="frame" x="209" y="75" width="91" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -247,25 +249,63 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="S70-iP-DMB">
+                                                    <rect key="frame" x="20" y="103" width="140" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                    <state key="normal" title="Add to Cart">
+                                                        <color key="titleColor" red="0.074509806930000005" green="0.074509806930000005" blue="0.023529414089999999" alpha="1" colorSpace="deviceRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="addToCartButtonPressed:" destination="2Nz-9f-SVv" eventType="touchUpInside" id="D5p-1j-bVO"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qUX-eR-0us">
+                                                    <rect key="frame" x="168" y="103" width="132" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Reviews">
+                                                        <color key="titleColor" red="0.074509806930000005" green="0.074509806930000005" blue="0.023529414089999999" alpha="1" colorSpace="deviceRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="reviewsButtonPressed:" destination="2Nz-9f-SVv" eventType="touchUpInside" id="dDe-4p-OsH"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="addToCartButton" destination="S70-iP-DMB" id="iDr-cB-0WD"/>
                                             <outlet property="bookAuthor" destination="iuI-nX-AM4" id="kNj-UV-Vtd"/>
                                             <outlet property="bookISBN" destination="HWl-Yu-NoV" id="8fN-5p-DG3"/>
                                             <outlet property="bookPrice" destination="Cn8-qb-gEc" id="fgE-cf-RHc"/>
                                             <outlet property="bookPublisher" destination="Ywj-BD-oHY" id="UmP-29-ZzG"/>
                                             <outlet property="bookTitle" destination="xQ9-ub-Gym" id="wL0-3Y-5Cc"/>
+                                            <outlet property="reviewsButton" destination="qUX-eR-0us" id="8CV-Ek-xcO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L2R-K8-sal">
+                                <rect key="frame" x="12" y="11" width="251" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="resultTable" destination="1sW-se-upa" id="ez0-aD-gJT"/>
+                        <outlet property="shoppingCartInfo" destination="L2R-K8-sal" id="I4A-oh-N10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suz-Af-HYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,11 +317,15 @@
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
+                <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPublisher" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reviewsButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="OSU_initViewController" superclassName="UIViewController">
@@ -295,6 +339,7 @@
             <relationships>
                 <relationship kind="action" name="returnButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="resultTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="shoppingCartInfo" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="OSU_searchViewController" superclassName="UIViewController">

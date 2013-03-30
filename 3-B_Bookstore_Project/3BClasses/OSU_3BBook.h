@@ -17,6 +17,7 @@
 @property (nonatomic) NSInteger Year;
 @property (nonatomic) double Price;
 @property (copy, nonatomic) NSString *Category;
+@property (nonatomic) NSUInteger Quantity;
 
 // custom setter
 - (id)initWithISBN:(NSString *)ISBN

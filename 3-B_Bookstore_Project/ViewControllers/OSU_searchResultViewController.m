@@ -8,6 +8,7 @@
 
 #import "OSU_searchResultViewController.h"
 #import "OSU_3BBookCell.h"
+#import "OSU_3BShoppingCart.h"
 
 @interface OSU_searchResultViewController ()
 
@@ -32,10 +33,25 @@
     self.resultTable.delegate = self;
     self.resultTable.dataSource = self;
     
-    for (int i = 0; i < self.resultBooks.count; i++) {
-        [self.resultBooks[i] print];
+    // Progress Hud view
+
+    if (self.resultBooks.count == 0) {
+        MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        HUD.delegate = self;
+        HUD.dimBackground = YES;
+        HUD.mode = MBProgressHUDModeText;
+        HUD.labelText = @"No matching items found!";
+        HUD.margin = 10.f;
+        HUD.yOffset = 150.f;
+        HUD.removeFromSuperViewOnHide = YES;
+	
+        [HUD hide:YES afterDelay:1.2f];
     }
+    
+    self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -61,13 +77,44 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     OSU_3BBookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell"];
+
+    cell.delegate = self;
+    cell.book = [self.resultBooks objectAtIndexedSubscript:indexPath.row];
+    cell.bookTitle.text = cell.book.Titile;
+    cell.bookAuthor.text = cell.book.Author;
+    cell.bookPublisher.text = cell.book.Publisher;
+    cell.bookISBN.text = cell.book.ISBN;
+    cell.bookPrice.text = [NSString stringWithFormat:@"$ %.2f",cell.book.Price];
     
-    cell.bookTitle.text = [self.resultBooks objectAtIndexedSubscript:indexPath.row].Titile;
-    cell.bookAuthor.text = [self.resultBooks objectAtIndexedSubscript:indexPath.row].Author;
-    cell.bookPublisher.text = [self.resultBooks objectAtIndexedSubscript:indexPath.row].Publisher;
-    cell.bookISBN.text = [self.resultBooks objectAtIndexedSubscript:indexPath.row].ISBN;
-    cell.bookPrice.text = [NSString stringWithFormat:@"$ %.2f",[self.resultBooks objectAtIndexedSubscript:indexPath.row].Price];
+    if (![[OSU_3BShoppingCart sharedInstance] isInShoppingCart:cell.book]) {
+        cell.addToCartButton.userInteractionEnabled = YES;
+        [cell.addToCartButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    else {
+        cell.addToCartButton.userInteractionEnabled = NO;
+        [cell.addToCartButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    }
+    
     return cell;
+}
+
+- (void)hudWasHidden:(MBProgressHUD *)hud
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+- (void)userDidPressAddToCartButton:(OSU_3BBookCell *)cell
+{
+    self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+   // NSLog(@"button pressed");
+}
+
+- (void)userDidPressReviewsButton:(OSU_3BBookCell *)cell
+{
+
+
 }
 
 @end
