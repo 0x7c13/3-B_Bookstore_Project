@@ -13,6 +13,9 @@
 
 - (NSUInteger)count;
 - (void)addABook:(OSU_3BBook *)book;
+- (void)removeABook:(OSU_3BBook *)book;
+- (void)changeQuantityOfItem:(OSU_3BBook *)book
+                withQuantity:(NSUInteger)quantity;
 - (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)bookNumber;
 
 @end

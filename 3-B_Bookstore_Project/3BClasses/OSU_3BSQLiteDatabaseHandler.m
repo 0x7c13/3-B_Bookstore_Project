@@ -194,7 +194,7 @@
         querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" INTERSECT SELECT * FROM Books WHERE Category = '%@'", category]];
     }
     
-    NSLog(@"%@",querystring);
+    //NSLog(@"%@",querystring);
     
     const char *sql = [querystring UTF8String];
     

@@ -18,8 +18,16 @@
 
 - (void)addItem:(OSU_3BBook *)book
    withQuantity:(NSUInteger)quantity;
+- (void)removeItem:(OSU_3BBook *)book;
+- (void)changeQuantityOfItem:(OSU_3BBook *)book
+                withQuantity:(NSUInteger)quantity;
+
+- (double)subtotalValue;
 
 - (NSUInteger)numberOfDistinctItemsInShoppingCart;
 
+- (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)index;
+
 - (BOOL)isInShoppingCart:(OSU_3BBook *)book;
+
 @end

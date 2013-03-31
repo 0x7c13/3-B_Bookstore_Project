@@ -37,9 +37,30 @@
     [self.listOfBooks addObject:book];
 }
 
+-(void)removeABook:(OSU_3BBook *)book
+{
+    for (OSU_3BBook *tmp in self.listOfBooks) {
+        if ([book.ISBN isEqualToString:tmp.ISBN]) {
+            [self.listOfBooks removeObject:tmp];
+            break;
+        }
+    }
+}
+
+- (void)changeQuantityOfItem:(OSU_3BBook *)book
+                withQuantity:(NSUInteger)quantity
+{
+    for (OSU_3BBook *tmpBook in self.listOfBooks) {
+        if ([book.ISBN isEqualToString:tmpBook.ISBN]) {
+            tmpBook.Quantity = quantity;
+            break;
+        }
+    }
+}
+
 - (NSUInteger)count
 {
-    return self.listOfBooks.count;
+    return (NSUInteger)self.listOfBooks.count;
 }
 
 - (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)bookNumber

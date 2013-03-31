@@ -32,6 +32,7 @@
 		F75680EB1707E77F0042BB55 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680EA1707E77F0042BB55 /* 37x-Checkmark.png */; };
 		F75680F11707EA7A0042BB55 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75680F01707EA7A0042BB55 /* QuartzCore.framework */; };
 		F75680F21707EA9E0042BB55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231217027DF6004D7A4D /* CoreGraphics.framework */; };
+		F75680F51707F37D0042BB55 /* OSU_3BShoppingCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680F41707F37D0042BB55 /* OSU_3BShoppingCartCell.m */; };
 		F775230F17027DF6004D7A4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775230E17027DF6004D7A4D /* UIKit.framework */; };
 		F775231117027DF6004D7A4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231017027DF6004D7A4D /* Foundation.framework */; };
 		F775231917027DF6004D7A4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F775231717027DF6004D7A4D /* InfoPlist.strings */; };
@@ -82,6 +83,8 @@
 		F75680E81707E40D0042BB55 /* cellButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellButton.png; sourceTree = "<group>"; };
 		F75680EA1707E77F0042BB55 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
 		F75680F01707EA7A0042BB55 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F75680F31707F37D0042BB55 /* OSU_3BShoppingCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BShoppingCartCell.h; sourceTree = "<group>"; };
+		F75680F41707F37D0042BB55 /* OSU_3BShoppingCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BShoppingCartCell.m; sourceTree = "<group>"; };
 		F775230B17027DF6004D7A4D /* CSE3241_Bookstore_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE3241_Bookstore_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F775230E17027DF6004D7A4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F775231017027DF6004D7A4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,7 +170,6 @@
 		F775230217027DF6004D7A4D = {
 			isa = PBXGroup;
 			children = (
-				F75680F01707EA7A0042BB55 /* QuartzCore.framework */,
 				F775234D17029B97004D7A4D /* 3BBooks.sqlite */,
 				F7752342170284BF004D7A4D /* libsqlite3.0.dylib */,
 				F7752343170284BF004D7A4D /* libsqlite3.dylib */,
@@ -188,6 +190,7 @@
 		F775230D17027DF6004D7A4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F75680F01707EA7A0042BB55 /* QuartzCore.framework */,
 				F775230E17027DF6004D7A4D /* UIKit.framework */,
 				F775231017027DF6004D7A4D /* Foundation.framework */,
 				F775231217027DF6004D7A4D /* CoreGraphics.framework */,
@@ -238,6 +241,8 @@
 				F75680C017067D400042BB55 /* OSU_3BBookCell.m */,
 				F75680C91707C1700042BB55 /* OSU_shoppingCartViewController.h */,
 				F75680CA1707C1700042BB55 /* OSU_shoppingCartViewController.m */,
+				F75680F31707F37D0042BB55 /* OSU_3BShoppingCartCell.h */,
+				F75680F41707F37D0042BB55 /* OSU_3BShoppingCartCell.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				F75680C517069B820042BB55 /* MBProgressHUD.m in Sources */,
 				F75680C81706A2040042BB55 /* OSU_3BShoppingCart.m in Sources */,
 				F75680CB1707C1700042BB55 /* OSU_shoppingCartViewController.m in Sources */,
+				F75680F51707F37D0042BB55 /* OSU_3BShoppingCartCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

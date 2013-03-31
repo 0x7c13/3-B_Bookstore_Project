@@ -26,6 +26,11 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self updateResultsInfo];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -50,7 +55,12 @@
         [HUD hide:YES afterDelay:1.2f];
     }
     
-    self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    if ([[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart] > 1) {
+        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    }
+    else {
+        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u item", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    }
 
     
     UIButton *buttonLeft = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 30)];
@@ -86,6 +96,19 @@
     // improve performance
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:view.bounds];
     view.layer.shadowPath = path.CGPath;
+}
+
+- (void)updateResultsInfo
+{
+    if ([[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart] > 1) {
+        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    }
+    else {
+        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u item", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    }
+    
+    [self.resultTable reloadData];
+
 }
 
 
@@ -137,8 +160,13 @@
 
 - (void)userDidPressAddToCartButton:(OSU_3BBookCell *)cell
 {
-    self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
-   // NSLog(@"button pressed");
+    if ([[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart] > 1) {
+        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    }
+    else {
+        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u item", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    }
+
 }
 
 - (void)userDidPressReviewsButton:(OSU_3BBookCell *)cell

@@ -8,7 +8,9 @@
 
 #import "OSU_3BShoppingCart.h"
 
-@interface OSU_3BShoppingCart ()
+@interface OSU_3BShoppingCart () {
+    double _subtotal;
+}
     
 @property (strong, nonatomic) OSU_3BBooks *books;
 
@@ -44,19 +46,70 @@
 - (void)addItem:(OSU_3BBook *)book
    withQuantity:(NSUInteger)quantity
 {
-    book.Quantity = quantity;
-    [self.books addABook:book];
+    
+    if (![self isInShoppingCart:book])
+    {
+        book.Quantity = quantity;
+        [self.books addABook:book];
+        _subtotal += book.Price * quantity;
+    }
+}
+
+- (void)changeQuantityOfItem:(OSU_3BBook *)book
+                withQuantity:(NSUInteger)quantity
+{
+    for (int i = 0; i < self.books.count; i++) {
+        if ([book.ISBN isEqualToString:[self.books objectAtIndexedSubscript:i].ISBN]) {
+            
+            OSU_3BBook *tmpBook = [self.books objectAtIndexedSubscript:i];
+            if (quantity > tmpBook.Quantity)
+            {
+                _subtotal += (quantity - tmpBook.Quantity) * tmpBook.Price;
+                [self.books changeQuantityOfItem:book withQuantity:quantity];
+            }
+            else {
+                _subtotal -= (tmpBook.Quantity - quantity) * tmpBook.Price;
+                [self.books changeQuantityOfItem:book withQuantity:quantity];
+            }
+            break;
+        }
+    }
+}
+
+- (void)removeItem:(OSU_3BBook *)book
+{
+    for (int i = 0; i < self.books.count; i++) {
+        if ([book.ISBN isEqualToString:[self.books objectAtIndexedSubscript:i].ISBN]) {
+            
+            OSU_3BBook *tmpBook = [self.books objectAtIndexedSubscript:i];
+            _subtotal -= tmpBook.Quantity * tmpBook.Price;
+            break;
+        }
+    }
+    [self.books removeABook:book];
+}
+
+- (double)subtotalValue
+{
+    if (_subtotal < 0) return 0.0;
+    return _subtotal;
 }
 
 - (void)initShoppingCart
 {
     _books = [[OSU_3BBooks alloc]init];
+    _subtotal = 0.0;
 }
 
 
 - (NSUInteger)numberOfDistinctItemsInShoppingCart
 {
-    return self.books.count;
+    return (NSUInteger)self.books.count;
+}
+
+- (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)index
+{
+    return [self.books objectAtIndexedSubscript:index];
 }
 
 - (BOOL)isInShoppingCart:(OSU_3BBook *)book
