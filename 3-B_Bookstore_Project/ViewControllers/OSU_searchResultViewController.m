@@ -42,6 +42,7 @@
     // Progress Hud view
 
     if (self.resultBooks.count == 0) {
+        
         MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
         HUD.delegate = self;
@@ -49,9 +50,29 @@
         HUD.mode = MBProgressHUDModeText;
         HUD.labelText = @"No matching items found!";
         HUD.margin = 10.f;
-        HUD.yOffset = 150.f;
+        //HUD.yOffset = 150.f;
         HUD.removeFromSuperViewOnHide = YES;
 	
+        [HUD hide:YES afterDelay:1.0f];
+    }
+    else {
+        
+        MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        HUD.userInteractionEnabled = NO;
+        HUD.delegate = self;
+        HUD.dimBackground = NO;
+        HUD.mode = MBProgressHUDModeText;
+        if (self.resultBooks.count == 1) {
+            HUD.labelText = [NSString stringWithFormat:@"Found %u result to your search", self.resultBooks.count];
+        }
+        else {
+            HUD.labelText = [NSString stringWithFormat:@"Found %u results to your search", self.resultBooks.count];
+        }
+        HUD.margin = 10.f;
+        HUD.yOffset = 150.f;
+        HUD.removeFromSuperViewOnHide = YES;
+        
         [HUD hide:YES afterDelay:1.2f];
     }
     
@@ -154,7 +175,9 @@
 
 - (void)hudWasHidden:(MBProgressHUD *)hud
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (hud.yOffset != 150.f) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 
@@ -165,6 +188,14 @@
     }
     else {
         self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u item", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    }
+    
+    if ([[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue == nil) {
+        [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"1";
+    }
+    else {
+        int tmp = [[[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue integerValue] + 1;
+        [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = [NSString stringWithFormat:@"%d", tmp];
     }
 
 }

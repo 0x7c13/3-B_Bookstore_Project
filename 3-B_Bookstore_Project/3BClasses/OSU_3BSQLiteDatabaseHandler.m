@@ -99,9 +99,9 @@
 - (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber
 {
     OSU_3BBook *book;
-    NSString *querystring = [NSString stringWithFormat:@"SELECT * FROM Books WHERE ISBN = '%@'", ISBNNumber];
+    NSString *queryString = [NSString stringWithFormat:@"SELECT * FROM Books WHERE ISBN = '%@'", ISBNNumber];
     
-    const char *sql = [querystring UTF8String];
+    const char *sql = [queryString UTF8String];
     
     sqlite3_stmt *statement;
     
@@ -136,9 +136,9 @@
 - (NSArray *)getCategoriesFromDatabase;
 {
     NSMutableArray *categories;
-    NSString *querystring = [NSString stringWithFormat:@"SELECT Distinct Category FROM Books"];
+    NSString *queryString = [NSString stringWithFormat:@"SELECT Distinct Category FROM Books"];
     
-    const char *sql = [querystring UTF8String];
+    const char *sql = [queryString UTF8String];
     
     sqlite3_stmt *statement;
     
@@ -166,37 +166,37 @@
 {
     OSU_3BBooks *books = [[OSU_3BBooks alloc]init];
     
-    NSString *querystring;
+    NSString *queryString;
     
     NSArray *titleOfRows = [NSArray arrayWithObjects:@"ISBN", @"Title", @"Author", @"Publisher", nil];
     
     if ([row isEqualToString:@"Keyword Anywhere"]) {
         
-        querystring = [NSString stringWithFormat:@"SELECT * FROM Books"];
+        queryString = [NSString stringWithFormat:@"SELECT * FROM Books"];
         
         bool controlFlag = YES;
         for (NSString *rowName in titleOfRows) {
             
             if (controlFlag) {
-                querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" WHERE %@ LIKE '%%%@%%'", rowName, keyword]];
+                queryString = [queryString stringByAppendingString:[NSString stringWithFormat:@" WHERE %@ LIKE '%%%@%%'", rowName, keyword]];
                 controlFlag = NO;
             }
             else {
-                querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" or %@ LIKE '%%%@%%'", rowName, keyword]];
+                queryString = [queryString stringByAppendingString:[NSString stringWithFormat:@" or %@ LIKE '%%%@%%'", rowName, keyword]];
             }
         }
     }
     else {
-        querystring = [NSString stringWithFormat:@"SELECT * FROM Books WHERE %@ LIKE '%%%@%%'", row, keyword];
+        queryString = [NSString stringWithFormat:@"SELECT * FROM Books WHERE %@ LIKE '%%%@%%'", row, keyword];
     }
 
     if (![category isEqualToString:@"All Categories"]){
-        querystring = [querystring stringByAppendingString:[NSString stringWithFormat:@" INTERSECT SELECT * FROM Books WHERE Category = '%@'", category]];
+        queryString = [queryString stringByAppendingString:[NSString stringWithFormat:@" INTERSECT SELECT * FROM Books WHERE Category = '%@'", category]];
     }
     
-    //NSLog(@"%@",querystring);
+    NSLog(@"%@",queryString);
     
-    const char *sql = [querystring UTF8String];
+    const char *sql = [queryString UTF8String];
     
     sqlite3_stmt *statement;
     

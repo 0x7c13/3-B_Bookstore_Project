@@ -38,6 +38,7 @@
     double value = [sender value];
     
     [[OSU_3BShoppingCart sharedInstance] changeQuantityOfItem:self.book withQuantity:(NSUInteger)value];
+    
     self.book.Quantity = (NSUInteger)value;
     
     self.bookQuantity.text = [NSString stringWithFormat:@"%u", (NSInteger)self.book.Quantity];

@@ -1,6 +1,8 @@
 Best-Book-Buy Online Bookstore Project
 ======================================
 
+Progress: About 40%… :(
+
 The Ohio State CSE 3241 Database Project
 
 3-B_Bookstore_Project.app
@@ -19,13 +21,15 @@ Target: iOS 6.1
 
 ARC + Storyboard based
 
-iPhone 3GS/4/4S/5 supported
+iPhone 5 supported
 
 --------------------------------
 
 ##Open Source Classes used in this project:
 
-nil
+AFPickerView : https://github.com/arkichek/AFPickerView
+
+MBProgressHUD : https://github.com/jdg/MBProgressHUD
 
 --------------------------------
 

@@ -24,6 +24,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated
 {
+    [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
     [self.shoppingCartTableView reloadData];
     [self updateShoppingCartInfo];
 }
@@ -40,6 +41,7 @@
     [self addShadow:(UIImageView *)self.lowerLabelBG towardsUp:YES];
     
     [self updateShoppingCartInfo];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,8 +110,14 @@
 - (void)userDidPressDeleteButton:(OSU_3BShoppingCartCell *)cell
 {
     [[OSU_3BShoppingCart sharedInstance] removeItem:cell.book];
+    
+    NSArray *deleteIndexPaths = [[NSArray alloc] initWithObjects:[self.shoppingCartTableView indexPathForCell:cell],
+                                 nil];
+    [self.shoppingCartTableView beginUpdates];
+    [self.shoppingCartTableView deleteRowsAtIndexPaths:deleteIndexPaths withRowAnimation:UITableViewRowAnimationFade];
+    [self.shoppingCartTableView endUpdates];
+    
     [self updateShoppingCartInfo];
-    [self.shoppingCartTableView reloadData];
 }
 
 - (void)userDidPressStepper:(OSU_3BShoppingCartCell *)cell

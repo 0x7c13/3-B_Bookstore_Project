@@ -91,7 +91,10 @@
 
 - (double)subtotalValue
 {
-    if (_subtotal < 0) return 0.0;
+    if (_subtotal < 0) {
+        _subtotal = 0.0;
+        return 0.0;
+    }
     return _subtotal;
 }
 
