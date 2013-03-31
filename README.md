@@ -25,16 +25,16 @@ iPhone 5 supported
 
 --------------------------------
 
+##Description:
+
+The purpose of this case study is to present a data-intensive application for which a database can be designed. It is described with sufficient degree of detail so that the application can be implemented in languages like Java or Visual Basic using ODBC connectivity to the relational database (I use obj-c and SQLite here). This case study is an illustration of the typical project we have been using to teach an undergraduate class in database design.
+(The Ohio State University CSE 3241 Best-Book-Buy Online Bookstore Project Requirements Specification Document:http://www.cse.ohio-state.edu/~samy/CSE3241/CourseNotes/ClassAssignments/Project.pdf)
+
+--------------------------------
+
 ##Open Source Classes used in this project:
 
 AFPickerView : https://github.com/arkichek/AFPickerView
 
 MBProgressHUD : https://github.com/jdg/MBProgressHUD
-
---------------------------------
-
-##Description:
-
-The purpose of this case study is to present a data-intensive application for which a database can be designed. It is described with sufficient degree of detail so that the application can be implemented in languages like Java or Visual Basic using ODBC connectivity to the relational database (I use obj-c and SQLite here). This case study is an illustration of the typical project we have been using to teach an undergraduate class in database design.
-(Token from Best-Book-Buy Online Bookstore Project Requirements Specification Document:http://www.cse.ohio-state.edu/~samy/CSE3241/CourseNotes/ClassAssignments/Project.pdf)
 
