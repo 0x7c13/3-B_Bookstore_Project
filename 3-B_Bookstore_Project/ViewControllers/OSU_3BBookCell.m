@@ -34,7 +34,8 @@
     
     self.addToCartButton.userInteractionEnabled = NO;
     [self.addToCartButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    
+    self.checkMark.alpha = 1.0;
+
     [self.delegate userDidPressAddToCartButton:self];
 
     

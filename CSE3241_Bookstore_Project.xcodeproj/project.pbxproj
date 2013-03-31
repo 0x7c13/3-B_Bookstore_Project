@@ -20,9 +20,20 @@
 		F75680C117067D400042BB55 /* OSU_3BBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680C017067D400042BB55 /* OSU_3BBookCell.m */; };
 		F75680C517069B820042BB55 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680C417069B820042BB55 /* MBProgressHUD.m */; };
 		F75680C81706A2040042BB55 /* OSU_3BShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680C71706A2040042BB55 /* OSU_3BShoppingCart.m */; };
+		F75680CB1707C1700042BB55 /* OSU_shoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75680CA1707C1700042BB55 /* OSU_shoppingCartViewController.m */; };
+		F75680D51707CA450042BB55 /* shoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680D41707CA450042BB55 /* shoppingcart.png */; };
+		F75680D71707D04D0042BB55 /* NavBar_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680D61707D04D0042BB55 /* NavBar_gray@2x.png */; };
+		F75680D91707D13F0042BB55 /* NavBar_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680D81707D13F0042BB55 /* NavBar_gray.png */; };
+		F75680E11707DC120042BB55 /* BackButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E01707DC110042BB55 /* BackButtonBg@2x.png */; };
+		F75680E31707DD280042BB55 /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E21707DD280042BB55 /* BackButton.png */; };
+		F75680E51707DE790042BB55 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E41707DE790042BB55 /* background@2x.png */; };
+		F75680E71707E2660042BB55 /* bigButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E61707E2660042BB55 /* bigButton.png */; };
+		F75680E91707E40D0042BB55 /* cellButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E81707E40D0042BB55 /* cellButton.png */; };
+		F75680EB1707E77F0042BB55 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680EA1707E77F0042BB55 /* 37x-Checkmark.png */; };
+		F75680F11707EA7A0042BB55 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75680F01707EA7A0042BB55 /* QuartzCore.framework */; };
+		F75680F21707EA9E0042BB55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231217027DF6004D7A4D /* CoreGraphics.framework */; };
 		F775230F17027DF6004D7A4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775230E17027DF6004D7A4D /* UIKit.framework */; };
 		F775231117027DF6004D7A4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231017027DF6004D7A4D /* Foundation.framework */; };
-		F775231317027DF6004D7A4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231217027DF6004D7A4D /* CoreGraphics.framework */; };
 		F775231917027DF6004D7A4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F775231717027DF6004D7A4D /* InfoPlist.strings */; };
 		F775231B17027DF6004D7A4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F775231A17027DF6004D7A4D /* main.m */; };
 		F775231F17027DF6004D7A4D /* OSUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F775231E17027DF6004D7A4D /* OSUAppDelegate.m */; };
@@ -59,6 +70,18 @@
 		F75680C417069B820042BB55 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F75680C61706A2040042BB55 /* OSU_3BShoppingCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BShoppingCart.h; sourceTree = "<group>"; };
 		F75680C71706A2040042BB55 /* OSU_3BShoppingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BShoppingCart.m; sourceTree = "<group>"; };
+		F75680C91707C1700042BB55 /* OSU_shoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_shoppingCartViewController.h; sourceTree = "<group>"; };
+		F75680CA1707C1700042BB55 /* OSU_shoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_shoppingCartViewController.m; sourceTree = "<group>"; };
+		F75680D41707CA450042BB55 /* shoppingcart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcart.png; sourceTree = "<group>"; };
+		F75680D61707D04D0042BB55 /* NavBar_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar_gray@2x.png"; sourceTree = "<group>"; };
+		F75680D81707D13F0042BB55 /* NavBar_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_gray.png; sourceTree = "<group>"; };
+		F75680E01707DC110042BB55 /* BackButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackButtonBg@2x.png"; sourceTree = "<group>"; };
+		F75680E21707DD280042BB55 /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackButton.png; sourceTree = "<group>"; };
+		F75680E41707DE790042BB55 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		F75680E61707E2660042BB55 /* bigButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigButton.png; sourceTree = "<group>"; };
+		F75680E81707E40D0042BB55 /* cellButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellButton.png; sourceTree = "<group>"; };
+		F75680EA1707E77F0042BB55 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
+		F75680F01707EA7A0042BB55 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F775230B17027DF6004D7A4D /* CSE3241_Bookstore_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE3241_Bookstore_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F775230E17027DF6004D7A4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F775231017027DF6004D7A4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,11 +112,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F75680F21707EA9E0042BB55 /* CoreGraphics.framework in Frameworks */,
+				F75680F11707EA7A0042BB55 /* QuartzCore.framework in Frameworks */,
 				F7752344170284BF004D7A4D /* libsqlite3.0.dylib in Frameworks */,
 				F7752345170284BF004D7A4D /* libsqlite3.dylib in Frameworks */,
 				F775230F17027DF6004D7A4D /* UIKit.framework in Frameworks */,
 				F775231117027DF6004D7A4D /* Foundation.framework in Frameworks */,
-				F775231317027DF6004D7A4D /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,9 +148,26 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		F75680D31707CA450042BB55 /* UIImages */ = {
+			isa = PBXGroup;
+			children = (
+				F75680E41707DE790042BB55 /* background@2x.png */,
+				F75680E81707E40D0042BB55 /* cellButton.png */,
+				F75680E61707E2660042BB55 /* bigButton.png */,
+				F75680EA1707E77F0042BB55 /* 37x-Checkmark.png */,
+				F75680E21707DD280042BB55 /* BackButton.png */,
+				F75680E01707DC110042BB55 /* BackButtonBg@2x.png */,
+				F75680D81707D13F0042BB55 /* NavBar_gray.png */,
+				F75680D61707D04D0042BB55 /* NavBar_gray@2x.png */,
+				F75680D41707CA450042BB55 /* shoppingcart.png */,
+			);
+			path = UIImages;
+			sourceTree = "<group>";
+		};
 		F775230217027DF6004D7A4D = {
 			isa = PBXGroup;
 			children = (
+				F75680F01707EA7A0042BB55 /* QuartzCore.framework */,
 				F775234D17029B97004D7A4D /* 3BBooks.sqlite */,
 				F7752342170284BF004D7A4D /* libsqlite3.0.dylib */,
 				F7752343170284BF004D7A4D /* libsqlite3.dylib */,
@@ -172,6 +213,7 @@
 		F775231517027DF6004D7A4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F75680D31707CA450042BB55 /* UIImages */,
 				F775231617027DF6004D7A4D /* CSE3241_Bookstore_Project-Info.plist */,
 				F775231717027DF6004D7A4D /* InfoPlist.strings */,
 				F775231A17027DF6004D7A4D /* main.m */,
@@ -194,6 +236,8 @@
 				F75680B71705F4390042BB55 /* OSU_searchResultViewController.m */,
 				F75680BF17067D400042BB55 /* OSU_3BBookCell.h */,
 				F75680C017067D400042BB55 /* OSU_3BBookCell.m */,
+				F75680C91707C1700042BB55 /* OSU_shoppingCartViewController.h */,
+				F75680CA1707C1700042BB55 /* OSU_shoppingCartViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -277,6 +321,15 @@
 				F75680B31705DB0C0042BB55 /* pickerGlass@2x.png in Resources */,
 				F75680B41705DB0C0042BB55 /* pickerShadows.png in Resources */,
 				F75680B51705DB0C0042BB55 /* pickerShadows@2x.png in Resources */,
+				F75680D51707CA450042BB55 /* shoppingcart.png in Resources */,
+				F75680D71707D04D0042BB55 /* NavBar_gray@2x.png in Resources */,
+				F75680D91707D13F0042BB55 /* NavBar_gray.png in Resources */,
+				F75680E11707DC120042BB55 /* BackButtonBg@2x.png in Resources */,
+				F75680E31707DD280042BB55 /* BackButton.png in Resources */,
+				F75680E51707DE790042BB55 /* background@2x.png in Resources */,
+				F75680E71707E2660042BB55 /* bigButton.png in Resources */,
+				F75680E91707E40D0042BB55 /* cellButton.png in Resources */,
+				F75680EB1707E77F0042BB55 /* 37x-Checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +352,7 @@
 				F75680C117067D400042BB55 /* OSU_3BBookCell.m in Sources */,
 				F75680C517069B820042BB55 /* MBProgressHUD.m in Sources */,
 				F75680C81706A2040042BB55 /* OSU_3BShoppingCart.m in Sources */,
+				F75680CB1707C1700042BB55 /* OSU_shoppingCartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

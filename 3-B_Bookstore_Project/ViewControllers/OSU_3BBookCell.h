@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *addToCartButton;
 @property (strong, nonatomic) IBOutlet UIButton *reviewsButton;
+@property (strong, nonatomic) IBOutlet UIImageView *checkMark;
 
 @property (weak, nonatomic) id<OSU_3BBookCellDelegate> delegate;
 

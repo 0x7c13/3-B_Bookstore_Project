@@ -7,8 +7,10 @@
 //
 
 #import "OSU_initViewController.h"
+#import "OSU_searchViewController.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
 #import "OSU_3BBook.h"
+#import "OSU_3BShoppingCart.h"
 
 
 @interface OSU_initViewController ()
@@ -63,9 +65,16 @@
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    OSU_searchViewController *searchVC = segue.destinationViewController;
+    
+    searchVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+}
+
 - (IBAction)searchOnlyButtonPressed:(UIButton *)sender {
     
-    
+    [[OSU_3BShoppingCart sharedInstance] initShoppingCart];
     
 }
 

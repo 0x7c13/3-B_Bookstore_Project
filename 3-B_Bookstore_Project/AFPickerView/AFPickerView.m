@@ -107,7 +107,7 @@
  
         UIImageView *shadows = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
         
-        //shadows.image = [UIImage imageNamed:@"pickerShadows.png"];
+        shadows.image = [UIImage imageNamed:@"pickerShadows@2x.png"];
         [self addSubview:shadows];
         
         // glass

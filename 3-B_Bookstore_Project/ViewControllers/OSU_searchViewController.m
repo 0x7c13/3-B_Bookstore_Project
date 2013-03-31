@@ -42,6 +42,28 @@
 	// Do any additional setup after loading the view.
     
     [self addPickers];
+    
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavBar_gray.png"] forBarMetrics:UIBarMetricsDefault];
+    }
+    
+    self.navigationController.navigationBar.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
+    self.navigationController.navigationBar.layer.shadowRadius = 3.0f;
+    self.navigationController.navigationBar.layer.shadowOpacity = 0.8f;
+    
+    
+    UIButton *buttonLeft = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 30)];
+    
+    [buttonLeft setImage:[UIImage imageNamed:@"BackButton.png"] forState:UIControlStateNormal];
+    [buttonLeft addTarget:self action:@selector(Exit) forControlEvents:UIControlEventTouchUpInside];
+
+    UIBarButtonItem *itemLeft = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
+
+    self.navigationItem.leftBarButtonItem = itemLeft;
+
+    
+
 }
 
 - (void)addPickers;
@@ -51,7 +73,7 @@
     titleOfCategories = [[NSArray alloc] initWithObjects:@"All Categories", nil];
     titleOfCategories = [titleOfCategories arrayByAddingObjectsFromArray:[[OSU_3BSQLiteDatabaseHandler sharedInstance] getCategoriesFromDatabase]];
     
-    self.databaseRowPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(30.0, 70.0, 196.0, 197.0)];
+    self.databaseRowPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(0.0, 60.0, 320.0, 197.0)];
     self.databaseRowPicker.dataSource = self;
     self.databaseRowPicker.delegate = self;
     self.databaseRowPicker.rowFont = [UIFont boldSystemFontOfSize:15.0];
@@ -59,7 +81,7 @@
     [self.databaseRowPicker reloadData];
     [self.view addSubview:self.databaseRowPicker];
     
-    self.categoryPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(30.0, 290.0, 196.0, 197.0)];
+    self.categoryPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(0.0, 260.0, 320.0, 197.0)];
     self.categoryPicker.dataSource = self;
     self.categoryPicker.delegate = self;
     self.categoryPicker.rowFont = [UIFont boldSystemFontOfSize:15.0];
@@ -80,21 +102,18 @@
 
 
 
-- (IBAction)exitButtonPressed:(UIButton *)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
 - (IBAction)searchButtonPressed:(UITextField *)sender {
 
     [self.searchField resignFirstResponder];
+    
     OSU_searchResultViewController *resultVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchResultSegue"];
 
     resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:self.searchField.text
                                                                                                    Category:titleOfCategories[indexOfCategory]
                                                                                                     RowName:titleOfRows[indexOfRow]];
-    [self presentViewController:resultVC animated:YES completion:nil];
+    //[self presentViewController:resultVC animated:YES completion:nil];
+    [self.navigationController pushViewController:resultVC animated:YES];
+
 }
 
 - (IBAction) backgroundTap:(id)sender
@@ -103,6 +122,10 @@
 }
 
 
+- (void)Exit
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 
 // protocols ********************
 

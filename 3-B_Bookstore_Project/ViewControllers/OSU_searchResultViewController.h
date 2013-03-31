@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *shoppingCartInfo;
 @property (strong, nonatomic) OSU_3BBooks *resultBooks;
 @property (strong, nonatomic) IBOutlet UITableView *resultTable;
+@property (strong, nonatomic) IBOutlet UIView *labelBG;
 
 @end
