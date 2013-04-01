@@ -30,4 +30,6 @@
 
 - (void)print;
 
+- (BOOL)isEqual:(id)object;
+
 @end

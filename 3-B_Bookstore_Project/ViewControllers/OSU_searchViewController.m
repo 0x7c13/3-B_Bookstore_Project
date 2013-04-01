@@ -55,7 +55,7 @@
     
     UIButton *buttonLeft = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 30)];
     
-    [buttonLeft setImage:[UIImage imageNamed:@"BackButton.png"] forState:UIControlStateNormal];
+    [buttonLeft setImage:[UIImage imageNamed:@"ExitButton.png"] forState:UIControlStateNormal];
     [buttonLeft addTarget:self action:@selector(Exit) forControlEvents:UIControlEventTouchUpInside];
 
     UIBarButtonItem *itemLeft = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
@@ -100,19 +100,21 @@
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    OSU_searchResultViewController *resultVC = segue.destinationViewController;
+    resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:self.searchField.text
+                                                                                                   Category:titleOfCategories[indexOfCategory]
+                                                                                                    RowName:titleOfRows[indexOfRow]];
 
+}
 
 - (IBAction)searchButtonPressed:(UITextField *)sender {
 
     [self.searchField resignFirstResponder];
     
-    OSU_searchResultViewController *resultVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchResultSegue"];
+    [self performSegueWithIdentifier:@"pushSearchResultSegue" sender:self];
 
-    resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:self.searchField.text
-                                                                                                   Category:titleOfCategories[indexOfCategory]
-                                                                                                    RowName:titleOfRows[indexOfRow]];
-    //[self presentViewController:resultVC animated:YES completion:nil];
-    [self.navigationController pushViewController:resultVC animated:YES];
 
 }
 

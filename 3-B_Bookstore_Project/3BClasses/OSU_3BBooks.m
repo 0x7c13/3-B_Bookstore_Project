@@ -39,9 +39,9 @@
 
 -(void)removeABook:(OSU_3BBook *)book
 {
-    for (OSU_3BBook *tmp in self.listOfBooks) {
-        if ([book.ISBN isEqualToString:tmp.ISBN]) {
-            [self.listOfBooks removeObject:tmp];
+    for (OSU_3BBook *tmpBook in self.listOfBooks) {
+        if ([book isEqual:tmpBook]) {
+            [self.listOfBooks removeObject:tmpBook];
             break;
         }
     }
@@ -51,7 +51,7 @@
                 withQuantity:(NSUInteger)quantity
 {
     for (OSU_3BBook *tmpBook in self.listOfBooks) {
-        if ([book.ISBN isEqualToString:tmpBook.ISBN]) {
+        if ([book isEqual:tmpBook]) {
             tmpBook.Quantity = quantity;
             break;
         }

@@ -24,7 +24,6 @@
 		F75680D51707CA450042BB55 /* shoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680D41707CA450042BB55 /* shoppingcart.png */; };
 		F75680D71707D04D0042BB55 /* NavBar_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680D61707D04D0042BB55 /* NavBar_gray@2x.png */; };
 		F75680D91707D13F0042BB55 /* NavBar_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680D81707D13F0042BB55 /* NavBar_gray.png */; };
-		F75680E11707DC120042BB55 /* BackButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E01707DC110042BB55 /* BackButtonBg@2x.png */; };
 		F75680E31707DD280042BB55 /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E21707DD280042BB55 /* BackButton.png */; };
 		F75680E51707DE790042BB55 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E41707DE790042BB55 /* background@2x.png */; };
 		F75680E71707E2660042BB55 /* bigButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F75680E61707E2660042BB55 /* bigButton.png */; };
@@ -48,6 +47,12 @@
 		F7752345170284BF004D7A4D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7752343170284BF004D7A4D /* libsqlite3.dylib */; };
 		F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F775234917028959004D7A4D /* OSU_3BBook.m */; };
 		F775234E17029B97004D7A4D /* 3BBooks.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F775234D17029B97004D7A4D /* 3BBooks.sqlite */; };
+		F79870601709083B00CCD89C /* OSU_customerRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */; };
+		F79870641709218000CCD89C /* URBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870631709218000CCD89C /* URBAlertView.m */; };
+		F79870661709229B00CCD89C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79870651709229B00CCD89C /* Accelerate.framework */; };
+		F7987068170922B800CCD89C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7987067170922B800CCD89C /* CoreImage.framework */; };
+		F798706A1709274C00CCD89C /* black_button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F79870691709274C00CCD89C /* black_button_1.png */; };
+		F798706C17092B4300CCD89C /* ExitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F798706B17092B4300CCD89C /* ExitButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +81,6 @@
 		F75680D41707CA450042BB55 /* shoppingcart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcart.png; sourceTree = "<group>"; };
 		F75680D61707D04D0042BB55 /* NavBar_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBar_gray@2x.png"; sourceTree = "<group>"; };
 		F75680D81707D13F0042BB55 /* NavBar_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar_gray.png; sourceTree = "<group>"; };
-		F75680E01707DC110042BB55 /* BackButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackButtonBg@2x.png"; sourceTree = "<group>"; };
 		F75680E21707DD280042BB55 /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackButton.png; sourceTree = "<group>"; };
 		F75680E41707DE790042BB55 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		F75680E61707E2660042BB55 /* bigButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigButton.png; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 		F775234817028959004D7A4D /* OSU_3BBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BBook.h; sourceTree = "<group>"; };
 		F775234917028959004D7A4D /* OSU_3BBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BBook.m; sourceTree = "<group>"; };
 		F775234D17029B97004D7A4D /* 3BBooks.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3BBooks.sqlite; path = "3-B_Bookstore_Project/3BBooks.sqlite"; sourceTree = "<group>"; };
+		F798705E1709083A00CCD89C /* OSU_customerRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_customerRegistrationViewController.h; sourceTree = "<group>"; };
+		F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_customerRegistrationViewController.m; sourceTree = "<group>"; };
+		F79870621709218000CCD89C /* URBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBAlertView.h; sourceTree = "<group>"; };
+		F79870631709218000CCD89C /* URBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URBAlertView.m; sourceTree = "<group>"; };
+		F79870651709229B00CCD89C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		F7987067170922B800CCD89C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F79870691709274C00CCD89C /* black_button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_button_1.png; sourceTree = "<group>"; };
+		F798706B17092B4300CCD89C /* ExitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExitButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7987068170922B800CCD89C /* CoreImage.framework in Frameworks */,
+				F79870661709229B00CCD89C /* Accelerate.framework in Frameworks */,
 				F75680F21707EA9E0042BB55 /* CoreGraphics.framework in Frameworks */,
 				F75680F11707EA7A0042BB55 /* QuartzCore.framework in Frameworks */,
 				F7752344170284BF004D7A4D /* libsqlite3.0.dylib in Frameworks */,
@@ -154,12 +168,13 @@
 		F75680D31707CA450042BB55 /* UIImages */ = {
 			isa = PBXGroup;
 			children = (
+				F798706B17092B4300CCD89C /* ExitButton.png */,
 				F75680E41707DE790042BB55 /* background@2x.png */,
 				F75680E81707E40D0042BB55 /* cellButton.png */,
 				F75680E61707E2660042BB55 /* bigButton.png */,
+				F79870691709274C00CCD89C /* black_button_1.png */,
 				F75680EA1707E77F0042BB55 /* 37x-Checkmark.png */,
 				F75680E21707DD280042BB55 /* BackButton.png */,
-				F75680E01707DC110042BB55 /* BackButtonBg@2x.png */,
 				F75680D81707D13F0042BB55 /* NavBar_gray.png */,
 				F75680D61707D04D0042BB55 /* NavBar_gray@2x.png */,
 				F75680D41707CA450042BB55 /* shoppingcart.png */,
@@ -190,6 +205,8 @@
 		F775230D17027DF6004D7A4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7987067170922B800CCD89C /* CoreImage.framework */,
+				F79870651709229B00CCD89C /* Accelerate.framework */,
 				F75680F01707EA7A0042BB55 /* QuartzCore.framework */,
 				F775230E17027DF6004D7A4D /* UIKit.framework */,
 				F775231017027DF6004D7A4D /* Foundation.framework */,
@@ -201,13 +218,14 @@
 		F775231417027DF6004D7A4D /* 3-B_Bookstore_Project */ = {
 			isa = PBXGroup;
 			children = (
-				F75680C217069B820042BB55 /* MBProgressHUD */,
 				F775231D17027DF6004D7A4D /* OSUAppDelegate.h */,
 				F775231E17027DF6004D7A4D /* OSUAppDelegate.m */,
 				F775232617027DF6004D7A4D /* MainStoryboard.storyboard */,
-				F75680A61705DB0C0042BB55 /* AFPickerView */,
+				F79870611709218000CCD89C /* URBAlertView */,
 				F775233E170283C6004D7A4D /* 3BClasses */,
 				F7752333170282CA004D7A4D /* ViewControllers */,
+				F75680C217069B820042BB55 /* MBProgressHUD */,
+				F75680A61705DB0C0042BB55 /* AFPickerView */,
 				F775231517027DF6004D7A4D /* Supporting Files */,
 			);
 			path = "3-B_Bookstore_Project";
@@ -235,14 +253,16 @@
 				F7752335170282CA004D7A4D /* OSU_initViewController.m */,
 				F75680A31705CC8C0042BB55 /* OSU_searchViewController.h */,
 				F75680A41705CC8C0042BB55 /* OSU_searchViewController.m */,
-				F75680B61705F4390042BB55 /* OSU_searchResultViewController.h */,
-				F75680B71705F4390042BB55 /* OSU_searchResultViewController.m */,
 				F75680BF17067D400042BB55 /* OSU_3BBookCell.h */,
 				F75680C017067D400042BB55 /* OSU_3BBookCell.m */,
-				F75680C91707C1700042BB55 /* OSU_shoppingCartViewController.h */,
-				F75680CA1707C1700042BB55 /* OSU_shoppingCartViewController.m */,
+				F75680B61705F4390042BB55 /* OSU_searchResultViewController.h */,
+				F75680B71705F4390042BB55 /* OSU_searchResultViewController.m */,
 				F75680F31707F37D0042BB55 /* OSU_3BShoppingCartCell.h */,
 				F75680F41707F37D0042BB55 /* OSU_3BShoppingCartCell.m */,
+				F75680C91707C1700042BB55 /* OSU_shoppingCartViewController.h */,
+				F75680CA1707C1700042BB55 /* OSU_shoppingCartViewController.m */,
+				F798705E1709083A00CCD89C /* OSU_customerRegistrationViewController.h */,
+				F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +280,15 @@
 				F75680C71706A2040042BB55 /* OSU_3BShoppingCart.m */,
 			);
 			path = 3BClasses;
+			sourceTree = "<group>";
+		};
+		F79870611709218000CCD89C /* URBAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				F79870621709218000CCD89C /* URBAlertView.h */,
+				F79870631709218000CCD89C /* URBAlertView.m */,
+			);
+			path = URBAlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,12 +358,13 @@
 				F75680D51707CA450042BB55 /* shoppingcart.png in Resources */,
 				F75680D71707D04D0042BB55 /* NavBar_gray@2x.png in Resources */,
 				F75680D91707D13F0042BB55 /* NavBar_gray.png in Resources */,
-				F75680E11707DC120042BB55 /* BackButtonBg@2x.png in Resources */,
 				F75680E31707DD280042BB55 /* BackButton.png in Resources */,
 				F75680E51707DE790042BB55 /* background@2x.png in Resources */,
 				F75680E71707E2660042BB55 /* bigButton.png in Resources */,
 				F75680E91707E40D0042BB55 /* cellButton.png in Resources */,
 				F75680EB1707E77F0042BB55 /* 37x-Checkmark.png in Resources */,
+				F798706A1709274C00CCD89C /* black_button_1.png in Resources */,
+				F798706C17092B4300CCD89C /* ExitButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +389,8 @@
 				F75680C81706A2040042BB55 /* OSU_3BShoppingCart.m in Sources */,
 				F75680CB1707C1700042BB55 /* OSU_shoppingCartViewController.m in Sources */,
 				F75680F51707F37D0042BB55 /* OSU_3BShoppingCartCell.m in Sources */,
+				F79870601709083B00CCD89C /* OSU_customerRegistrationViewController.m in Sources */,
+				F79870641709218000CCD89C /* URBAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

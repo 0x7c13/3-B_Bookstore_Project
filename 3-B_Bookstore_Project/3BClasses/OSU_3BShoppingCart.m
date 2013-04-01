@@ -59,7 +59,7 @@
                 withQuantity:(NSUInteger)quantity
 {
     for (int i = 0; i < self.books.count; i++) {
-        if ([book.ISBN isEqualToString:[self.books objectAtIndexedSubscript:i].ISBN]) {
+        if ([book isEqual:[self.books objectAtIndexedSubscript:i]]) {
             
             OSU_3BBook *tmpBook = [self.books objectAtIndexedSubscript:i];
             if (quantity > tmpBook.Quantity)
@@ -79,7 +79,7 @@
 - (void)removeItem:(OSU_3BBook *)book
 {
     for (int i = 0; i < self.books.count; i++) {
-        if ([book.ISBN isEqualToString:[self.books objectAtIndexedSubscript:i].ISBN]) {
+        if ([book isEqual:[self.books objectAtIndexedSubscript:i]]) {
             
             OSU_3BBook *tmpBook = [self.books objectAtIndexedSubscript:i];
             _subtotal -= tmpBook.Quantity * tmpBook.Price;
@@ -118,7 +118,7 @@
 - (BOOL)isInShoppingCart:(OSU_3BBook *)book
 {
     for (int i = 0; i < self.books.count; i++) {
-        if ([book.ISBN isEqualToString:[self.books objectAtIndexedSubscript:i].ISBN]) {
+        if ([book isEqual:[self.books objectAtIndexedSubscript:i]]) {
             return YES;
         }
     }

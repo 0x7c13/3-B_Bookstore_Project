@@ -27,12 +27,32 @@
     [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
     [self.shoppingCartTableView reloadData];
     [self updateShoppingCartInfo];
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavBar_gray.png"] forBarMetrics:UIBarMetricsDefault];
+    }
+    
+    self.navigationController.navigationBar.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
+    self.navigationController.navigationBar.layer.shadowRadius = 3.0f;
+    self.navigationController.navigationBar.layer.shadowOpacity = 0.8f;
+    
+    
+    UIButton *buttonLeft = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 30)];
+    
+    [buttonLeft setImage:[UIImage imageNamed:@"ExitButton.png"] forState:UIControlStateNormal];
+    [buttonLeft addTarget:self action:@selector(Exit) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *itemLeft = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
+    
+    self.navigationItem.leftBarButtonItem = itemLeft;
     
     self.shoppingCartTableView.delegate = self;
     self.shoppingCartTableView.dataSource = self;
@@ -79,6 +99,19 @@
     self.subtotalInfo.text = [NSString stringWithFormat:@"Subtotal:  $ %.2lf", [[OSU_3BShoppingCart sharedInstance] subtotalValue]];
 }
 
+
+
+- (IBAction)checkoutButtonPressed:(UIButton *)sender {
+
+
+    [self performSegueWithIdentifier:@"checkoutSegue" sender:self];
+    
+}
+
+- (void)Exit
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 
 // protocols ***********************************************
 

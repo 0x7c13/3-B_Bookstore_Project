@@ -39,5 +39,13 @@
 
 }
 
+- (BOOL)isEqual:(id)object
+{
+    if ([object isKindOfClass:[OSU_3BBook class]]) {
+        return [self.ISBN isEqualToString:[(OSU_3BBook *)object ISBN]];
+    }
+    return NO;
+}
+
 
 @end
