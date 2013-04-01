@@ -1,7 +1,7 @@
 Best-Book-Buy Online Bookstore Project
 ======================================
 
-Progress: About 40%… :(
+Progress: About 50%… :(
 
 The Ohio State CSE 3241 Database Project
 
@@ -37,4 +37,8 @@ The purpose of this case study is to present a data-intensive application for wh
 AFPickerView : https://github.com/arkichek/AFPickerView
 
 MBProgressHUD : https://github.com/jdg/MBProgressHUD
+
+NIDropDown : https://github.com/BijeshNair/NIDropDown
+
+URBAlertView : https://github.com/u10int/URBAlertView
 

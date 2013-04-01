@@ -7,9 +7,10 @@
 //
 
 #import "OSU_shoppingCartViewController.h"
+#import "URBAlertView.h"
 
 @interface OSU_shoppingCartViewController ()
-
+@property (nonatomic, strong) URBAlertView *alertView;
 @end
 
 @implementation OSU_shoppingCartViewController
@@ -27,6 +28,7 @@
     [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
     [self.shoppingCartTableView reloadData];
     [self updateShoppingCartInfo];
+
     
 }
 
@@ -61,6 +63,16 @@
     [self addShadow:(UIImageView *)self.lowerLabelBG towardsUp:YES];
     
     [self updateShoppingCartInfo];
+    
+    URBAlertView *alertView = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"The shopping cart is empty!"];
+	alertView.blurBackground = NO;
+	[alertView addButtonWithTitle:@"OK"];
+	[alertView setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *alertView) {
+		[self.alertView hideWithCompletionBlock:^{
+		}];
+	}];
+	
+	self.alertView = alertView;
 
 }
 
@@ -103,8 +115,12 @@
 
 - (IBAction)checkoutButtonPressed:(UIButton *)sender {
 
-
-    [self performSegueWithIdentifier:@"checkoutSegue" sender:self];
+    if ([[OSU_3BShoppingCart sharedInstance] numberOfDistinctItemsInShoppingCart] > 0) {
+        [self performSegueWithIdentifier:@"checkoutSegue" sender:self];
+    }
+    else {
+        [self.alertView showWithAnimation:URBAlertAnimationSlideLeft];
+    }
     
 }
 

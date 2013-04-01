@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "NIDropDown.h"
 
-@interface OSU_customerRegistrationViewController : UIViewController
+@interface OSU_customerRegistrationViewController : UIViewController <UITextFieldDelegate, NIDropDownDelegate>
 
 @end
