@@ -194,7 +194,7 @@
         queryString = [queryString stringByAppendingString:[NSString stringWithFormat:@" INTERSECT SELECT * FROM Books WHERE Category = '%@'", category]];
     }
     
-    NSLog(@"%@",queryString);
+    //NSLog(@"%@",queryString);
     
     const char *sql = [queryString UTF8String];
     
@@ -223,6 +223,76 @@
     sqlite3_finalize(statement);
 
     return books;
+}
+
+- (BOOL)usernameIsExist:(NSString *)username
+{
+    BOOL result = NO;
+    
+    NSString *queryString = [NSString stringWithFormat:@"SELECT * FROM Customers WHERE Username = '%@'", username];
+    
+    const char *sql = [queryString UTF8String];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
+        
+        NSLog(@"sql problem occured with: %s", sql);
+        NSLog(@"%s", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    else
+    {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            
+            result = YES;
+            
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return result;
+}
+
+-(void)insertAUserInfoIntoDatabase:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
+{
+    if ([self usernameIsExist:user.username]) {
+        NSLog(@"Username already exists!");
+        return;
+    }
+
+    if (userType == OSU_3BUserTypeCustomer) {
+        
+        static sqlite3_stmt *insertStmt = nil;
+        
+        if(insertStmt == nil)
+        {
+            const char *sql = [@"INSERT INTO Customers (Username, PIN, FirstName, LastName, Address, City, State, ZIP, CreditCardType, CreditCardNumber) VALUES(?,?,?,?,?,?,?,?,?,?)" UTF8String];
+            
+            if(sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &insertStmt, NULL) != SQLITE_OK)
+                NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(_3BBooksDataBase));
+        }
+        
+        sqlite3_bind_text(insertStmt, 1, [user.username UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(insertStmt, 2, [user.PIN UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(insertStmt, 3, [user.firstName UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(insertStmt, 4, [user.lastName UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(insertStmt, 5, [user.address UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(insertStmt, 6, [user.city UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(insertStmt, 7, [user.state UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_int (insertStmt, 8, (int)user.ZIPCode);
+        sqlite3_bind_text(insertStmt, 9, [user.creditCardType UTF8String], -1, SQLITE_TRANSIENT);;
+        sqlite3_bind_text(insertStmt, 10, [user.creditCardNumber UTF8String], -1, SQLITE_TRANSIENT);
+        
+        if(SQLITE_DONE != sqlite3_step(insertStmt))
+            NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(_3BBooksDataBase));
+        else
+            NSLog(@"New User Inserted!");
+        //Reset the add statement.
+        sqlite3_reset(insertStmt);
+        sqlite3_finalize(insertStmt);
+        insertStmt = nil;
+    }
+
 }
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import "OSU_customerRegistrationViewController.h"
+#import "OSU_3BSQLiteDatabaseHandler.h"
 #import "URBAlertView.h"
+#import "OSU_3BUser.h"
 
 @interface OSU_customerRegistrationViewController () 
 
@@ -15,7 +17,10 @@
 @property (strong, nonatomic) NIDropDown *stateDropUp;
 
 @property (nonatomic, strong) URBAlertView *alertView;
-@property (strong, nonatomic) IBOutlet UIButton *creditCardTypeButton;
+@property (nonatomic, strong) URBAlertView *alertView2;
+@property (nonatomic, strong) URBAlertView *alertView3;
+@property (nonatomic, strong) URBAlertView *alertView4;
+
 @end
 
 @implementation OSU_customerRegistrationViewController
@@ -60,8 +65,41 @@
 	}];
 	
 	self.alertView = alertView;
+  
+    
+    URBAlertView *alertView2 = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"Please fill out all fields!"];
+	alertView2.blurBackground = NO;
+	[alertView2 addButtonWithTitle:@"OK"];
+	[alertView2 setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *alertView2) {
+        // do stuff here
+		[self.alertView2 hideWithCompletionBlock:^{
+		}];
+	}];
+    
+    self.alertView2 = alertView2;
     
     
+    URBAlertView *alertView3 = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"PINs don't match!"];
+	alertView3.blurBackground = NO;
+	[alertView3 addButtonWithTitle:@"OK"];
+	[alertView3 setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *alertView3) {
+        // do stuff here
+		[self.alertView3 hideWithCompletionBlock:^{
+		}];
+	}];
+    
+    self.alertView3 = alertView3;
+    
+    URBAlertView *alertView4 = [URBAlertView dialogWithTitle:@"Sorry:" subtitle:@"Username already exists!"];
+	alertView4.blurBackground = NO;
+	[alertView4 addButtonWithTitle:@"OK"];
+	[alertView4 setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *alertView4) {
+        // do stuff here
+		[self.alertView4 hideWithCompletionBlock:^{
+		}];
+	}];
+    
+    self.alertView4 = alertView4;
 }
 
 - (void)didReceiveMemoryWarning
@@ -118,6 +156,46 @@
 
 - (IBAction)creditCardNumberTouchDown:(UITextField *)sender {
     [self textFieldShouldReturn:sender];
+}
+
+- (IBAction)registerButtonPressed:(UIButton *)sender {
+    
+    if (![self.username.text isEqualToString:@""] && ![self.PIN1.text isEqualToString:@""] &&
+        ![self.PIN2.text isEqualToString:@""] && ![self.firstName.text isEqualToString:@""] &&
+        ![self.lastName.text isEqualToString:@""] && ![self.address.text isEqualToString:@""] &&
+        ![self.city.text isEqualToString:@""] && ![self.ZIPCode.text isEqualToString:@""] &&
+        ![self.creditCardNumber.text isEqualToString:@""]) {
+        
+        if (![self.PIN1.text isEqualToString:self.PIN2.text]) {
+            [self.alertView3 showWithAnimation:URBAlertAnimationDefault];
+        }
+        else {
+
+            if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsExist:self.username.text]) {
+                [self.alertView4 showWithAnimation:URBAlertAnimationTumble];
+            }
+            else {
+                // everything is clear
+                OSU_3BUser *newUser = [[OSU_3BUser alloc] initWithUsername:self.username.text
+                                                                       PIN:self.PIN1.text
+                                                                 firstName:self.firstName.text
+                                                                  lastName:self.lastName.text
+                                                                   address:self.address.text
+                                                                      city:self.city.text
+                                                                     state:self.state.titleLabel.text
+                                                                   ZIPCode:(NSUInteger)[self.ZIPCode.text integerValue]
+                                                            creditCardType:self.creditCardType.titleLabel.text
+                                                          creditCardNumber:self.creditCardNumber.text];
+                [[OSU_3BSQLiteDatabaseHandler sharedInstance]insertAUserInfoIntoDatabase:newUser withUserType:OSU_3BUserTypeCustomer];
+            }
+        }
+        
+    }
+    else {
+        [self.alertView2 showWithAnimation:URBAlertAnimationDefault];
+    }
+    
+    
 }
 
 #pragma protocols

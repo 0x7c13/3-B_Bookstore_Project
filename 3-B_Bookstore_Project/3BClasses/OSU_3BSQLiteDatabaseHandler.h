@@ -10,6 +10,7 @@
 #import <sqlite3.h>
 #import "OSU_3BBook.h"
 #import "OSU_3BBooks.h"
+#import "OSU_3BUser.h"
 
 @interface OSU_3BSQLiteDatabaseHandler : NSObject{
     sqlite3 *_3BBooksDataBase;
@@ -32,5 +33,9 @@
                                            Category:(NSString *)category
                                             RowName:(NSString *)row;
 
+- (void)insertAUserInfoIntoDatabase:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
+
+// return YES if the username is in database
+- (BOOL)usernameIsExist:(NSString *)username;
 
 @end

@@ -55,6 +55,7 @@
 		F798706C17092B4300CCD89C /* ExitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F798706B17092B4300CCD89C /* ExitButton.png */; };
 		F798706E1709341A00CCD89C /* CellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F798706D1709341A00CCD89C /* CellBackground.png */; };
 		F79870741709426E00CCD89C /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870731709426E00CCD89C /* NIDropDown.m */; };
+		F7987077170A7E0400CCD89C /* OSU_3BUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F7987076170A7E0400CCD89C /* OSU_3BUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,8 @@
 		F798706D1709341A00CCD89C /* CellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CellBackground.png; sourceTree = "<group>"; };
 		F79870721709426E00CCD89C /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
 		F79870731709426E00CCD89C /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
+		F7987075170A7E0400CCD89C /* OSU_3BUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BUser.h; sourceTree = "<group>"; };
+		F7987076170A7E0400CCD89C /* OSU_3BUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +282,8 @@
 			children = (
 				F775233F170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.h */,
 				F7752340170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m */,
+				F7987075170A7E0400CCD89C /* OSU_3BUser.h */,
+				F7987076170A7E0400CCD89C /* OSU_3BUser.m */,
 				F775234817028959004D7A4D /* OSU_3BBook.h */,
 				F775234917028959004D7A4D /* OSU_3BBook.m */,
 				F75680B9170666660042BB55 /* OSU_3BBooks.h */,
@@ -409,6 +414,7 @@
 				F79870601709083B00CCD89C /* OSU_customerRegistrationViewController.m in Sources */,
 				F79870641709218000CCD89C /* URBAlertView.m in Sources */,
 				F79870741709426E00CCD89C /* NIDropDown.m in Sources */,
+				F7987077170A7E0400CCD89C /* OSU_3BUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
