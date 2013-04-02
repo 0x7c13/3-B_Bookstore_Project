@@ -176,7 +176,7 @@
             }
             else {
                 // everything is clear
-                OSU_3BUser *newUser = [[OSU_3BUser alloc] initWithUsername:self.username.text
+                OSU_3BUser *newUser = [[OSU_3BUser alloc]initWithUsername:self.username.text
                                                                        PIN:self.PIN1.text
                                                                  firstName:self.firstName.text
                                                                   lastName:self.lastName.text

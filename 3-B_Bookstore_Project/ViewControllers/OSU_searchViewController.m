@@ -19,7 +19,7 @@
     NSInteger indexOfCategory;
 }
 
-@property (strong, nonatomic) IBOutlet UITextField *searchField;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchField;
 @property (strong, nonatomic) AFPickerView *databaseRowPicker;
 @property (strong, nonatomic) AFPickerView *categoryPicker;
 
@@ -73,7 +73,7 @@
     titleOfCategories = [[NSArray alloc] initWithObjects:@"All Categories", nil];
     titleOfCategories = [titleOfCategories arrayByAddingObjectsFromArray:[[OSU_3BSQLiteDatabaseHandler sharedInstance] getCategoriesFromDatabase]];
     
-    self.databaseRowPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(0.0, 60.0, 320.0, 197.0)];
+    self.databaseRowPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(0.0, 48.0, 320.0, 197.0)];
     self.databaseRowPicker.dataSource = self;
     self.databaseRowPicker.delegate = self;
     self.databaseRowPicker.rowFont = [UIFont boldSystemFontOfSize:15.0];
@@ -81,7 +81,7 @@
     [self.databaseRowPicker reloadData];
     [self.view addSubview:self.databaseRowPicker];
     
-    self.categoryPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(0.0, 260.0, 320.0, 197.0)];
+    self.categoryPicker = [[AFPickerView alloc] initWithFrame:CGRectMake(0.0, 253.0, 320.0, 197.0)];
     self.categoryPicker.dataSource = self;
     self.categoryPicker.delegate = self;
     self.categoryPicker.rowFont = [UIFont boldSystemFontOfSize:15.0];
@@ -109,19 +109,6 @@
 
 }
 
-- (IBAction)searchButtonPressed:(UITextField *)sender {
-
-    [self.searchField resignFirstResponder];
-    
-    [self performSegueWithIdentifier:@"pushSearchResultSegue" sender:self];
-
-
-}
-
-- (IBAction) backgroundTap:(id)sender
-{
-    [self.searchField resignFirstResponder];
-}
 
 
 - (void)Exit
@@ -167,6 +154,25 @@
 }
 
 
+#pragma - UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    [self performSegueWithIdentifier:@"pushSearchResultSegue" sender:self];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [self handleSearch:searchBar];
+}
+
+- (void)handleSearch:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder]; 
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {
+
+    [searchBar resignFirstResponder]; 
+}
 
 
 @end

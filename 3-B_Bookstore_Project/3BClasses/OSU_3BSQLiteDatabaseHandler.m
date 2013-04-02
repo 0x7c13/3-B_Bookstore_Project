@@ -287,8 +287,7 @@
             NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(_3BBooksDataBase));
         else
             NSLog(@"New User Inserted!");
-        //Reset the add statement.
-        sqlite3_reset(insertStmt);
+
         sqlite3_finalize(insertStmt);
         insertStmt = nil;
     }

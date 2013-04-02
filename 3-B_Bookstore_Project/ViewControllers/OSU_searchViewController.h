@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AFPickerView.h"
 
-@interface OSU_searchViewController : UIViewController <AFPickerViewDataSource, AFPickerViewDelegate>
+@interface OSU_searchViewController : UIViewController <AFPickerViewDataSource, AFPickerViewDelegate, UISearchBarDelegate>
 
 
 @end

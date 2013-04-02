@@ -555,31 +555,21 @@
                             <view contentMode="scaleToFill" id="f4S-rh-8YZ" userLabel="BG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="468"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="Search For" showsCancelButton="YES" id="D89-8L-4fe">
+                                        <rect key="frame" x="0.0" y="1" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Zmd-Q0-xQ2" id="7FD-SZ-rdp"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
                                 <color key="backgroundColor" red="0.13620057397959184" green="0.13620057397959184" blue="0.13620057397959184" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="iza-UC-gbq">
-                                <rect key="frame" x="117" y="18" width="188" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="backgroundTap:" destination="Zmd-Q0-xQ2" eventType="touchDown" id="CQI-Bz-FwA"/>
-                                    <action selector="searchButtonPressed:" destination="Zmd-Q0-xQ2" eventType="editingDidEndOnExit" id="8lV-gy-40D"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Search For" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zxo-Uo-fts">
-                                <rect key="frame" x="12" y="18" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="m4B-iY-mCl" appends="YES" id="fek-ax-024"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="rqa-4E-K5S">
                         <barButtonItem key="leftBarButtonItem" title="Exit" id="hQ5-T3-ozX"/>
@@ -587,16 +577,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="fad-XO-N8U" id="y1l-uA-bJ8"/>
-                        <outlet property="searchField" destination="iza-UC-gbq" id="RQu-jC-iMV"/>
+                        <outlet property="searchField" destination="D89-8L-4fe" id="57u-Gy-chs"/>
                         <segue destination="KLl-ic-tvh" kind="push" identifier="pushSearchResultSegue" id="izQ-Pw-44I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gN9-CB-IOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="m4B-iY-mCl" userLabel="backgroundTap">
-                    <connections>
-                        <action selector="backgroundTap:" destination="Zmd-Q0-xQ2" id="uZq-dS-sU2"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <searchDisplayController id="fad-XO-N8U">
                     <connections>
                         <outlet property="delegate" destination="Zmd-Q0-xQ2" id="T5p-lc-9hh"/>
@@ -832,6 +817,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
                 <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -845,6 +831,8 @@
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BShoppingCartCell.h"/>
             <relationships>
+                <relationship kind="action" name="deleteButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stepperPressed:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>
@@ -855,12 +843,7 @@
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -876,6 +859,9 @@
         </class>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="OSU_searchResultViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_searchResultViewController.h"/>
@@ -888,7 +874,7 @@
         <class className="OSU_searchViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_searchViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="searchField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchField" candidateClass="UISearchBar"/>
             </relationships>
         </class>
         <class className="OSU_shoppingCartViewController" superclassName="UIViewController">

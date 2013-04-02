@@ -18,7 +18,6 @@ typedef enum {
     
 } OSU_3BUserUserTypes;
 
-
 @property (copy, nonatomic) NSString *username;
 @property (copy, nonatomic) NSString *PIN;
 @property (copy, nonatomic) NSString *firstName;
