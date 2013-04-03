@@ -69,7 +69,7 @@
 {
     OSU_searchViewController *searchVC = segue.destinationViewController;
     
-    searchVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    searchVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 }
 
 - (IBAction)searchOnlyButtonPressed:(UIButton *)sender {

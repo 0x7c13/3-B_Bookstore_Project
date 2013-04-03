@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *streetAddressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cityStateAndZIPCodeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *creditCardTypeAndNumberLabel;
+@property (strong, nonatomic) IBOutlet UITableView *orderListTable;
 
 @end

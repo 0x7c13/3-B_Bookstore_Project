@@ -10,6 +10,7 @@
 
 @interface OSU_3BShoppingCart () {
     double _subtotal;
+    NSUInteger _items;
     BOOL _isGuestMode;
 }
     
@@ -53,6 +54,7 @@
 {
     _books = [[OSU_3BBooks alloc]init];
     _subtotal = 0.0;
+    _items = 0;
     _currentCustomer = nil;
     _isGuestMode = YES;
 }
@@ -66,7 +68,7 @@
 
 - (OSU_3BUser *)getCurrentCustomer
 {
-    return self.currentCustomer;
+    return _currentCustomer;
 }
 
 - (void)addItem:(OSU_3BBook *)book
@@ -78,6 +80,7 @@
         book.Quantity = quantity;
         [self.books addABook:book];
         _subtotal += book.Price * quantity;
+        _items += quantity;
     }
 }
 
@@ -91,10 +94,12 @@
             if (quantity > tmpBook.Quantity)
             {
                 _subtotal += (quantity - tmpBook.Quantity) * tmpBook.Price;
+                _items += (quantity - tmpBook.Quantity);
                 [self.books changeQuantityOfItem:book withQuantity:quantity];
             }
             else {
                 _subtotal -= (tmpBook.Quantity - quantity) * tmpBook.Price;
+                _items -= (tmpBook.Quantity - quantity);
                 [self.books changeQuantityOfItem:book withQuantity:quantity];
             }
             break;
@@ -109,6 +114,7 @@
             
             OSU_3BBook *tmpBook = [self.books objectAtIndexedSubscript:i];
             _subtotal -= tmpBook.Quantity * tmpBook.Price;
+            _items -= tmpBook.Quantity;
             break;
         }
     }
@@ -132,11 +138,7 @@
 
 - (NSUInteger)numberOfItemsInShoppingCart
 {
-    NSUInteger result = 0;
-    for (int i = 0; i < self.books.count; i++) {
-        result += [self.books objectAtIndexedSubscript:i].Quantity;
-    }
-    return result;
+    return _items;
 }
 
 - (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)index

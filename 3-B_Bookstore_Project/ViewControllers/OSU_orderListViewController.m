@@ -62,6 +62,11 @@
     self.shippingLabel.text = [NSString stringWithFormat:@"%.2f", [[OSU_3BShoppingCart sharedInstance] numberOfItemsInShoppingCart] * 2.0];
     self.totalLabel.text = [NSString stringWithFormat:@"%.2f", [[OSU_3BShoppingCart sharedInstance] subtotalValue] + [[OSU_3BShoppingCart sharedInstance] numberOfItemsInShoppingCart] * 2.0];
     
+    // set table view background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"black_bg.png"]];
+    [tempImageView setFrame:self.orderListTable.frame];
+    self.orderListTable.backgroundView = tempImageView;
+    
 }
 
 

@@ -73,6 +73,11 @@
 	}];
 	
 	self.alertView = alertView;
+    
+    // set table view background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"black_bg.png"]];
+    [tempImageView setFrame:self.shoppingCartTableView.frame];
+    self.shoppingCartTableView.backgroundView = tempImageView;
 
 }
 

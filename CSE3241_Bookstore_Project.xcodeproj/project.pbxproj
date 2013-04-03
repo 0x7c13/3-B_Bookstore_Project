@@ -48,6 +48,7 @@
 		F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F775234917028959004D7A4D /* OSU_3BBook.m */; };
 		F775234E17029B97004D7A4D /* 3BBooks.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F775234D17029B97004D7A4D /* 3BBooks.sqlite */; };
 		F77B39C4170BEA4C00406905 /* OSU_3BOrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F77B39C3170BEA4C00406905 /* OSU_3BOrderListCell.m */; };
+		F78E26F5170C6C5D00F2DFA6 /* black_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F78E26F4170C6C5D00F2DFA6 /* black_bg.png */; };
 		F79870601709083B00CCD89C /* OSU_customerRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */; };
 		F79870641709218000CCD89C /* URBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870631709218000CCD89C /* URBAlertView.m */; };
 		F79870661709229B00CCD89C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79870651709229B00CCD89C /* Accelerate.framework */; };
@@ -119,6 +120,7 @@
 		F775234D17029B97004D7A4D /* 3BBooks.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3BBooks.sqlite; path = "3-B_Bookstore_Project/3BBooks.sqlite"; sourceTree = "<group>"; };
 		F77B39C2170BEA4C00406905 /* OSU_3BOrderListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BOrderListCell.h; sourceTree = "<group>"; };
 		F77B39C3170BEA4C00406905 /* OSU_3BOrderListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BOrderListCell.m; sourceTree = "<group>"; };
+		F78E26F4170C6C5D00F2DFA6 /* black_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_bg.png; sourceTree = "<group>"; };
 		F798705E1709083A00CCD89C /* OSU_customerRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_customerRegistrationViewController.h; sourceTree = "<group>"; };
 		F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_customerRegistrationViewController.m; sourceTree = "<group>"; };
 		F79870621709218000CCD89C /* URBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBAlertView.h; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				F798706B17092B4300CCD89C /* ExitButton.png */,
 				F798706D1709341A00CCD89C /* CellBackground.png */,
+				F78E26F4170C6C5D00F2DFA6 /* black_bg.png */,
 				F75680E41707DE790042BB55 /* background@2x.png */,
 				F75680E81707E40D0042BB55 /* cellButton.png */,
 				F75680E61707E2660042BB55 /* bigButton.png */,
@@ -397,6 +400,7 @@
 				F798706A1709274C00CCD89C /* black_button_1.png in Resources */,
 				F798706C17092B4300CCD89C /* ExitButton.png in Resources */,
 				F798706E1709341A00CCD89C /* CellBackground.png in Resources */,
+				F78E26F5170C6C5D00F2DFA6 /* black_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

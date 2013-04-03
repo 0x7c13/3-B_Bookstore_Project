@@ -80,20 +80,27 @@
         self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u item", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
     }
     
+    // add shadow to navigation bar
     self.navigationController.navigationBar.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
     self.navigationController.navigationBar.layer.shadowRadius = 3.0f;
     self.navigationController.navigationBar.layer.shadowOpacity = 0.8f;
-
+    
+    // add back button
     UIButton *buttonLeft = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 30)];
     
     [buttonLeft setImage:[UIImage imageNamed:@"BackButton.png"] forState:UIControlStateNormal];
     [buttonLeft addTarget:self action:@selector(Back) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *itemLeft = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
-    
     self.navigationItem.leftBarButtonItem = itemLeft;
     
+    // set table view background image
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"black_bg.png"]];
+    [tempImageView setFrame:self.resultTable.frame];
+    self.resultTable.backgroundView = tempImageView;
+    
+    // add shadow to label background image
     [self addShadow:(UIImageView *)self.labelBG];
 }
 
