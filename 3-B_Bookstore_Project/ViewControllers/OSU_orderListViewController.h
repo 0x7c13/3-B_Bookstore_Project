@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "OSU_3BBook.h"
 
 @interface OSU_orderListViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UILabel *customerNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *streetAddressLabel;
+@property (strong, nonatomic) IBOutlet UILabel *cityStateAndZIPCodeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *creditCardTypeAndNumberLabel;
 
 @end

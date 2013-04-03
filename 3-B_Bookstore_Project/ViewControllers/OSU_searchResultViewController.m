@@ -36,9 +36,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.resultTable.delegate = self;
-    self.resultTable.dataSource = self;
-    
     // Progress Hud view
 
     if (self.resultBooks.count == 0) {

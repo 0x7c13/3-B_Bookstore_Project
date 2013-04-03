@@ -47,6 +47,7 @@
 		F7752345170284BF004D7A4D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7752343170284BF004D7A4D /* libsqlite3.dylib */; };
 		F775234A17028959004D7A4D /* OSU_3BBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F775234917028959004D7A4D /* OSU_3BBook.m */; };
 		F775234E17029B97004D7A4D /* 3BBooks.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F775234D17029B97004D7A4D /* 3BBooks.sqlite */; };
+		F77B39C4170BEA4C00406905 /* OSU_3BOrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F77B39C3170BEA4C00406905 /* OSU_3BOrderListCell.m */; };
 		F79870601709083B00CCD89C /* OSU_customerRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */; };
 		F79870641709218000CCD89C /* URBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870631709218000CCD89C /* URBAlertView.m */; };
 		F79870661709229B00CCD89C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79870651709229B00CCD89C /* Accelerate.framework */; };
@@ -116,6 +117,8 @@
 		F775234817028959004D7A4D /* OSU_3BBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BBook.h; sourceTree = "<group>"; };
 		F775234917028959004D7A4D /* OSU_3BBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BBook.m; sourceTree = "<group>"; };
 		F775234D17029B97004D7A4D /* 3BBooks.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3BBooks.sqlite; path = "3-B_Bookstore_Project/3BBooks.sqlite"; sourceTree = "<group>"; };
+		F77B39C2170BEA4C00406905 /* OSU_3BOrderListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BOrderListCell.h; sourceTree = "<group>"; };
+		F77B39C3170BEA4C00406905 /* OSU_3BOrderListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BOrderListCell.m; sourceTree = "<group>"; };
 		F798705E1709083A00CCD89C /* OSU_customerRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_customerRegistrationViewController.h; sourceTree = "<group>"; };
 		F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_customerRegistrationViewController.m; sourceTree = "<group>"; };
 		F79870621709218000CCD89C /* URBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBAlertView.h; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 				F75680CA1707C1700042BB55 /* OSU_shoppingCartViewController.m */,
 				F798705E1709083A00CCD89C /* OSU_customerRegistrationViewController.h */,
 				F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */,
+				F77B39C2170BEA4C00406905 /* OSU_3BOrderListCell.h */,
+				F77B39C3170BEA4C00406905 /* OSU_3BOrderListCell.m */,
 				F7987078170BC56400CCD89C /* OSU_orderListViewController.h */,
 				F7987079170BC56400CCD89C /* OSU_orderListViewController.m */,
 			);
@@ -421,6 +426,7 @@
 				F79870741709426E00CCD89C /* NIDropDown.m in Sources */,
 				F7987077170A7E0400CCD89C /* OSU_3BUser.m in Sources */,
 				F798707A170BC56400CCD89C /* OSU_orderListViewController.m in Sources */,
+				F77B39C4170BEA4C00406905 /* OSU_3BOrderListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

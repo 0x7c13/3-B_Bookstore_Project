@@ -7,8 +7,16 @@
 //
 
 #import "OSU_orderListViewController.h"
+#import "OSU_3BShoppingCart.h"
+#import "OSU_3BOrderListCell.h"
 
 @interface OSU_orderListViewController ()
+@property (strong, nonatomic) IBOutlet UIView *upperBG;
+@property (strong, nonatomic) IBOutlet UIView *lowerBG;
+@property (strong, nonatomic) IBOutlet UIButton *updateProfileButton;
+@property (strong, nonatomic) IBOutlet UILabel *subtotalLabel;
+@property (strong, nonatomic) IBOutlet UILabel *shippingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *totalLabel;
 
 @end
 
@@ -27,6 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
     
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
         [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavBar_gray.png"] forBarMetrics:UIBarMetricsDefault];
@@ -40,19 +49,77 @@
     
     self.navigationItem.hidesBackButton = YES;
     
+    [self addShadow:(UIImageView *)self.upperBG towardsUp:NO];
+    [self addShadow:(UIImageView *)self.lowerBG towardsUp:YES];
 
+    OSU_3BUser *currentUser = [[OSU_3BShoppingCart sharedInstance] getCurrentCustomer];
+    self.customerNameLabel.text = [NSString stringWithFormat:@"%@, %@", currentUser.firstName, currentUser.lastName];
+    self.streetAddressLabel.text = [NSString stringWithString:currentUser.address];
+    self.cityStateAndZIPCodeLabel.text = [NSString stringWithFormat:@"%@, %@ %lu", currentUser.city, currentUser.state, (unsigned long)currentUser.ZIPCode];
+    self.creditCardTypeAndNumberLabel.text = [NSString stringWithFormat:@"%@ %@", currentUser.creditCardType, currentUser.creditCardNumber];
+    
+    self.subtotalLabel.text = [NSString stringWithFormat:@"%.2f", [[OSU_3BShoppingCart sharedInstance] subtotalValue]];
+    self.shippingLabel.text = [NSString stringWithFormat:@"%.2f", [[OSU_3BShoppingCart sharedInstance] numberOfItemsInShoppingCart] * 2.0];
+    self.totalLabel.text = [NSString stringWithFormat:@"%.2f", [[OSU_3BShoppingCart sharedInstance] subtotalValue] + [[OSU_3BShoppingCart sharedInstance] numberOfItemsInShoppingCart] * 2.0];
     
 }
 
-- (void)Cancel
-{
+
+- (IBAction)cancelButtonPressed:(UIButton *)sender {
+    
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)addShadow: (UIImageView *)view towardsUp:(BOOL)towardsUp
+{
+    [view.layer setShadowColor:[[UIColor blackColor] CGColor]];
+    if (towardsUp) {
+        [view.layer setShadowOffset:CGSizeMake(0.0f, -10.0f)];
+    }
+    else {
+        [view.layer setShadowOffset:CGSizeMake(0.0f, 10.0f)];
+    }
+    [view.layer setShadowOpacity:0.4];
+    [view.layer setShadowRadius:6.0];
+    
+    // improve performance
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:view.bounds];
+    view.layer.shadowPath = path.CGPath;
+}
+
+
+#pragma -- UITableViewDelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[OSU_3BShoppingCart sharedInstance] numberOfDistinctItemsInShoppingCart];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    OSU_3BOrderListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrderListCell"];
+    
+    cell.book = [[OSU_3BShoppingCart sharedInstance]objectAtIndexedSubscript:indexPath.row];
+    cell.bookTitle.text = cell.book.Titile;
+    cell.bookAuthor.text = cell.book.Author;
+    cell.bookPrice.text = [NSString stringWithFormat:@"$ %.2f",cell.book.Price];
+    cell.bookQuantity.text = [NSString stringWithFormat:@"%u", cell.book.Quantity];
+    cell.bookTotalPrice.text = [NSString stringWithFormat:@"$ %.2f", cell.book.Price * cell.book.Quantity];
+    
+    return cell;
 }
 
 @end

@@ -101,11 +101,11 @@
 
 - (void)updateShoppingCartInfo
 {
-    if ([[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart] > 1) {
-        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+    if ([[OSU_3BShoppingCart sharedInstance]numberOfItemsInShoppingCart] > 1) {
+        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u items", [[OSU_3BShoppingCart sharedInstance]numberOfItemsInShoppingCart]];
     }
     else {
-        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u item", [[OSU_3BShoppingCart sharedInstance]numberOfDistinctItemsInShoppingCart]];
+        self.shoppingCartInfo.text = [NSString stringWithFormat:@"Your Shopping Cart has %u item", [[OSU_3BShoppingCart sharedInstance]numberOfItemsInShoppingCart]];
     }
     
     self.subtotalInfo.text = [NSString stringWithFormat:@"Subtotal:  $ %.2lf", [[OSU_3BShoppingCart sharedInstance] subtotalValue]];
@@ -134,7 +134,7 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-// protocols ***********************************************
+#pragma -- UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

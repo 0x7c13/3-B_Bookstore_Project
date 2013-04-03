@@ -14,7 +14,7 @@
 }
     
 @property (strong, nonatomic) OSU_3BBooks *books;
-@property (copy, nonatomic) NSString *usernameOfTheCurrentCustomer;
+@property (strong, nonatomic) OSU_3BUser *currentCustomer;
 
 @end
 
@@ -53,20 +53,20 @@
 {
     _books = [[OSU_3BBooks alloc]init];
     _subtotal = 0.0;
-    _usernameOfTheCurrentCustomer = nil;
+    _currentCustomer = nil;
     _isGuestMode = YES;
 }
 
 
-- (void)setUsernameOfTheCurrentCustomer:(NSString *)username
+- (void)setCurrentCustomer:(OSU_3BUser *)customer
 {
-    _usernameOfTheCurrentCustomer = [NSString stringWithString:username];
+    _currentCustomer = customer;
     _isGuestMode = NO;
 }
 
-- (NSString *)getUsernameOfTheCurrentCustomer
+- (OSU_3BUser *)getCurrentCustomer
 {
-    return [self.usernameOfTheCurrentCustomer copy];
+    return self.currentCustomer;
 }
 
 - (void)addItem:(OSU_3BBook *)book
@@ -128,6 +128,15 @@
 - (NSUInteger)numberOfDistinctItemsInShoppingCart
 {
     return (NSUInteger)self.books.count;
+}
+
+- (NSUInteger)numberOfItemsInShoppingCart
+{
+    NSUInteger result = 0;
+    for (int i = 0; i < self.books.count; i++) {
+        result += [self.books objectAtIndexedSubscript:i].Quantity;
+    }
+    return result;
 }
 
 - (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)index

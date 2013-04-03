@@ -189,7 +189,7 @@
                                                           creditCardNumber:self.creditCardNumber.text];
                         
                 [[OSU_3BSQLiteDatabaseHandler sharedInstance]insertNewUser:newUser withUserType:OSU_3BUserTypeCustomer];
-                [[OSU_3BShoppingCart sharedInstance] setUsernameOfTheCurrentCustomer:newUser.username];
+                [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:newUser];
                 [self performSegueWithIdentifier:@"orderListSegue2" sender:self];
             }
         }

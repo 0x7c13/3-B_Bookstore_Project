@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-783" y="651"/>
+            <point key="canvasLocation" x="-1291" y="291"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mQ7-6g-OAb">
@@ -112,7 +112,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIO-4J-GfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-224" y="22"/>
+            <point key="canvasLocation" x="-732" y="-338"/>
         </scene>
         <!--shopping Cart View Controller - Shopping Cart-->
         <scene sceneID="7ya-Lf-Y7U">
@@ -219,6 +219,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1op-Z9-73C" id="0NK-UX-sE4"/>
+                                    <outlet property="delegate" destination="1op-Z9-73C" id="KdD-7n-sH5"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" id="Eaa-gq-CWJ" userLabel="ShoppingCartInfoView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
@@ -276,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBl-Hp-vCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="392"/>
+            <point key="canvasLocation" x="381" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3BR-Is-PZA">
@@ -296,7 +300,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-1N-eTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376" y="392"/>
+            <point key="canvasLocation" x="868" y="32"/>
         </scene>
         <!--customer Registration View Controller - Customer Registration-->
         <scene sceneID="JNU-XI-cPr">
@@ -311,7 +315,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="aK3-Vu-VpD">
-                                <rect key="frame" x="160" y="441" width="140" height="50"/>
+                                <rect key="frame" x="160" y="440" width="140" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="Don't Register" backgroundImage="black_button_1.png">
@@ -322,7 +326,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="MqM-RM-1gO">
-                                <rect key="frame" x="20" y="441" width="140" height="50"/>
+                                <rect key="frame" x="20" y="440" width="140" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="Register" backgroundImage="black_button_1.png">
@@ -544,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uQ-eS-Rs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="392"/>
+            <point key="canvasLocation" x="1353" y="32"/>
         </scene>
         <!--order List View Controller - Confirm Order-->
         <scene sceneID="KnM-vl-0YA">
@@ -558,25 +562,199 @@
                                 <rect key="frame" x="0.0" y="-2" width="320" height="508"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="108" sectionHeaderHeight="22" sectionFooterHeight="22" id="nyN-bh-OnJ">
+                                <rect key="frame" x="0.0" y="150" width="320" height="214"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderListCell" rowHeight="108" id="OJz-7n-457" customClass="OSU_3BOrderListCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="CellBackground.png" id="hYt-b2-r7F">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BXC-Ja-VPj" userLabel="Label - Book Title">
+                                                    <rect key="frame" x="20" y="9" width="280" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pt3-l2-x9q" userLabel="Label - Book Author">
+                                                    <rect key="frame" x="51" y="31" width="249" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mg0-oA-sKW" userLabel="Label - Book Price">
+                                                    <rect key="frame" x="117" y="53" width="114" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mYR-Ab-SqN" userLabel="Label - Book Price">
+                                                    <rect key="frame" x="189" y="75" width="111" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rxN-Ql-Qyg">
+                                                    <rect key="frame" x="20" y="31" width="32" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Single Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IJA-QY-gDS">
+                                                    <rect key="frame" x="20" y="53" width="98" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DrR-2M-OaL">
+                                                    <rect key="frame" x="141" y="75" width="49" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quantity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="udm-8X-z31">
+                                                    <rect key="frame" x="20" y="75" width="82" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tna-6v-vdF">
+                                                    <rect key="frame" x="101" y="75" width="41" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.89556760199999996" green="0.89556760199999996" blue="0.89556760199999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="bookAuthor" destination="Pt3-l2-x9q" id="hFz-9E-p4M"/>
+                                            <outlet property="bookPrice" destination="Mg0-oA-sKW" id="fQi-q2-E1D"/>
+                                            <outlet property="bookQuantity" destination="Tna-6v-vdF" id="zhh-4s-5hH"/>
+                                            <outlet property="bookTitle" destination="BXC-Ja-VPj" id="sW8-Np-Zzj"/>
+                                            <outlet property="bookTotalPrice" destination="mYR-Ab-SqN" id="ZuZ-0O-FKN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="O4l-Fw-whj" id="adi-aA-3Bb"/>
+                                    <outlet property="delegate" destination="O4l-Fw-whj" id="WbQ-lo-LjB"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" id="Ai1-ha-tvX" userLabel="UpperBG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City, State  ZIP Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hg0-LM-69f">
+                                        <rect key="frame" x="20" y="71" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="mEl-NQ-AcM">
+                                        <rect key="frame" x="210" y="33" width="85" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                        <state key="normal" title="Revise" backgroundImage="black_button_1.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14985251913265307" green="0.14985251913265307" blue="0.14985251913265307" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="VdF-o6-DIX" userLabel="LowerBG">
+                                <rect key="frame" x="0.0" y="363" width="320" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="aiU-9M-QXR">
+                                        <rect key="frame" x="20" y="0.0" width="129" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">SHIPPING NOTE:
+The books will be delivered within 5 business days.</string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Subtotal:  $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iDW-Am-ZKI">
+                                        <rect key="frame" x="168" y="9" width="73" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total:  $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XBg-VQ-WuV">
+                                        <rect key="frame" x="168" y="49" width="73" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shipping:  $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MR7-U8-Wjn">
+                                        <rect key="frame" x="168" y="29" width="73" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dba-fv-yj2">
+                                        <rect key="frame" x="240" y="9" width="54" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9H1-u4-EO3">
+                                        <rect key="frame" x="240" y="29" width="54" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mj8-Sv-Rcm">
+                                        <rect key="frame" x="240" y="49" width="54" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1498525191" green="0.1498525191" blue="0.1498525191" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="XYB-Gw-5aD">
-                                <rect key="frame" x="20" y="434" width="125" height="50"/>
+                                <rect key="frame" x="20" y="440" width="125" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="Cancel" backgroundImage="black_button_1.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="mEl-NQ-AcM">
-                                <rect key="frame" x="195" y="130" width="78" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
-                                <state key="normal" title="Update" backgroundImage="bigButton.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="O4l-Fw-whj" eventType="touchUpInside" id="Nrf-eM-A2U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Eyd-sX-gj4">
-                                <rect key="frame" x="175" y="434" width="125" height="50"/>
+                                <rect key="frame" x="175" y="440" width="125" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="Check Out" backgroundImage="black_button_1.png">
@@ -584,14 +762,14 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credit Card Type, Credit Card Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lJF-he-dxS">
-                                <rect key="frame" x="20" y="164" width="280" height="21"/>
+                                <rect key="frame" x="20" y="118" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shipping Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LPZ-xE-q66">
-                                <rect key="frame" x="20" y="15" width="167" height="28"/>
+                                <rect key="frame" x="20" y="4" width="167" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -600,7 +778,7 @@
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credit Card:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zgw-CX-Fiy">
-                                <rect key="frame" x="20" y="130" width="167" height="28"/>
+                                <rect key="frame" x="20" y="91" width="118" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -609,21 +787,14 @@
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Customer Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7jz-Hh-c2t">
-                                <rect key="frame" x="20" y="49" width="167" height="21"/>
+                                <rect key="frame" x="20" y="31" width="167" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Street Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12H-Is-VZK">
-                                <rect key="frame" x="20" y="75" width="167" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City, State  ZIP Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hg0-LM-69f">
-                                <rect key="frame" x="20" y="101" width="280" height="21"/>
+                                <rect key="frame" x="20" y="51" width="188" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -634,10 +805,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="Confirm Order" id="7Ua-J2-oz3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cityStateAndZIPCodeLabel" destination="hg0-LM-69f" id="V4Y-TY-bIc"/>
+                        <outlet property="creditCardTypeAndNumberLabel" destination="lJF-he-dxS" id="1BV-Nf-Dyu"/>
+                        <outlet property="customerNameLabel" destination="7jz-Hh-c2t" id="X5U-KS-2G6"/>
+                        <outlet property="lowerBG" destination="VdF-o6-DIX" id="1Du-H1-ixU"/>
+                        <outlet property="shippingLabel" destination="9H1-u4-EO3" id="H78-my-OhC"/>
+                        <outlet property="streetAddressLabel" destination="12H-Is-VZK" id="jtM-gN-VqO"/>
+                        <outlet property="subtotalLabel" destination="dba-fv-yj2" id="0vf-FF-4ko"/>
+                        <outlet property="totalLabel" destination="Mj8-Sv-Rcm" id="QqF-Ru-smh"/>
+                        <outlet property="updateProfileButton" destination="mEl-NQ-AcM" id="3DF-0T-vW3"/>
+                        <outlet property="upperBG" destination="Ai1-ha-tvX" id="bs2-yv-SmN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gaq-11-08N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="1075"/>
+            <point key="canvasLocation" x="1353" y="715"/>
         </scene>
         <!--search View Controller - Search-->
         <scene sceneID="q5N-0d-AYI">
@@ -686,7 +869,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="889" y="-306"/>
+            <point key="canvasLocation" x="381" y="-666"/>
         </scene>
         <!--search Result View Controller - Search Results-->
         <scene sceneID="pKw-uQ-NqG">
@@ -826,6 +1009,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KLl-ic-tvh" id="Xcz-8M-CfV"/>
+                                    <outlet property="delegate" destination="KLl-ic-tvh" id="CJ7-yC-nCL"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" id="Oub-BS-HkE" userLabel="LabelBG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
@@ -852,7 +1039,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suz-Af-HYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376" y="-306"/>
+            <point key="canvasLocation" x="868" y="-666"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUY-i9-If0">
@@ -876,7 +1063,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCT-Yd-s6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="-306"/>
+            <point key="canvasLocation" x="-103" y="-666"/>
         </scene>
         <!--Navigation Controller - Shopping Cart-->
         <scene sceneID="gFA-5R-R3p">
@@ -895,7 +1082,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmN-1c-51n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="392"/>
+            <point key="canvasLocation" x="-103" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sbu-80-K9R">
@@ -915,7 +1102,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPc-pL-B4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376" y="1075"/>
+            <point key="canvasLocation" x="868" y="715"/>
         </scene>
     </scenes>
     <resources>
@@ -941,6 +1128,16 @@
                 <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="checkMark" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="reviewsButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="OSU_3BOrderListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BOrderListCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookTotalPrice" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
@@ -974,6 +1171,19 @@
         </class>
         <class className="OSU_orderListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_orderListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cityStateAndZIPCodeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="creditCardTypeAndNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="customerNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lowerBG" candidateClass="UIView"/>
+                <relationship kind="outlet" name="shippingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="streetAddressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subtotalLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="updateProfileButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="upperBG" candidateClass="UIView"/>
+            </relationships>
         </class>
         <class className="OSU_searchResultViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_searchResultViewController.h"/>
@@ -992,7 +1202,6 @@
         <class className="OSU_shoppingCartViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_shoppingCartViewController.h"/>
             <relationships>
-                <relationship kind="action" name="checkoutButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="lowerLabelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="shoppingCartInfo" candidateClass="UILabel"/>
@@ -1007,6 +1216,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JR7-3T-jB1"/>
+        <segue reference="6kE-at-BNp"/>
     </inferredMetricsTieBreakers>
 </document>

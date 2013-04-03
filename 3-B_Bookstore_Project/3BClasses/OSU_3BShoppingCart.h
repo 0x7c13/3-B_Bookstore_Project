@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "OSU_3BBook.h"
 #import "OSU_3BBooks.h"
+#import "OSU_3BUser.h"
 
 @interface OSU_3BShoppingCart : NSObject
 
@@ -16,8 +17,8 @@
 
 + (id)sharedInstance;
 
-- (void)setUsernameOfTheCurrentCustomer:(NSString *)username;
-- (NSString *)getUsernameOfTheCurrentCustomer;
+- (void)setCurrentCustomer:(OSU_3BUser *)customer;
+- (OSU_3BUser *)getCurrentCustomer;
 - (BOOL)isGuestMode;
 
 - (void)initShoppingCart;
@@ -31,6 +32,7 @@
 - (double)subtotalValue;
 
 - (NSUInteger)numberOfDistinctItemsInShoppingCart;
+- (NSUInteger)numberOfItemsInShoppingCart;
 
 - (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)index;
 
