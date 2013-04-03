@@ -3,7 +3,7 @@
 //  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-3-26.
-//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
+//  Copyright (c) 2013 The Ohio State University. All rights reserved.
 //
 
 #import "OSU_3BSQLiteDatabaseHandler.h"
@@ -253,7 +253,7 @@
     return result;
 }
 
--(void)insertAUserInfoIntoDatabase:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
+- (void)insertNewUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
 {
     if ([self usernameIsExist:user.username]) {
         NSLog(@"Username already exists!");

@@ -271,11 +271,12 @@
                         <outlet property="shoppingCartTableView" destination="VQG-yp-TIq" id="oY0-mF-0ri"/>
                         <outlet property="subtotalInfo" destination="lc8-sV-FNZ" id="4US-E8-Ce1"/>
                         <segue destination="jSh-9z-WbS" kind="modal" identifier="checkoutSegue" modalTransitionStyle="flipHorizontal" id="yrL-IH-azc"/>
+                        <segue destination="Zsn-jt-c7n" kind="modal" identifier="orderListSegue" modalTransitionStyle="flipHorizontal" id="fRS-qf-abq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBl-Hp-vCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="392"/>
+            <point key="canvasLocation" x="889" y="392"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3BR-Is-PZA">
@@ -295,7 +296,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-1N-eTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="392"/>
+            <point key="canvasLocation" x="1376" y="392"/>
         </scene>
         <!--customer Registration View Controller - Customer Registration-->
         <scene sceneID="JNU-XI-cPr">
@@ -538,11 +539,105 @@
                         <outlet property="lastName" destination="FAe-Ig-i4r" id="JML-u8-gog"/>
                         <outlet property="state" destination="XgG-hW-fNg" id="nyZ-yJ-Lps"/>
                         <outlet property="username" destination="Fic-5v-4rh" id="yAI-t1-BQS"/>
+                        <segue destination="O4l-Fw-whj" kind="push" identifier="orderListSegue2" id="JR7-3T-jB1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uQ-eS-Rs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="392"/>
+            <point key="canvasLocation" x="1861" y="392"/>
+        </scene>
+        <!--order List View Controller - Confirm Order-->
+        <scene sceneID="KnM-vl-0YA">
+            <objects>
+                <viewController id="O4l-Fw-whj" customClass="OSU_orderListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BmC-e8-Ajt" userLabel="OrderListView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background@2x.png" id="q3X-2i-qeE">
+                                <rect key="frame" x="0.0" y="-2" width="320" height="508"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="XYB-Gw-5aD">
+                                <rect key="frame" x="20" y="434" width="125" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Cancel" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="mEl-NQ-AcM">
+                                <rect key="frame" x="195" y="130" width="78" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <state key="normal" title="Update" backgroundImage="bigButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Eyd-sX-gj4">
+                                <rect key="frame" x="175" y="434" width="125" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Check Out" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credit Card Type, Credit Card Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lJF-he-dxS">
+                                <rect key="frame" x="20" y="164" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shipping Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LPZ-xE-q66">
+                                <rect key="frame" x="20" y="15" width="167" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credit Card:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zgw-CX-Fiy">
+                                <rect key="frame" x="20" y="130" width="167" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Customer Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7jz-Hh-c2t">
+                                <rect key="frame" x="20" y="49" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Street Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12H-Is-VZK">
+                                <rect key="frame" x="20" y="75" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City, State  ZIP Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hg0-LM-69f">
+                                <rect key="frame" x="20" y="101" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Confirm Order" id="7Ua-J2-oz3"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gaq-11-08N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="1075"/>
         </scene>
         <!--search View Controller - Search-->
         <scene sceneID="q5N-0d-AYI">
@@ -591,7 +686,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="849" y="-306"/>
+            <point key="canvasLocation" x="889" y="-306"/>
         </scene>
         <!--search Result View Controller - Search Results-->
         <scene sceneID="pKw-uQ-NqG">
@@ -757,7 +852,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suz-Af-HYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="-306"/>
+            <point key="canvasLocation" x="1376" y="-306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUY-i9-If0">
@@ -802,6 +897,26 @@
             </objects>
             <point key="canvasLocation" x="405" y="392"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sbu-80-K9R">
+            <objects>
+                <navigationController id="Zsn-jt-c7n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="njX-Vw-Hb3"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s6u-7m-hdJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O4l-Fw-whj" kind="relationship" relationship="rootViewController" id="6kE-at-BNp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPc-pL-B4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376" y="1075"/>
+        </scene>
     </scenes>
     <resources>
         <image name="37x-Checkmark.png" width="37" height="37"/>
@@ -831,8 +946,6 @@
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BShoppingCartCell.h"/>
             <relationships>
-                <relationship kind="action" name="deleteButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="stepperPressed:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>
@@ -843,7 +956,6 @@
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -859,9 +971,9 @@
         </class>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
-            </relationships>
+        </class>
+        <class className="OSU_orderListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_orderListViewController.h"/>
         </class>
         <class className="OSU_searchResultViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_searchResultViewController.h"/>
@@ -880,6 +992,7 @@
         <class className="OSU_shoppingCartViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_shoppingCartViewController.h"/>
             <relationships>
+                <relationship kind="action" name="checkoutButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="lowerLabelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="shoppingCartInfo" candidateClass="UILabel"/>
@@ -893,4 +1006,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="JR7-3T-jB1"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -3,7 +3,7 @@
 //  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-3-30.
-//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
+//  Copyright (c) 2013 The Ohio State University. All rights reserved.
 //
 
 #import "OSU_shoppingCartViewController.h"
@@ -116,7 +116,12 @@
 - (IBAction)checkoutButtonPressed:(UIButton *)sender {
 
     if ([[OSU_3BShoppingCart sharedInstance] numberOfDistinctItemsInShoppingCart] > 0) {
-        [self performSegueWithIdentifier:@"checkoutSegue" sender:self];
+        if ([[OSU_3BShoppingCart sharedInstance] isGuestMode]) {
+            [self performSegueWithIdentifier:@"checkoutSegue" sender:self];
+        }
+        else {
+            [self performSegueWithIdentifier:@"orderListSegue" sender:self];
+        }
     }
     else {
         [self.alertView showWithAnimation:URBAlertAnimationSlideLeft];

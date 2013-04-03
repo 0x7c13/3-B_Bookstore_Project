@@ -3,16 +3,18 @@
 //  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-3-30.
-//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
+//  Copyright (c) 2013 The Ohio State University. All rights reserved.
 //
 
 #import "OSU_3BShoppingCart.h"
 
 @interface OSU_3BShoppingCart () {
     double _subtotal;
+    BOOL _isGuestMode;
 }
     
 @property (strong, nonatomic) OSU_3BBooks *books;
+@property (copy, nonatomic) NSString *usernameOfTheCurrentCustomer;
 
 @end
 
@@ -34,6 +36,11 @@
     return _sharedObject;
 }
 
+- (BOOL)isGuestMode
+{
+    return _isGuestMode;
+}
+
 - (OSU_3BShoppingCart *)init
 {
     if (self = [super init]) {
@@ -42,6 +49,25 @@
     return self;
 }
 
+- (void)initShoppingCart
+{
+    _books = [[OSU_3BBooks alloc]init];
+    _subtotal = 0.0;
+    _usernameOfTheCurrentCustomer = nil;
+    _isGuestMode = YES;
+}
+
+
+- (void)setUsernameOfTheCurrentCustomer:(NSString *)username
+{
+    _usernameOfTheCurrentCustomer = [NSString stringWithString:username];
+    _isGuestMode = NO;
+}
+
+- (NSString *)getUsernameOfTheCurrentCustomer
+{
+    return [self.usernameOfTheCurrentCustomer copy];
+}
 
 - (void)addItem:(OSU_3BBook *)book
    withQuantity:(NSUInteger)quantity
@@ -96,12 +122,6 @@
         return 0.0;
     }
     return _subtotal;
-}
-
-- (void)initShoppingCart
-{
-    _books = [[OSU_3BBooks alloc]init];
-    _subtotal = 0.0;
 }
 
 

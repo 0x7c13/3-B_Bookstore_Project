@@ -56,6 +56,7 @@
 		F798706E1709341A00CCD89C /* CellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F798706D1709341A00CCD89C /* CellBackground.png */; };
 		F79870741709426E00CCD89C /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870731709426E00CCD89C /* NIDropDown.m */; };
 		F7987077170A7E0400CCD89C /* OSU_3BUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F7987076170A7E0400CCD89C /* OSU_3BUser.m */; };
+		F798707A170BC56400CCD89C /* OSU_orderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7987079170BC56400CCD89C /* OSU_orderListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,8 @@
 		F79870731709426E00CCD89C /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
 		F7987075170A7E0400CCD89C /* OSU_3BUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BUser.h; sourceTree = "<group>"; };
 		F7987076170A7E0400CCD89C /* OSU_3BUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BUser.m; sourceTree = "<group>"; };
+		F7987078170BC56400CCD89C /* OSU_orderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_orderListViewController.h; sourceTree = "<group>"; };
+		F7987079170BC56400CCD89C /* OSU_orderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_orderListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,10 +233,10 @@
 				F775231D17027DF6004D7A4D /* OSUAppDelegate.h */,
 				F775231E17027DF6004D7A4D /* OSUAppDelegate.m */,
 				F775232617027DF6004D7A4D /* MainStoryboard.storyboard */,
-				F79870711709426E00CCD89C /* NIDropDown */,
-				F79870611709218000CCD89C /* URBAlertView */,
 				F775233E170283C6004D7A4D /* 3BClasses */,
 				F7752333170282CA004D7A4D /* ViewControllers */,
+				F79870711709426E00CCD89C /* NIDropDown */,
+				F79870611709218000CCD89C /* URBAlertView */,
 				F75680C217069B820042BB55 /* MBProgressHUD */,
 				F75680A61705DB0C0042BB55 /* AFPickerView */,
 				F775231517027DF6004D7A4D /* Supporting Files */,
@@ -273,6 +276,8 @@
 				F75680CA1707C1700042BB55 /* OSU_shoppingCartViewController.m */,
 				F798705E1709083A00CCD89C /* OSU_customerRegistrationViewController.h */,
 				F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */,
+				F7987078170BC56400CCD89C /* OSU_orderListViewController.h */,
+				F7987079170BC56400CCD89C /* OSU_orderListViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 				F79870641709218000CCD89C /* URBAlertView.m in Sources */,
 				F79870741709426E00CCD89C /* NIDropDown.m in Sources */,
 				F7987077170A7E0400CCD89C /* OSU_3BUser.m in Sources */,
+				F798707A170BC56400CCD89C /* OSU_orderListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

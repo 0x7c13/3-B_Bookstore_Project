@@ -3,11 +3,12 @@
 //  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-3-31.
-//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
+//  Copyright (c) 2013 The Ohio State University. All rights reserved.
 //
 
 #import "OSU_customerRegistrationViewController.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
+#import "OSU_3BShoppingCart.h"
 #import "URBAlertView.h"
 #import "OSU_3BUser.h"
 
@@ -117,7 +118,7 @@
 - (IBAction)creditCardTypeButtonPressed:(UIButton *)sender {
 
     if(_creditCardDropUp == nil) {
-        NSArray * arr = [[NSArray alloc] init];
+        NSArray *arr = [[NSArray alloc] init];
         arr = [NSArray arrayWithObjects:@"VISA", @"American Express", @"Diners Club", @"Discover", @"MasterCard",nil];
         
         CGFloat f = 200;
@@ -136,7 +137,7 @@
 - (IBAction)stateSelectButtonPressed:(UIButton *)sender {
     
     if(_stateDropUp == nil) {
-        NSArray * arr = [[NSArray alloc] init];
+        NSArray *arr = [[NSArray alloc] init];
         arr = [NSArray arrayWithObjects:@"AL",@"AK",@"AZ",@"AR",@"CA",@"CO",@"CT",@"DE",@"DC",@"FL",@"GA",@"HI",@"ID",@"IL",@"IN",@"IA",@"KS",@"KY",@"LA",@"ME",@"MD",@"MA",@"MI",@"MN",@"MS",@"MO",@"MT",@"NE",@"NV",@"NH",@"NJ",@"NM",@"NY",@"NC",@"ND",@"OH",@"OK",@"OR",@"PA",@"RI",@"SC",@"SD",@"TN",@"TX",@"UT",@"VT",@"VA",@"WA",@"WV",@"WI",@"WY",nil];
         
         CGFloat f = 200;
@@ -186,7 +187,10 @@
                                                                    ZIPCode:(NSUInteger)[self.ZIPCode.text integerValue]
                                                             creditCardType:self.creditCardType.titleLabel.text
                                                           creditCardNumber:self.creditCardNumber.text];
-                [[OSU_3BSQLiteDatabaseHandler sharedInstance]insertAUserInfoIntoDatabase:newUser withUserType:OSU_3BUserTypeCustomer];
+                        
+                [[OSU_3BSQLiteDatabaseHandler sharedInstance]insertNewUser:newUser withUserType:OSU_3BUserTypeCustomer];
+                [[OSU_3BShoppingCart sharedInstance] setUsernameOfTheCurrentCustomer:newUser.username];
+                [self performSegueWithIdentifier:@"orderListSegue2" sender:self];
             }
         }
         
@@ -194,7 +198,6 @@
     else {
         [self.alertView2 showWithAnimation:URBAlertAnimationDefault];
     }
-    
     
 }
 
