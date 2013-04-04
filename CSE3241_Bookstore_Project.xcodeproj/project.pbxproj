@@ -53,6 +53,10 @@
 		F78E26FA170CFE6900F2DFA6 /* OSU_customerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78E26F9170CFE6900F2DFA6 /* OSU_customerProfileViewController.m */; };
 		F78E26FD170D0FD500F2DFA6 /* OSU_proofOfPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78E26FC170D0FD500F2DFA6 /* OSU_proofOfPurchaseViewController.m */; };
 		F78E2700170D319E00F2DFA6 /* OSU_newCustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78E26FF170D319D00F2DFA6 /* OSU_newCustomerViewController.m */; };
+		F78E2704170D409300F2DFA6 /* ASDepthModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78E2703170D409300F2DFA6 /* ASDepthModalViewController.m */; };
+		F78E2706170D4A1D00F2DFA6 /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F78E2705170D4A1D00F2DFA6 /* login_bg.png */; };
+		F78E2709170D4B3300F2DFA6 /* login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F78E2707170D4B3300F2DFA6 /* login_button.png */; };
+		F78E270A170D4B3300F2DFA6 /* login_field.png in Resources */ = {isa = PBXBuildFile; fileRef = F78E2708170D4B3300F2DFA6 /* login_field.png */; };
 		F79870601709083B00CCD89C /* OSU_customerRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */; };
 		F79870641709218000CCD89C /* URBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870631709218000CCD89C /* URBAlertView.m */; };
 		F79870661709229B00CCD89C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79870651709229B00CCD89C /* Accelerate.framework */; };
@@ -132,6 +136,11 @@
 		F78E26FC170D0FD500F2DFA6 /* OSU_proofOfPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_proofOfPurchaseViewController.m; sourceTree = "<group>"; };
 		F78E26FE170D319D00F2DFA6 /* OSU_newCustomerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_newCustomerViewController.h; sourceTree = "<group>"; };
 		F78E26FF170D319D00F2DFA6 /* OSU_newCustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_newCustomerViewController.m; sourceTree = "<group>"; };
+		F78E2702170D409300F2DFA6 /* ASDepthModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDepthModalViewController.h; sourceTree = "<group>"; };
+		F78E2703170D409300F2DFA6 /* ASDepthModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDepthModalViewController.m; sourceTree = "<group>"; };
+		F78E2705170D4A1D00F2DFA6 /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
+		F78E2707170D4B3300F2DFA6 /* login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button.png; sourceTree = "<group>"; };
+		F78E2708170D4B3300F2DFA6 /* login_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_field.png; sourceTree = "<group>"; };
 		F798705E1709083A00CCD89C /* OSU_customerRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_customerRegistrationViewController.h; sourceTree = "<group>"; };
 		F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_customerRegistrationViewController.m; sourceTree = "<group>"; };
 		F79870621709218000CCD89C /* URBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBAlertView.h; sourceTree = "<group>"; };
@@ -197,9 +206,12 @@
 			children = (
 				F798706B17092B4300CCD89C /* ExitButton.png */,
 				F798706D1709341A00CCD89C /* CellBackground.png */,
+				F78E2705170D4A1D00F2DFA6 /* login_bg.png */,
 				F78E26F4170C6C5D00F2DFA6 /* black_bg.png */,
 				F78E26F6170C74B900F2DFA6 /* black_bg2.png */,
 				F75680E41707DE790042BB55 /* background@2x.png */,
+				F78E2707170D4B3300F2DFA6 /* login_button.png */,
+				F78E2708170D4B3300F2DFA6 /* login_field.png */,
 				F75680E81707E40D0042BB55 /* cellButton.png */,
 				F75680E61707E2660042BB55 /* bigButton.png */,
 				F79870691709274C00CCD89C /* black_button_1.png */,
@@ -253,6 +265,7 @@
 				F775232617027DF6004D7A4D /* MainStoryboard.storyboard */,
 				F775233E170283C6004D7A4D /* 3BClasses */,
 				F7752333170282CA004D7A4D /* ViewControllers */,
+				F78E2701170D409300F2DFA6 /* ASDepthModal */,
 				F79870711709426E00CCD89C /* NIDropDown */,
 				F79870611709218000CCD89C /* URBAlertView */,
 				F75680C217069B820042BB55 /* MBProgressHUD */,
@@ -313,16 +326,25 @@
 			children = (
 				F775233F170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.h */,
 				F7752340170283D3004D7A4D /* OSU_3BSQLiteDatabaseHandler.m */,
+				F75680C61706A2040042BB55 /* OSU_3BShoppingCart.h */,
+				F75680C71706A2040042BB55 /* OSU_3BShoppingCart.m */,
 				F7987075170A7E0400CCD89C /* OSU_3BUser.h */,
 				F7987076170A7E0400CCD89C /* OSU_3BUser.m */,
 				F775234817028959004D7A4D /* OSU_3BBook.h */,
 				F775234917028959004D7A4D /* OSU_3BBook.m */,
 				F75680B9170666660042BB55 /* OSU_3BBooks.h */,
 				F75680BA170666660042BB55 /* OSU_3BBooks.m */,
-				F75680C61706A2040042BB55 /* OSU_3BShoppingCart.h */,
-				F75680C71706A2040042BB55 /* OSU_3BShoppingCart.m */,
 			);
 			path = 3BClasses;
+			sourceTree = "<group>";
+		};
+		F78E2701170D409300F2DFA6 /* ASDepthModal */ = {
+			isa = PBXGroup;
+			children = (
+				F78E2702170D409300F2DFA6 /* ASDepthModalViewController.h */,
+				F78E2703170D409300F2DFA6 /* ASDepthModalViewController.m */,
+			);
+			path = ASDepthModal;
 			sourceTree = "<group>";
 		};
 		F79870611709218000CCD89C /* URBAlertView */ = {
@@ -420,6 +442,9 @@
 				F798706E1709341A00CCD89C /* CellBackground.png in Resources */,
 				F78E26F5170C6C5D00F2DFA6 /* black_bg.png in Resources */,
 				F78E26F7170C74B900F2DFA6 /* black_bg2.png in Resources */,
+				F78E2706170D4A1D00F2DFA6 /* login_bg.png in Resources */,
+				F78E2709170D4B3300F2DFA6 /* login_button.png in Resources */,
+				F78E270A170D4B3300F2DFA6 /* login_field.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +478,7 @@
 				F78E26FA170CFE6900F2DFA6 /* OSU_customerProfileViewController.m in Sources */,
 				F78E26FD170D0FD500F2DFA6 /* OSU_proofOfPurchaseViewController.m in Sources */,
 				F78E2700170D319E00F2DFA6 /* OSU_newCustomerViewController.m in Sources */,
+				F78E2704170D409300F2DFA6 /* ASDepthModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

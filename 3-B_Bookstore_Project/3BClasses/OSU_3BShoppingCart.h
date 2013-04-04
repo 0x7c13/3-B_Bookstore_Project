@@ -14,11 +14,11 @@
 @interface OSU_3BShoppingCart : NSObject
 
 
-
 + (id)sharedInstance;
 
 - (void)setCurrentCustomer:(OSU_3BUser *)customer;
 - (OSU_3BUser *)getCurrentCustomer;
+
 - (BOOL)isGuestMode;
 
 - (void)initShoppingCart;

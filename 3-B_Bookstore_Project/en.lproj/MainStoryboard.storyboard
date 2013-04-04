@@ -68,6 +68,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="returningCustomerButtonPressed:" destination="2" eventType="touchUpInside" id="Oy3-ce-GwV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="yJI-KT-Vdu">
                                 <rect key="frame" x="50" y="420" width="220" height="55"/>
@@ -80,23 +83,69 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CSE 3241 Jiaqi Liu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="him-Y0-FsY">
-                                <rect key="frame" x="142" y="506" width="158" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="passwordTextField" destination="VdL-IN-Dh1" id="9e1-cf-ar9"/>
+                        <outlet property="popupView" destination="Rv4-oy-GSY" id="Pz4-Ij-a8e"/>
+                        <outlet property="usernameTextField" destination="d14-PL-Pvc" id="e2e-Fe-ifR"/>
                         <segue destination="e4R-dr-zNG" kind="modal" identifier="searchOnlySegue" modalTransitionStyle="flipHorizontal" id="DX3-3s-25u"/>
                         <segue destination="8S1-7v-6SF" kind="modal" identifier="startRegistrationSegue" id="93O-gr-9lU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="Rv4-oy-GSY" userLabel="Login View">
+                    <rect key="frame" x="0.0" y="0.0" width="270" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="login_bg.png" id="riO-7P-y10">
+                            <rect key="frame" x="0.0" y="0.0" width="270" height="200"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="login_field.png" id="8qV-lO-59P">
+                            <rect key="frame" x="-65" y="-85" width="400" height="400"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="048-WK-hgy">
+                            <rect key="frame" x="18" y="130" width="234" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" backgroundImage="login_button.png">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="loginButtonPressed:" destination="2" eventType="touchUpInside" id="Ixu-fG-hrY"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" id="d14-PL-Pvc">
+                            <rect key="frame" x="51" y="32" width="183" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <action selector="usernameFieldTouchDown:" destination="2" eventType="touchDown" id="k7L-9J-cYZ"/>
+                                <outlet property="delegate" destination="2" id="Pwe-dp-LD1"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" id="VdL-IN-Dh1">
+                            <rect key="frame" x="51" y="79" width="183" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            <connections>
+                                <action selector="passwordFieldTouchDown:" destination="2" eventType="touchDown" id="Bh5-pR-RmD"/>
+                                <outlet property="delegate" destination="2" id="TkU-TP-d5b"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="-2555" y="547"/>
         </scene>
@@ -1733,7 +1782,7 @@ The books will be delivered within 5 business days.</string>
                                 <rect key="frame" x="160" y="484" width="140" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <state key="normal" title="Don't Register" backgroundImage="black_button_1.png">
+                                <state key="normal" title="Cancel" backgroundImage="black_button_1.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2005,14 +2054,15 @@ The books will be delivered within 5 business days.</string>
         <image name="black_bg.png" width="640" height="960"/>
         <image name="black_button_1.png" width="220" height="77"/>
         <image name="cellButton.png" width="86" height="32"/>
+        <image name="login_bg.png" width="400" height="398"/>
+        <image name="login_button.png" width="246" height="53"/>
+        <image name="login_field.png" width="400" height="400"/>
         <image name="shoppingcart.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
-                <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -2063,7 +2113,6 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -2081,20 +2130,14 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
             <relationships>
-                <relationship kind="action" name="newCustomerButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="popupView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="OSU_newCustomerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_newCustomerViewController.h"/>
             <relationships>
-                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -2161,7 +2204,6 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_shoppingCartViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_shoppingCartViewController.h"/>
             <relationships>
-                <relationship kind="action" name="checkoutButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="lowerLabelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="shoppingCartInfo" candidateClass="UILabel"/>

@@ -1,7 +1,7 @@
 Best-Book-Buy Online Bookstore Project
 ======================================
 
-Progress: About 60%… :(
+Progress: About 65%… :(
 
 The Ohio State CSE 3241 Database Project
 
@@ -42,11 +42,11 @@ NIDropDown : https://github.com/BijeshNair/NIDropDown
 
 URBAlertView : https://github.com/u10int/URBAlertView
 
+ASDepthModal : https://github.com/autresphere/ASDepthModal
+
 --------------------------------
 
-##Todo List:
+##To do List:
 
-1.Returning Customer entry.
-
-2.Administrator entry.
+1.Administrator entry.
 

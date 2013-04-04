@@ -333,4 +333,42 @@
     sqlite3_finalize(statement);
 }
 
+-(OSU_3BUser *)selectAUserFromDatabaseWithUsername:(NSString *)username
+{
+    OSU_3BUser *user;
+    
+    NSString *queryString = [NSString stringWithFormat:@"SELECT * FROM Customers WHERE Username = '%@'", username];
+    
+    const char *sql = [queryString UTF8String];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
+        
+        NSLog(@"sql problem occured with: %s", sql);
+        NSLog(@"%s", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    else
+    {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            
+            user = [[OSU_3BUser alloc] initWithUsername:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)]
+                                                    PIN:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)]
+                                              firstName:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)]
+                                               lastName:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 3)]
+                                                address:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 4)]
+                                                   city:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 5)]
+                                                  state:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]
+                                                ZIPCode:(NSUInteger)sqlite3_column_int(statement, 7)
+                                         creditCardType:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 8)]
+                                       creditCardNumber:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 9)]
+                               creditCardExpirationDate:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 10)]];
+            
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return user;
+}
+
 @end

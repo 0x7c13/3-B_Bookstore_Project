@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "OSU_searchViewController.h"
 #import "OSU_newCustomerViewController.h"
+#import "ASDepthModalViewController.h"
 
-@interface OSU_initViewController : UIViewController <OSU_newCustomerViewControllerDelegate>
+@interface OSU_initViewController : UIViewController <OSU_newCustomerViewControllerDelegate, UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UIView *popupView;
 
 @end

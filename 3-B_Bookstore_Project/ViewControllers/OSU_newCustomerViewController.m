@@ -3,7 +3,7 @@
 //  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-4-3.
-//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
+//  Copyright (c) 2013 The Ohio State University. All rights reserved.
 //
 
 #import "OSU_newCustomerViewController.h"
@@ -15,10 +15,9 @@
 
 @interface OSU_newCustomerViewController ()
 
-@property (strong, nonatomic) IBOutlet UIImageView *navBarBG;
+@property (weak, nonatomic) IBOutlet UIImageView *navBarBG;
 @property (strong, nonatomic) NIDropDown *creditCardDropUp;
 @property (strong, nonatomic) NIDropDown *stateDropUp;
-@property (strong, nonatomic) URBAlertView *alertView;
 @property (strong, nonatomic) URBAlertView *alertView2;
 @property (strong, nonatomic) URBAlertView *alertView3;
 @property (strong, nonatomic) URBAlertView *alertView4;
@@ -47,21 +46,6 @@
     self.navBarBG.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
     self.navBarBG.layer.shadowRadius = 3.0f;
     self.navBarBG.layer.shadowOpacity = 0.8f;
-    
-	URBAlertView *alertView = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"In order to proceed with the payment, you need to register first."];
-	alertView.blurBackground = NO;
-	[alertView addButtonWithTitle:@"Exit"];
-	[alertView addButtonWithTitle:@"Register"];
-	[alertView setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *alertView) {
-        // do stuff here
-		[self.alertView hideWithCompletionBlock:^{
-            if (buttonIndex == 0) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }
-		}];
-	}];
-	
-	self.alertView = alertView;
     
     
     URBAlertView *alertView2 = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"Please fill out all fields!"];
@@ -107,7 +91,7 @@
 
 - (IBAction)skipRegistrationButtonPressed:(UIButton *)sender {
     
-    [self.alertView showWithAnimation:URBAlertAnimationFlipHorizontal];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
