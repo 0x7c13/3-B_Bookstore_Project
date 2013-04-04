@@ -7,6 +7,7 @@
 //
 
 #import "OSU_searchViewController.h"
+#import "OSU_3BShoppingCart.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
 #import "OSU_searchResultViewController.h"
 
@@ -113,6 +114,7 @@
 
 - (void)Exit
 {
+    [[OSU_3BShoppingCart sharedInstance] cleanShoppingCart];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 

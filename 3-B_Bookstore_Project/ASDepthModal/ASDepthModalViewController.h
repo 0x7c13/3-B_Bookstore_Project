@@ -34,13 +34,25 @@ typedef enum
     ASDepthModalAnimationDefault = ASDepthModalAnimationGrow,
 } ASDepthModalAnimationStyle;
 
+
+@protocol ASDepthModalViewControllerDelegate;
+
 /*
 Mostly inspired by http://lab.hakim.se/avgrund/
 */
 @interface ASDepthModalViewController : UIViewController
 
-+ (void)presentView:(UIView *)view withBackgroundColor:(UIColor *)color popupAnimationStyle:(ASDepthModalAnimationStyle)popupAnimationStyle;
-+ (void)presentView:(UIView *)view;
-+ (void)dismiss;
+- (void)presentView:(UIView *)view withBackgroundColor:(UIColor *)color popupAnimationStyle:(ASDepthModalAnimationStyle)popupAnimationStyle;
+- (void)presentView:(UIView *)view;
+- (void)dismiss;
+
+@property (weak, nonatomic) id<ASDepthModalViewControllerDelegate> delegate;
+
+@end
+
+@protocol ASDepthModalViewControllerDelegate <NSObject>
+
+- (void)popupViewDidDisappear;
+- (void)userDidDismissPopupView;
 
 @end

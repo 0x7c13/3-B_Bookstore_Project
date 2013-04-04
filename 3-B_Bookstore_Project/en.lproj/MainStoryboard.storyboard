@@ -88,6 +88,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="loginButton" destination="048-WK-hgy" id="WTJ-jZ-otm"/>
                         <outlet property="passwordTextField" destination="VdL-IN-Dh1" id="9e1-cf-ar9"/>
                         <outlet property="popupView" destination="Rv4-oy-GSY" id="Pz4-Ij-a8e"/>
                         <outlet property="usernameTextField" destination="d14-PL-Pvc" id="e2e-Fe-ifR"/>
@@ -109,7 +110,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="048-WK-hgy">
-                            <rect key="frame" x="18" y="130" width="234" height="50"/>
+                            <rect key="frame" x="18" y="135" width="234" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" backgroundImage="login_button.png">
@@ -2088,6 +2089,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BShoppingCartCell.h"/>
             <relationships>
+                <relationship kind="action" name="deleteButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stepperPressed:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>
@@ -2138,6 +2141,7 @@ The books will be delivered within 5 business days.</string>
                 <relationship kind="action" name="returningCustomerButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="usernameFieldTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="popupView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>

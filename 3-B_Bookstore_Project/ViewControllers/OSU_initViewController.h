@@ -12,7 +12,7 @@
 #import "OSU_newCustomerViewController.h"
 #import "ASDepthModalViewController.h"
 
-@interface OSU_initViewController : UIViewController <OSU_newCustomerViewControllerDelegate, UITextFieldDelegate>
+@interface OSU_initViewController : UIViewController <OSU_newCustomerViewControllerDelegate, UITextFieldDelegate, ASDepthModalViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *popupView;
 

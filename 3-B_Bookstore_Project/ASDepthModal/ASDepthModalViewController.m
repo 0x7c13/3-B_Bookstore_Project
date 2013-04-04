@@ -72,6 +72,8 @@ static NSTimeInterval const kModalViewAnimationDuration = 0.3;
                      }
                      completion:^(BOOL finished) {
                          [self restoreRootViewController];
+                         [self.delegate userDidDismissPopupView];
+                         [self.delegate popupViewDidDisappear];
                      }];
 }
 
@@ -179,19 +181,12 @@ static NSTimeInterval const kModalViewAnimationDuration = 0.3;
     self.rootViewController.view.transform = CGAffineTransformMakeScale(0.9, 0.9);
 }
 
-+ (void)presentView:(UIView *)view
+- (void)presentView:(UIView *)view
 {
     [self presentView:view withBackgroundColor:nil popupAnimationStyle:ASDepthModalAnimationDefault];
 }
 
-+ (void)presentView:(UIView *)view withBackgroundColor:(UIColor *)color popupAnimationStyle:(ASDepthModalAnimationStyle)popupAnimationStyle;
-{
-    ASDepthModalViewController *modalViewController;
-    
-    modalViewController = [[ASDepthModalViewController alloc] init];
-    [modalViewController presentView:view withBackgroundColor:(UIColor *)color popupAnimationStyle:popupAnimationStyle];
-}
-
+/*
 + (void)dismiss
 {
     UIWindow *window;
@@ -205,11 +200,30 @@ static NSTimeInterval const kModalViewAnimationDuration = 0.3;
         [controller dismiss];
     }
 }
+ */
 
 #pragma mark - Action
 - (void)handleCloseAction:(id)sender
 {
-    [self dismiss];
+    [UIView animateWithDuration:kModalViewAnimationDuration
+                     animations:^{
+                         self.coverView.alpha = 0;
+                         self.rootViewController.view.transform = CGAffineTransformIdentity;
+                         self.popupView.transform = self.initialPopupTransform;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                         UIWindow *window;
+                         
+                         window = [UIApplication sharedApplication].keyWindow;
+                         [self.rootViewController.view removeFromSuperview];
+                         self.rootViewController.view.transform = window.rootViewController.view.transform;
+                         window.rootViewController = self.rootViewController;
+                         
+                         [self.delegate userDidDismissPopupView];
+                     }];
+    
+
 }
 
 @end

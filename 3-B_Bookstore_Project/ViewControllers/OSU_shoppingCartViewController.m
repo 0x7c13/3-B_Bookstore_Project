@@ -136,6 +136,7 @@
 
 - (void)Exit
 {
+    [[OSU_3BShoppingCart sharedInstance] cleanShoppingCart];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 

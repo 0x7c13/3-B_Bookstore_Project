@@ -13,12 +13,25 @@
 
 
 @interface OSU_initViewController ()
-@property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) ASDepthModalViewController *popManagerVC;
 
 @end
 
 @implementation OSU_initViewController
+
+
+- (ASDepthModalViewController *)popManagerVC
+{
+    if (!_popManagerVC) {
+        _popManagerVC = [[ASDepthModalViewController alloc]init];
+        _popManagerVC.delegate = self;
+    }
+    return _popManagerVC;
+}
 
 
 - (void)viewDidLoad
@@ -72,7 +85,7 @@
 - (IBAction)returningCustomerButtonPressed:(UIButton *)sender {
     
     UIColor *color = nil;
-    [ASDepthModalViewController presentView:self.popupView withBackgroundColor:color popupAnimationStyle:ASDepthModalAnimationDefault];
+    [self.popManagerVC presentView:self.popupView withBackgroundColor:color popupAnimationStyle:ASDepthModalAnimationDefault];
     
     
     
@@ -91,8 +104,7 @@
 - (IBAction)loginButtonPressed:(UIButton *)sender {
     
     if ([self loginCheck]) {
-        [ASDepthModalViewController dismiss];
-        [NSTimer scheduledTimerWithTimeInterval: 0.4f target:self selector:@selector(GoSearch:) userInfo:nil repeats: NO];
+        [self.popManagerVC dismiss];
     }
     else {
         // shake
@@ -117,29 +129,6 @@
     return NO;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    if ([self loginCheck]) {
-        [ASDepthModalViewController dismiss];
-        [NSTimer scheduledTimerWithTimeInterval: 0.4f target:self selector:@selector(GoSearch:) userInfo:nil repeats: NO];
-    }
-    else {
-        // shake
-        [self shakeWithDuration:0.1f];
-    }
-
-    return YES;
-}
-
-- (void)GoSearch:(NSTimer *)timer
-{
-    self.usernameTextField.text = @"";
-    self.passwordTextField.text = @"";
-    [self performSegueWithIdentifier:@"searchOnlySegue" sender:self];
-    [timer invalidate];
-}
-
 - (void)shakeWithDuration:(NSTimeInterval)animationTime
 {
     CGFloat t = 4.0;
@@ -161,5 +150,74 @@
     [UIView commitAnimations];
 }
 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    if ([self loginCheck]) {
+        [self.popManagerVC dismiss];
+    }
+    else {
+        // shake
+        [self shakeWithDuration:0.1f];
+    }
+    
+    // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
+    NSTimeInterval animationDuration = 0.20f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    CGRect rect = CGRectMake(0.0f, 0.0f, self.popupView.frame.size.width, self.popupView.frame.size.height);
+    self.popupView.frame = rect;
+    [UIView commitAnimations];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSTimeInterval animationDuration = 0.20f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    CGRect rect = CGRectMake(0.0f, 0.0f, self.popupView.frame.size.width, self.popupView.frame.size.height);
+    self.popupView.frame = rect;
+    [UIView commitAnimations];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    int offset = 30.0f;
+    NSTimeInterval animationDuration = 0.20f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    float width = self.popupView.frame.size.width;
+    float height = self.popupView.frame.size.height;
+    if(offset > 0)
+    {
+        CGRect rect = CGRectMake(0.0f, -offset,width,height);
+        self.popupView.frame = rect;
+    }
+    [UIView commitAnimations];
+}
+
+
+#pragma -- protocal
+
+- (void)popupViewDidDisappear
+{
+    self.view.userInteractionEnabled = NO;
+    [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(Go:) userInfo:nil repeats:NO];
+}
+
+- (void)Go:(NSTimer *)timer
+{
+    [self performSegueWithIdentifier:@"searchOnlySegue" sender:self];
+    self.view.userInteractionEnabled = YES;
+    [timer invalidate];
+}
+
+- (void)userDidDismissPopupView
+{
+    self.usernameTextField.text = @"";
+    self.passwordTextField.text = @"";
+}
 
 @end
