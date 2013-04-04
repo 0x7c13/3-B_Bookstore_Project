@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OSU_searchViewController.h"
+#import "OSU_newCustomerViewController.h"
 
-@interface OSU_initViewController : UIViewController
+@interface OSU_initViewController : UIViewController <OSU_newCustomerViewControllerDelegate>
 
 @end

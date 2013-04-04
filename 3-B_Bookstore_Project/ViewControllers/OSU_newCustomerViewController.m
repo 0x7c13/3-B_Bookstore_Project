@@ -1,22 +1,23 @@
 //
-//  OSU_customerRegistrationViewController.m
+//  OSU_newCustomerViewController.m
 //  CSE3241_Bookstore_Project
 //
-//  Created by FlyinGeek on 13-3-31.
-//  Copyright (c) 2013 The Ohio State University. All rights reserved.
+//  Created by FlyinGeek on 13-4-3.
+//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
 //
 
-#import "OSU_customerRegistrationViewController.h"
+#import "OSU_newCustomerViewController.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
 #import "OSU_3BShoppingCart.h"
 #import "URBAlertView.h"
 #import "OSU_3BUser.h"
 
-@interface OSU_customerRegistrationViewController () 
 
+@interface OSU_newCustomerViewController ()
+
+@property (strong, nonatomic) IBOutlet UIImageView *navBarBG;
 @property (strong, nonatomic) NIDropDown *creditCardDropUp;
 @property (strong, nonatomic) NIDropDown *stateDropUp;
-
 @property (strong, nonatomic) URBAlertView *alertView;
 @property (strong, nonatomic) URBAlertView *alertView2;
 @property (strong, nonatomic) URBAlertView *alertView3;
@@ -24,7 +25,7 @@
 
 @end
 
-@implementation OSU_customerRegistrationViewController
+@implementation OSU_newCustomerViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,15 +43,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavBar_gray.png"] forBarMetrics:UIBarMetricsDefault];
-    }
-    
-    self.navigationController.navigationBar.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
-    self.navigationController.navigationBar.layer.shadowRadius = 3.0f;
-    self.navigationController.navigationBar.layer.shadowOpacity = 0.8f;
-    
+    self.navBarBG.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.navBarBG.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
+    self.navBarBG.layer.shadowRadius = 3.0f;
+    self.navBarBG.layer.shadowOpacity = 0.8f;
     
 	URBAlertView *alertView = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"In order to proceed with the payment, you need to register first."];
 	alertView.blurBackground = NO;
@@ -60,13 +56,13 @@
         // do stuff here
 		[self.alertView hideWithCompletionBlock:^{
             if (buttonIndex == 0) {
-                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
 		}];
 	}];
 	
 	self.alertView = alertView;
-  
+    
     
     URBAlertView *alertView2 = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"Please fill out all fields!"];
 	alertView2.blurBackground = NO;
@@ -116,7 +112,7 @@
 }
 
 - (IBAction)creditCardTypeButtonPressed:(UIButton *)sender {
-
+    
     if(_creditCardDropUp == nil) {
         NSArray *arr = [[NSArray alloc] init];
         arr = [NSArray arrayWithObjects:@"VISA", @"American Express", @"Diners Club", @"Discover", @"MasterCard",nil];
@@ -175,27 +171,31 @@
             [self.alertView3 showWithAnimation:URBAlertAnimationDefault];
         }
         else {
-
+            
             if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsExist:self.username.text]) {
                 [self.alertView4 showWithAnimation:URBAlertAnimationTumble];
             }
             else {
                 // everything is clear
                 OSU_3BUser *newUser = [[OSU_3BUser alloc]initWithUsername:self.username.text
-                                                                       PIN:self.PIN1.text
-                                                                 firstName:self.firstName.text
-                                                                  lastName:self.lastName.text
-                                                                   address:self.address.text
-                                                                      city:self.city.text
-                                                                     state:self.state.titleLabel.text
-                                                                   ZIPCode:(NSUInteger)[self.ZIPCode.text integerValue]
-                                                            creditCardType:self.creditCardType.titleLabel.text
-                                                          creditCardNumber:self.creditCardNumber.text
+                                                                      PIN:self.PIN1.text
+                                                                firstName:self.firstName.text
+                                                                 lastName:self.lastName.text
+                                                                  address:self.address.text
+                                                                     city:self.city.text
+                                                                    state:self.state.titleLabel.text
+                                                                  ZIPCode:(NSUInteger)[self.ZIPCode.text integerValue]
+                                                           creditCardType:self.creditCardType.titleLabel.text
+                                                         creditCardNumber:self.creditCardNumber.text
                                                  creditCardExpirationDate:self.expirationDate.text];
-                        
+                
                 [[OSU_3BSQLiteDatabaseHandler sharedInstance]insertNewUser:newUser withUserType:OSU_3BUserTypeCustomer];
                 [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:newUser];
-                [self performSegueWithIdentifier:@"orderListSegue2" sender:self];
+                
+                [self dismissViewControllerAnimated:YES completion:^{
+                                                                  [self.delegate registrationDidFinished];
+                }];
+               
             }
         }
         
@@ -223,7 +223,7 @@
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
-    CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
+    CGRect rect = CGRectMake(0.0f, 20.0f, self.view.frame.size.width, self.view.frame.size.height);
     self.view.frame = rect;
     [UIView commitAnimations];
     [textField resignFirstResponder];

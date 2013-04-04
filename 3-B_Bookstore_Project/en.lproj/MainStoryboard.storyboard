@@ -42,7 +42,6 @@
                                 </state>
                                 <connections>
                                     <action selector="searchOnlyButtonPressed:" destination="2" eventType="touchUpInside" id="hKW-dQ-BYw"/>
-                                    <segue destination="e4R-dr-zNG" kind="modal" id="GJq-7F-Bd4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="ecB-TO-VDE">
@@ -55,6 +54,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="newCustomerButtonPressed:" destination="2" eventType="touchUpInside" id="npx-7O-avN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="ryH-V0-exN">
                                 <rect key="frame" x="50" y="350" width="220" height="55"/>
@@ -89,15 +91,20 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="e4R-dr-zNG" kind="modal" identifier="searchOnlySegue" modalTransitionStyle="flipHorizontal" id="DX3-3s-25u"/>
+                        <segue destination="8S1-7v-6SF" kind="modal" identifier="startRegistrationSegue" id="93O-gr-9lU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1291" y="291"/>
+            <point key="canvasLocation" x="-2555" y="547"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mQ7-6g-OAb">
             <objects>
                 <tabBarController storyboardIdentifier="" definesPresentationContext="YES" id="e4R-dr-zNG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cQk-dE-iSS"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="U48-fA-PNf">
@@ -112,7 +119,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIO-4J-GfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-732" y="-338"/>
+            <point key="canvasLocation" x="-1996" y="-82"/>
         </scene>
         <!--shopping Cart View Controller - Shopping Cart-->
         <scene sceneID="7ya-Lf-Y7U">
@@ -280,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBl-Hp-vCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="381" y="32"/>
+            <point key="canvasLocation" x="-883" y="288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3BR-Is-PZA">
@@ -300,7 +307,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-1N-eTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="32"/>
+            <point key="canvasLocation" x="-396" y="288"/>
         </scene>
         <!--customer Registration View Controller - Customer Registration-->
         <scene sceneID="JNU-XI-cPr">
@@ -566,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uQ-eS-Rs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1353" y="32"/>
+            <point key="canvasLocation" x="89" y="288"/>
         </scene>
         <!--order List View Controller - Confirm Order-->
         <scene sceneID="KnM-vl-0YA">
@@ -845,7 +852,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gaq-11-08N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1353" y="715"/>
+            <point key="canvasLocation" x="89" y="971"/>
         </scene>
         <!--search View Controller - Search-->
         <scene sceneID="q5N-0d-AYI">
@@ -898,7 +905,7 @@ The books will be delivered within 5 business days.</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="381" y="-666"/>
+            <point key="canvasLocation" x="-883" y="-410"/>
         </scene>
         <!--search Result View Controller - Search Results-->
         <scene sceneID="pKw-uQ-NqG">
@@ -1068,7 +1075,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suz-Af-HYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="-666"/>
+            <point key="canvasLocation" x="-396" y="-410"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUY-i9-If0">
@@ -1092,7 +1099,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCT-Yd-s6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103" y="-666"/>
+            <point key="canvasLocation" x="-1367" y="-410"/>
         </scene>
         <!--Navigation Controller - Shopping Cart-->
         <scene sceneID="gFA-5R-R3p">
@@ -1111,7 +1118,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmN-1c-51n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103" y="32"/>
+            <point key="canvasLocation" x="-1367" y="288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sbu-80-K9R">
@@ -1131,7 +1138,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPc-pL-B4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="715"/>
+            <point key="canvasLocation" x="-396" y="971"/>
         </scene>
         <!--customer Profile View Controller - Customer Profile-->
         <scene sceneID="fSi-19-dlu">
@@ -1394,7 +1401,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0F-Tj-CMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893" y="315"/>
+            <point key="canvasLocation" x="629" y="571"/>
         </scene>
         <!--proof Of Purchase View Controller - Proof Of Purchase-->
         <scene sceneID="uqm-Ee-ykS">
@@ -1708,12 +1715,291 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9U-1C-j34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893" y="1035"/>
+            <point key="canvasLocation" x="629" y="1335"/>
+        </scene>
+        <!--new Customer View Controller - Customer Registration-->
+        <scene sceneID="xnb-Qh-55M">
+            <objects>
+                <viewController storyboardIdentifier="newCustomerRegistrationVC" id="8S1-7v-6SF" customClass="OSU_newCustomerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QWq-UJ-T2B" userLabel="RegistrationView">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bg.png" id="wKE-sZ-rH4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="552"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="1Vr-A2-9wE">
+                                <rect key="frame" x="160" y="484" width="140" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Don't Register" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipRegistrationButtonPressed:" destination="8S1-7v-6SF" eventType="touchUpInside" id="fe1-v3-Yuc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="uLz-wR-LO1">
+                                <rect key="frame" x="20" y="484" width="140" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Register" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="8S1-7v-6SF" eventType="touchUpInside" id="sbH-Qz-REa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="db7-Gd-o5t">
+                                <rect key="frame" x="20" y="54" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HcJ-WJ-pac">
+                                <rect key="frame" x="20" y="174" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sH1-MB-DZv">
+                                <rect key="frame" x="20" y="254" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="P7q-Pi-x0h">
+                                <rect key="frame" x="114" y="254" width="186" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="fqA-ue-AO6"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="leh-BZ-0fO">
+                                <rect key="frame" x="20" y="294" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="Pr9-4E-uhX">
+                                <rect key="frame" x="67" y="294" width="163" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="XCg-De-xGE"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Credit Card Number" minimumFontSize="17" clearButtonMode="whileEditing" id="FBs-hO-odg">
+                                <rect key="frame" x="107" y="414" width="193" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                <connections>
+                                    <action selector="creditCardNumberTouchDown:" destination="8S1-7v-6SF" eventType="touchDown" id="kwe-ne-fTy"/>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="H3q-5m-KRE"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="State:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WSV-uE-JmN">
+                                <rect key="frame" x="20" y="334" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credit Card:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vqy-iQ-EY4">
+                                <rect key="frame" x="20" y="374" width="117" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yd9-gY-eGN">
+                                <rect key="frame" x="20" y="414" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ZIP:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ost-0C-zsb">
+                                <rect key="frame" x="165" y="334" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP Code" minimumFontSize="17" clearButtonMode="whileEditing" id="v4B-Tz-Pma">
+                                <rect key="frame" x="214" y="334" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="ZIPCodeTouchDown:" destination="8S1-7v-6SF" eventType="touchDown" id="s8n-Hr-gPC"/>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="JCP-GX-oSP"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PIN:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HaC-d9-ajC">
+                                <rect key="frame" x="20" y="94" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Re-type PIN:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Viw-0c-3ti">
+                                <rect key="frame" x="20" y="134" width="117" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3B Username" minimumFontSize="17" clearButtonMode="whileEditing" id="z8R-2F-1i9">
+                                <rect key="frame" x="128" y="54" width="172" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="NOs-tG-fAN"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="mzr-Lv-LcT">
+                                <rect key="frame" x="135" y="174" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="cSz-g0-wd3"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mff-x3-s6U">
+                                <rect key="frame" x="20" y="214" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="dMx-pV-lci">
+                                <rect key="frame" x="135" y="214" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="R0v-yn-go8"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" id="ReR-vS-MdI">
+                                <rect key="frame" x="65" y="94" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="7co-df-1lu"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-type Password" clearsOnBeginEditing="YES" minimumFontSize="17" id="Z3x-kY-p8R">
+                                <rect key="frame" x="145" y="134" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="FVt-Kc-Ief"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Expiration Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eGP-zw-xGk">
+                                <rect key="frame" x="61" y="452" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="TX6-qj-0pg">
+                                <rect key="frame" x="214" y="452" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                <connections>
+                                    <action selector="creditCardExpirationDateTouchDown:" destination="8S1-7v-6SF" eventType="touchDown" id="kBQ-zB-BO5"/>
+                                    <outlet property="delegate" destination="8S1-7v-6SF" id="G1i-jg-S6R"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="2tA-Qv-zni">
+                                <rect key="frame" x="149" y="372" width="151" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="VISA" backgroundImage="bigButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="creditCardTypeButtonPressed:" destination="8S1-7v-6SF" eventType="touchUpInside" id="omV-Pv-1Mt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="ZM1-QW-iYZ">
+                                <rect key="frame" x="84" y="332" width="67" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="OH" backgroundImage="bigButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stateSelectButtonPressed:" destination="8S1-7v-6SF" eventType="touchUpInside" id="CGE-pI-00d"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NavBar_gray.png" id="PXg-iK-UsY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Customer Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5rz-1v-YSR">
+                                <rect key="frame" x="31" y="8" width="259" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.62609614160000004" green="0.62609614160000004" blue="0.62609614160000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Customer Registration" id="MAQ-Ro-87C"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="PIN1" destination="ReR-vS-MdI" id="JTU-Ln-qEy"/>
+                        <outlet property="PIN2" destination="Z3x-kY-p8R" id="UBQ-wP-3Tt"/>
+                        <outlet property="ZIPCode" destination="v4B-Tz-Pma" id="DE5-jq-oCC"/>
+                        <outlet property="address" destination="P7q-Pi-x0h" id="g35-wS-NBr"/>
+                        <outlet property="city" destination="Pr9-4E-uhX" id="2ez-Jm-f0z"/>
+                        <outlet property="creditCardNumber" destination="FBs-hO-odg" id="HV8-jN-Nee"/>
+                        <outlet property="creditCardType" destination="2tA-Qv-zni" id="fFJ-Xl-Utq"/>
+                        <outlet property="expirationDate" destination="TX6-qj-0pg" id="ZLG-fA-0Kk"/>
+                        <outlet property="firstName" destination="mzr-Lv-LcT" id="aTD-7k-QKw"/>
+                        <outlet property="lastName" destination="dMx-pV-lci" id="k3w-vl-siR"/>
+                        <outlet property="navBarBG" destination="PXg-iK-UsY" id="SoA-qf-6mw"/>
+                        <outlet property="state" destination="ZM1-QW-iYZ" id="pa6-gt-uSH"/>
+                        <outlet property="username" destination="z8R-2F-1i9" id="QIa-fa-gnI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fj2-DH-djk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1996" y="790"/>
         </scene>
     </scenes>
     <resources>
         <image name="37x-Checkmark.png" width="37" height="37"/>
         <image name="CellBackground.png" width="460" height="86"/>
+        <image name="NavBar_gray.png" width="320" height="44"/>
         <image name="background@2x.png" width="640" height="920"/>
         <image name="bigButton.png" width="480" height="360"/>
         <image name="black_bg.png" width="640" height="960"/>
@@ -1777,6 +2063,31 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="address" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="city" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="creditCardNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="creditCardType" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="expirationDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="state" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="OSU_initViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="newCustomerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="OSU_newCustomerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_newCustomerViewController.h"/>
+            <relationships>
                 <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
                 <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
                 <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
@@ -1794,12 +2105,10 @@ The books will be delivered within 5 business days.</string>
                 <relationship kind="outlet" name="expirationDate" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="firstName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="lastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="navBarBG" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="state" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="username" candidateClass="UITextField"/>
             </relationships>
-        </class>
-        <class className="OSU_initViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
         </class>
         <class className="OSU_orderListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_orderListViewController.h"/>
@@ -1820,7 +2129,6 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_proofOfPurchaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_proofOfPurchaseViewController.h"/>
             <relationships>
-                <relationship kind="action" name="newSearchButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buyDateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buyTimeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cityStateAndZIPCodeLabel" candidateClass="UILabel"/>
@@ -1868,6 +2176,6 @@ The books will be delivered within 5 business days.</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JR7-3T-jB1"/>
+        <segue reference="6kE-at-BNp"/>
     </inferredMetricsTieBreakers>
 </document>

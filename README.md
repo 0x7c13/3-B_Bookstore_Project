@@ -46,9 +46,7 @@ URBAlertView : https://github.com/u10int/URBAlertView
 
 ##Todo List:
 
-1.Register New Customer entry.
+1.Returning Customer entry.
 
-2.Returning Customer entry.
-
-3.Administrator entry.
+2.Administrator entry.
 

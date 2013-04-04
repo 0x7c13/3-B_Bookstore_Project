@@ -7,7 +7,6 @@
 //
 
 #import "OSU_initViewController.h"
-#import "OSU_searchViewController.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
 #import "OSU_3BBook.h"
 #import "OSU_3BShoppingCart.h"
@@ -25,10 +24,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // a small test case
-    //[self databaseHandlerTest];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,43 +35,30 @@
 //************************************
 
 
--(void)databaseHandlerTest
-{
-    OSU_3BSQLiteDatabaseHandler *databaseHandler = [OSU_3BSQLiteDatabaseHandler sharedInstance];
-    
-    if (databaseHandler.dataBaseLoadedCorrectly) {
-        NSLog(@"Good to go!");
-        
-        OSU_3BBook *book = [databaseHandler selectABookFromDatabaseWithISBN:@"451209532"];
-        
-        if (book.ISBN) {
-            [book print];
-        }
-    }
-    else {
-        NSLog(@"Failed to load 3BBooksDatabase!");
-    }
-    
-    OSU_3BBooks *books = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:@"SQL" Category:@"All Categories" RowName:@"Title"];
-    
-    for (int i = 0; i < books.count; i++) {
-        [[books objectAtIndexedSubscript:i] print];
-    }
-}
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    OSU_searchViewController *searchVC = segue.destinationViewController;
-    
-    searchVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    if ([segue.identifier isEqualToString:@"startRegistrationSegue"]) {
+        OSU_newCustomerViewController *registrationVC = segue.destinationViewController;
+        registrationVC.delegate = self;
+    }
 }
 
 - (IBAction)searchOnlyButtonPressed:(UIButton *)sender {
     
     [[OSU_3BShoppingCart sharedInstance] initShoppingCart];
+    [self performSegueWithIdentifier:@"searchOnlySegue" sender:self];
     
 }
 
+- (IBAction)newCustomerButtonPressed:(UIButton *)sender {
+
+    [[OSU_3BShoppingCart sharedInstance] initShoppingCart];
+    [self performSegueWithIdentifier:@"startRegistrationSegue" sender:self];
+}
+
+- (void)registrationDidFinished
+{
+    [self performSegueWithIdentifier:@"searchOnlySegue" sender:self];
+}
 
 @end

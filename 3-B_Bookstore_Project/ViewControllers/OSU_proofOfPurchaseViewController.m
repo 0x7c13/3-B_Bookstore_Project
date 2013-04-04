@@ -22,7 +22,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *buyDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *buyTimeLabel;
 
-
 @end
 
 @implementation OSU_proofOfPurchaseViewController
