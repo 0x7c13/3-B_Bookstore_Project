@@ -266,7 +266,7 @@
         
         if(insertStmt == nil)
         {
-            const char *sql = [@"INSERT INTO Customers (Username, PIN, FirstName, LastName, Address, City, State, ZIP, CreditCardType, CreditCardNumber) VALUES(?,?,?,?,?,?,?,?,?,?)" UTF8String];
+            const char *sql = [@"INSERT INTO Customers (Username, PIN, FirstName, LastName, Address, City, State, ZIP, CreditCardType, CreditCardNumber, CreditCardExpirationDate) VALUES(?,?,?,?,?,?,?,?,?,?,?)" UTF8String];
             
             if(sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &insertStmt, NULL) != SQLITE_OK)
                 NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(_3BBooksDataBase));
@@ -282,16 +282,55 @@
         sqlite3_bind_int (insertStmt, 8, (int)user.ZIPCode);
         sqlite3_bind_text(insertStmt, 9, [user.creditCardType UTF8String], -1, SQLITE_TRANSIENT);;
         sqlite3_bind_text(insertStmt, 10, [user.creditCardNumber UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(insertStmt, 11, [user.creditCardExpirationDate UTF8String], -1, SQLITE_TRANSIENT);
         
         if(SQLITE_DONE != sqlite3_step(insertStmt))
             NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(_3BBooksDataBase));
         else
-            NSLog(@"New User Inserted!");
+            NSLog(@"New User Inserted.");
 
         sqlite3_finalize(insertStmt);
         insertStmt = nil;
     }
 
+}
+
+-(void)updateUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
+{
+    [self deleteUser:user withUserType:userType];
+    
+    [self insertNewUser:user withUserType:userType];
+}
+
+- (void)deleteUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
+{
+    if (![self usernameIsExist:user.username]) {
+        NSLog(@"Username doesn't exists!");
+    }
+    
+    sqlite3_stmt* statement;
+    
+    // Create Query String.
+    NSString* sqlStatement = [NSString stringWithFormat:@"DELETE FROM Customers WHERE Username ='%@'", user.username];
+    
+    if( sqlite3_prepare_v2(_3BBooksDataBase, [sqlStatement UTF8String], -1, &statement, NULL) == SQLITE_OK )
+    {
+        if( sqlite3_step(statement) == SQLITE_DONE )
+        {
+            NSLog( @"User with username: \"%@\" was deleted.", user.username );
+        }
+        else
+        {
+            NSLog( @"DeleteFromDataBase: Failed from sqlite3_step. Error is:  %s", sqlite3_errmsg(_3BBooksDataBase) );
+        }
+    }
+    else
+    {
+        NSLog( @"DeleteFromDataBase: Failed from sqlite3_prepare_v2. Error is:  %s", sqlite3_errmsg(_3BBooksDataBase) );
+    }
+    
+    // Finalize and close database.
+    sqlite3_finalize(statement);
 }
 
 @end

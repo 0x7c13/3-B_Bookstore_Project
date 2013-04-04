@@ -1,26 +1,32 @@
 //
-//  OSU_orderListViewController.m
+//  OSU_proofOfPurchaseViewController.m
 //  CSE3241_Bookstore_Project
 //
-//  Created by FlyinGeek on 13-4-2.
-//  Copyright (c) 2013 The Ohio State University. All rights reserved.
+//  Created by FlyinGeek on 13-4-3.
+//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
 //
 
-#import "OSU_orderListViewController.h"
-#import "OSU_3BShoppingCart.h"
+#import "OSU_proofOfPurchaseViewController.h"
 #import "OSU_3BOrderListCell.h"
+#import "OSU_3BUser.h"
+#import "OSU_3BShoppingCart.h"
 
-@interface OSU_orderListViewController ()
+@interface OSU_proofOfPurchaseViewController ()
+
 @property (strong, nonatomic) IBOutlet UIView *upperBG;
 @property (strong, nonatomic) IBOutlet UIView *lowerBG;
 @property (strong, nonatomic) IBOutlet UIButton *updateProfileButton;
 @property (strong, nonatomic) IBOutlet UILabel *subtotalLabel;
 @property (strong, nonatomic) IBOutlet UILabel *shippingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalLabel;
+@property (strong, nonatomic) IBOutlet UILabel *userIDLabel;
+@property (strong, nonatomic) IBOutlet UILabel *buyDateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *buyTimeLabel;
+
 
 @end
 
-@implementation OSU_orderListViewController
+@implementation OSU_proofOfPurchaseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,23 +41,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
-    
-    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavBar_gray.png"] forBarMetrics:UIBarMetricsDefault];
-    }
-    
-    self.navigationController.navigationBar.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
-    self.navigationController.navigationBar.layer.shadowRadius = 3.0f;
-    self.navigationController.navigationBar.layer.shadowOpacity = 0.8f;
- 
     
     self.navigationItem.hidesBackButton = YES;
     
     [self addShadow:(UIImageView *)self.upperBG towardsUp:NO];
     [self addShadow:(UIImageView *)self.lowerBG towardsUp:YES];
-
+    
     OSU_3BUser *currentUser = [[OSU_3BShoppingCart sharedInstance] getCurrentCustomer];
     self.customerNameLabel.text = [NSString stringWithFormat:@"%@ %@", currentUser.firstName, currentUser.lastName];
     self.streetAddressLabel.text = [NSString stringWithString:currentUser.address];
@@ -62,20 +57,36 @@
     self.shippingLabel.text = [NSString stringWithFormat:@"%.2f", [[OSU_3BShoppingCart sharedInstance] numberOfItemsInShoppingCart] * 2.0];
     self.totalLabel.text = [NSString stringWithFormat:@"%.2f", [[OSU_3BShoppingCart sharedInstance] subtotalValue] + [[OSU_3BShoppingCart sharedInstance] numberOfItemsInShoppingCart] * 2.0];
     
+    self.userIDLabel.text = currentUser.username;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yy"];
+    
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"HH:mm:ss"];
+    
+    NSDate *now = [[NSDate alloc] init];
+    
+    NSString *theDate = [dateFormat stringFromDate:now];
+    NSString *theTime = [timeFormat stringFromDate:now];
+
+    self.buyDateLabel.text = theDate;
+    self.buyTimeLabel.text = theTime;
+    
+    
     // set table view background image
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"black_bg.png"]];
     [tempImageView setFrame:self.orderListTable.frame];
     self.orderListTable.backgroundView = tempImageView;
     
+    
 }
 
 
-- (IBAction)cancelButtonPressed:(UIButton *)sender {
+- (IBAction)newSearchButtonPressed:(UIButton *)sender {
     
+    [[OSU_3BShoppingCart sharedInstance] cleanShoppingCart];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -126,5 +137,4 @@
     
     return cell;
 }
-
 @end

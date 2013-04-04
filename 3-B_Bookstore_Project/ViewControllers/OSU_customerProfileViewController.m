@@ -1,30 +1,29 @@
 //
-//  OSU_customerRegistrationViewController.m
+//  OSU_customerProfileViewController.m
 //  CSE3241_Bookstore_Project
 //
-//  Created by FlyinGeek on 13-3-31.
-//  Copyright (c) 2013 The Ohio State University. All rights reserved.
+//  Created by FlyinGeek on 13-4-3.
+//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
 //
 
-#import "OSU_customerRegistrationViewController.h"
+#import "OSU_customerProfileViewController.h"
+#import "URBAlertView.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
 #import "OSU_3BShoppingCart.h"
-#import "URBAlertView.h"
 #import "OSU_3BUser.h"
 
-@interface OSU_customerRegistrationViewController () 
+@interface OSU_customerProfileViewController ()
 
+@property (strong, nonatomic) OSU_3BUser *currentUser;
 @property (strong, nonatomic) NIDropDown *creditCardDropUp;
 @property (strong, nonatomic) NIDropDown *stateDropUp;
 
-@property (nonatomic, strong) URBAlertView *alertView;
 @property (nonatomic, strong) URBAlertView *alertView2;
 @property (nonatomic, strong) URBAlertView *alertView3;
-@property (nonatomic, strong) URBAlertView *alertView4;
 
 @end
 
-@implementation OSU_customerRegistrationViewController
+@implementation OSU_customerProfileViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,32 +40,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    self.navigationItem.hidesBackButton = YES;
     
-    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavBar_gray.png"] forBarMetrics:UIBarMetricsDefault];
-    }
+    self.currentUser = [[OSU_3BShoppingCart sharedInstance]getCurrentCustomer];
     
-    self.navigationController.navigationBar.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
-    self.navigationController.navigationBar.layer.shadowRadius = 3.0f;
-    self.navigationController.navigationBar.layer.shadowOpacity = 0.8f;
-    
-    
-	URBAlertView *alertView = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"In order to proceed with the payment, you need to register first."];
-	alertView.blurBackground = NO;
-	[alertView addButtonWithTitle:@"Exit"];
-	[alertView addButtonWithTitle:@"Register"];
-	[alertView setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *alertView) {
-        // do stuff here
-		[self.alertView hideWithCompletionBlock:^{
-            if (buttonIndex == 0) {
-                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-            }
-		}];
-	}];
-	
-	self.alertView = alertView;
-  
+    self.username.text = self.currentUser.username;
     
     URBAlertView *alertView2 = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"Please fill out all fields!"];
 	alertView2.blurBackground = NO;
@@ -90,17 +69,7 @@
 	}];
     
     self.alertView3 = alertView3;
-    
-    URBAlertView *alertView4 = [URBAlertView dialogWithTitle:@"Sorry:" subtitle:@"Username already exists!"];
-	alertView4.blurBackground = NO;
-	[alertView4 addButtonWithTitle:@"OK"];
-	[alertView4 setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *alertView4) {
-        // do stuff here
-		[self.alertView4 hideWithCompletionBlock:^{
-		}];
-	}];
-    
-    self.alertView4 = alertView4;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,14 +78,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)skipRegistrationButtonPressed:(UIButton *)sender {
-    
-    [self.alertView showWithAnimation:URBAlertAnimationFlipHorizontal];
-    
-}
+
 
 - (IBAction)creditCardTypeButtonPressed:(UIButton *)sender {
-
+    
     if(_creditCardDropUp == nil) {
         NSArray *arr = [[NSArray alloc] init];
         arr = [NSArray arrayWithObjects:@"VISA", @"American Express", @"Diners Club", @"Discover", @"MasterCard",nil];
@@ -163,40 +128,36 @@
     [self textFieldShouldReturn:sender];
 }
 
-- (IBAction)registerButtonPressed:(UIButton *)sender {
-    
-    if (![self.username.text isEqualToString:@""] && ![self.PIN1.text isEqualToString:@""] &&
-        ![self.PIN2.text isEqualToString:@""] && ![self.firstName.text isEqualToString:@""] &&
-        ![self.lastName.text isEqualToString:@""] && ![self.address.text isEqualToString:@""] &&
-        ![self.city.text isEqualToString:@""] && ![self.ZIPCode.text isEqualToString:@""] &&
-        ![self.creditCardNumber.text isEqualToString:@""] && ![self.expirationDate.text isEqualToString:@""]) {
+
+- (IBAction)updateButtonPressed:(UIButton *)sender {
+
+    if (![self.PIN1.text isEqualToString:@""] && ![self.PIN2.text isEqualToString:@""] &&
+        ![self.firstName.text isEqualToString:@""] && ![self.lastName.text isEqualToString:@""] &&
+        ![self.address.text isEqualToString:@""] && ![self.city.text isEqualToString:@""] &&
+        ![self.ZIPCode.text isEqualToString:@""] && ![self.creditCardNumber.text isEqualToString:@""] &&
+        ![self.expirationDate.text isEqualToString:@""]) {
         
         if (![self.PIN1.text isEqualToString:self.PIN2.text]) {
             [self.alertView3 showWithAnimation:URBAlertAnimationDefault];
         }
         else {
-
-            if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsExist:self.username.text]) {
-                [self.alertView4 showWithAnimation:URBAlertAnimationTumble];
-            }
-            else {
-                // everything is clear
-                OSU_3BUser *newUser = [[OSU_3BUser alloc]initWithUsername:self.username.text
-                                                                       PIN:self.PIN1.text
-                                                                 firstName:self.firstName.text
-                                                                  lastName:self.lastName.text
-                                                                   address:self.address.text
-                                                                      city:self.city.text
-                                                                     state:self.state.titleLabel.text
-                                                                   ZIPCode:(NSUInteger)[self.ZIPCode.text integerValue]
-                                                            creditCardType:self.creditCardType.titleLabel.text
-                                                          creditCardNumber:self.creditCardNumber.text
+            
+            // everything is clear
+            OSU_3BUser *newUser = [[OSU_3BUser alloc]initWithUsername:self.currentUser.username
+                                                                      PIN:self.PIN1.text
+                                                                firstName:self.firstName.text
+                                                                 lastName:self.lastName.text
+                                                                  address:self.address.text
+                                                                     city:self.city.text
+                                                                    state:self.state.titleLabel.text
+                                                                  ZIPCode:(NSUInteger)[self.ZIPCode.text integerValue]
+                                                           creditCardType:self.creditCardType.titleLabel.text
+                                                         creditCardNumber:self.creditCardNumber.text
                                                  creditCardExpirationDate:self.expirationDate.text];
-                        
-                [[OSU_3BSQLiteDatabaseHandler sharedInstance]insertNewUser:newUser withUserType:OSU_3BUserTypeCustomer];
-                [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:newUser];
-                [self performSegueWithIdentifier:@"orderListSegue2" sender:self];
-            }
+                
+            [[OSU_3BSQLiteDatabaseHandler sharedInstance]updateUser:newUser withUserType:OSU_3BUserTypeCustomer];
+            [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:newUser];
+            [self.navigationController popViewControllerAnimated:YES];
         }
         
     }
@@ -204,6 +165,10 @@
         [self.alertView2 showWithAnimation:URBAlertAnimationDefault];
     }
     
+}
+- (IBAction)cancelButtonPressed:(UIButton *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma protocols

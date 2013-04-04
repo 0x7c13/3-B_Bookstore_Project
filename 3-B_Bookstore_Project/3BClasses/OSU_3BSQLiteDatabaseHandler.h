@@ -34,6 +34,8 @@
                                             RowName:(NSString *)row;
 
 - (void)insertNewUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
+- (void)updateUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
+- (void)deleteUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
 
 // return YES if the username exists in the database
 - (BOOL)usernameIsExist:(NSString *)username;

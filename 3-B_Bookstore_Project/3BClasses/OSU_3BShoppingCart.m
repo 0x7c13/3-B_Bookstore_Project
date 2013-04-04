@@ -59,6 +59,13 @@
     _isGuestMode = YES;
 }
 
+- (void)cleanShoppingCart
+{
+    _books = [[OSU_3BBooks alloc]init];
+    _subtotal = 0.0;
+    _items = 0;
+}
+
 
 - (void)setCurrentCustomer:(OSU_3BUser *)customer
 {

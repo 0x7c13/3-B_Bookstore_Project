@@ -22,6 +22,7 @@
 - (BOOL)isGuestMode;
 
 - (void)initShoppingCart;
+- (void)cleanShoppingCart;
 
 - (void)addItem:(OSU_3BBook *)book
    withQuantity:(NSUInteger)quantity;

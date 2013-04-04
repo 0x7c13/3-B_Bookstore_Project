@@ -8,6 +8,22 @@
 
 #import "OSU_3BUser.h"
 
+@interface OSU_3BUser()
+
+@property (copy, nonatomic, readwrite) NSString *username;
+@property (copy, nonatomic, readwrite) NSString *PIN;
+@property (copy, nonatomic, readwrite) NSString *firstName;
+@property (copy, nonatomic, readwrite) NSString *lastName;
+@property (copy, nonatomic, readwrite) NSString *address;
+@property (copy, nonatomic, readwrite) NSString *city;
+@property (copy, nonatomic, readwrite) NSString *state;
+@property (nonatomic, readwrite) NSUInteger ZIPCode;
+@property (copy, nonatomic, readwrite) NSString *creditCardType;
+@property (copy, nonatomic, readwrite) NSString *creditCardNumber;
+@property (copy, nonatomic, readwrite) NSString *creditCardExpirationDate;
+
+@end
+
 @implementation OSU_3BUser
 
 
@@ -21,6 +37,7 @@
                          ZIPCode:(NSUInteger)ZIPCode
                   creditCardType:(NSString *)creditCardType
                 creditCardNumber:(NSString *)creditCardNumber
+        creditCardExpirationDate:(NSString *)expirationDate
 {
 
     if (self = [super init]) {
@@ -34,6 +51,7 @@
         _ZIPCode = ZIPCode;
         _creditCardType = creditCardType;
         _creditCardNumber = creditCardNumber;
+        _creditCardExpirationDate = expirationDate;
     }
     
     return  self;

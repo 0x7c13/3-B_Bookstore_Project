@@ -18,17 +18,17 @@ typedef enum {
     
 } OSU_3BUserUserTypes;
 
-@property (copy, nonatomic) NSString *username;
-@property (copy, nonatomic) NSString *PIN;
-@property (copy, nonatomic) NSString *firstName;
-@property (copy, nonatomic) NSString *lastName;
-@property (copy, nonatomic) NSString *address;
-@property (copy, nonatomic) NSString *city;
-@property (copy, nonatomic) NSString *state;
-@property (nonatomic) NSUInteger ZIPCode;
-@property (copy, nonatomic) NSString *creditCardType;
-@property (copy, nonatomic) NSString *creditCardNumber;
-
+@property (copy, nonatomic, readonly) NSString *username;
+@property (copy, nonatomic, readonly) NSString *PIN;
+@property (copy, nonatomic, readonly) NSString *firstName;
+@property (copy, nonatomic, readonly) NSString *lastName;
+@property (copy, nonatomic, readonly) NSString *address;
+@property (copy, nonatomic, readonly) NSString *city;
+@property (copy, nonatomic, readonly) NSString *state;
+@property (nonatomic, readonly) NSUInteger ZIPCode;
+@property (copy, nonatomic, readonly) NSString *creditCardType;
+@property (copy, nonatomic, readonly) NSString *creditCardNumber;
+@property (copy, nonatomic, readonly) NSString *creditCardExpirationDate;
 
 - (OSU_3BUser *)initWithUsername:(NSString *)username
                              PIN:(NSString *)PIN
@@ -39,7 +39,8 @@ typedef enum {
                            state:(NSString *)state
                          ZIPCode:(NSUInteger)ZIPCode
                   creditCardType:(NSString *)creditCardType
-                creditCardNumber:(NSString *)creditCardNumber;
+                creditCardNumber:(NSString *)creditCardNumber
+        creditCardExpirationDate:(NSString *)expirationDate;
 
 
 @end
