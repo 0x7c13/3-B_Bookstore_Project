@@ -563,7 +563,7 @@
                                 <rect key="frame" x="214" y="408" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="alert"/>
                                 <connections>
                                     <action selector="creditCardExpirationDateTouchDown:" destination="7fc-MY-NAT" eventType="touchDown" id="uU6-Hp-zlC"/>
                                     <outlet property="delegate" destination="7fc-MY-NAT" id="Dwi-39-m14"/>
@@ -1304,7 +1304,7 @@ The books will be delivered within 5 business days.</string>
                                 <rect key="frame" x="214" y="408" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="alert"/>
                                 <connections>
                                     <action selector="creditCardExpirationDateTouchDown:" destination="p0h-hE-KJV" eventType="touchDown" id="ggd-df-gjG"/>
                                     <outlet property="delegate" destination="p0h-hE-KJV" id="4RN-o2-iiW"/>
@@ -1971,7 +1971,7 @@ The books will be delivered within 5 business days.</string>
                                 <rect key="frame" x="214" y="452" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="alert"/>
                                 <connections>
                                     <action selector="creditCardExpirationDateTouchDown:" destination="8S1-7v-6SF" eventType="touchDown" id="kBQ-zB-BO5"/>
                                     <outlet property="delegate" destination="8S1-7v-6SF" id="G1i-jg-S6R"/>
@@ -2063,6 +2063,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
+                <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -2130,6 +2132,12 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
             <relationships>
+                <relationship kind="action" name="loginButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="newCustomerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="passwordFieldTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="returningCustomerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="usernameFieldTouchDown:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="popupView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>
@@ -2218,6 +2226,6 @@ The books will be delivered within 5 business days.</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6kE-at-BNp"/>
+        <segue reference="JR7-3T-jB1"/>
     </inferredMetricsTieBreakers>
 </document>
