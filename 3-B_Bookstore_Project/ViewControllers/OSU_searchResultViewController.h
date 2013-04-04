@@ -14,9 +14,9 @@
 
 @interface OSU_searchResultViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MBProgressHUDDelegate, OSU_3BBookCellDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *shoppingCartInfo;
+@property (weak, nonatomic) IBOutlet UILabel *shoppingCartInfo;
 @property (strong, nonatomic) OSU_3BBooks *resultBooks;
-@property (strong, nonatomic) IBOutlet UITableView *resultTable;
-@property (strong, nonatomic) IBOutlet UIView *labelBG;
+@property (weak, nonatomic) IBOutlet UITableView *resultTable;
+@property (weak, nonatomic) IBOutlet UIView *labelBG;
 
 @end

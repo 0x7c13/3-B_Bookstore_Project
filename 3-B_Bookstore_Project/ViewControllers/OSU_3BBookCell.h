@@ -14,15 +14,15 @@
 @interface OSU_3BBookCell : UITableViewCell
 
 @property (strong, nonatomic) OSU_3BBook *book;
-@property (strong, nonatomic) IBOutlet UILabel *bookTitle;
-@property (strong, nonatomic) IBOutlet UILabel *bookAuthor;
-@property (strong, nonatomic) IBOutlet UILabel *bookPublisher;
-@property (strong, nonatomic) IBOutlet UILabel *bookISBN;
-@property (strong, nonatomic) IBOutlet UILabel *bookPrice;
+@property (weak, nonatomic) IBOutlet UILabel *bookTitle;
+@property (weak, nonatomic) IBOutlet UILabel *bookAuthor;
+@property (weak, nonatomic) IBOutlet UILabel *bookPublisher;
+@property (weak, nonatomic) IBOutlet UILabel *bookISBN;
+@property (weak, nonatomic) IBOutlet UILabel *bookPrice;
 
-@property (strong, nonatomic) IBOutlet UIButton *addToCartButton;
-@property (strong, nonatomic) IBOutlet UIButton *reviewsButton;
-@property (strong, nonatomic) IBOutlet UIImageView *checkMark;
+@property (weak, nonatomic) IBOutlet UIButton *addToCartButton;
+@property (weak, nonatomic) IBOutlet UIButton *reviewsButton;
+@property (weak, nonatomic) IBOutlet UIImageView *checkMark;
 
 @property (weak, nonatomic) id<OSU_3BBookCellDelegate> delegate;
 

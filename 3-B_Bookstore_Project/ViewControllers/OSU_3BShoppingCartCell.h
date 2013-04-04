@@ -17,12 +17,12 @@
 
 
 @property (strong, nonatomic) OSU_3BBook *book;
-@property (strong, nonatomic) IBOutlet UILabel *bookTitle;
-@property (strong, nonatomic) IBOutlet UILabel *bookAuthor;
-@property (strong, nonatomic) IBOutlet UILabel *bookPrice;
-@property (strong, nonatomic) IBOutlet UILabel *bookQuantity;
+@property (weak, nonatomic) IBOutlet UILabel *bookTitle;
+@property (weak, nonatomic) IBOutlet UILabel *bookAuthor;
+@property (weak, nonatomic) IBOutlet UILabel *bookPrice;
+@property (weak, nonatomic) IBOutlet UILabel *bookQuantity;
 
-@property (strong, nonatomic) IBOutlet UIStepper *quantityStepper;
+@property (weak, nonatomic) IBOutlet UIStepper *quantityStepper;
 
 @property (weak, nonatomic) id<OSU_3BShoppingCartCellDelegate> delegate;
 

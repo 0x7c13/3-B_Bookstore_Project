@@ -19,7 +19,7 @@
     NSInteger indexOfCategory;
 }
 
-@property (strong, nonatomic) IBOutlet UISearchBar *searchField;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 @property (strong, nonatomic) AFPickerView *databaseRowPicker;
 @property (strong, nonatomic) AFPickerView *categoryPicker;
 

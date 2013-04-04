@@ -13,10 +13,10 @@
 
 @interface OSU_shoppingCartViewController : UIViewController <OSU_3BShoppingCartCellDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView *shoppingCartTableView;
-@property (strong, nonatomic) IBOutlet UIView *labelBG;
-@property (strong, nonatomic) IBOutlet UILabel *shoppingCartInfo;
-@property (strong, nonatomic) IBOutlet UIView *lowerLabelBG;
-@property (strong, nonatomic) IBOutlet UILabel *subtotalInfo;
+@property (weak, nonatomic) IBOutlet UITableView *shoppingCartTableView;
+@property (weak, nonatomic) IBOutlet UIView *labelBG;
+@property (weak, nonatomic) IBOutlet UILabel *shoppingCartInfo;
+@property (weak, nonatomic) IBOutlet UIView *lowerLabelBG;
+@property (weak, nonatomic) IBOutlet UILabel *subtotalInfo;
 
 @end

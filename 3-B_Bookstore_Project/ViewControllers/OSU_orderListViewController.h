@@ -12,10 +12,10 @@
 
 @interface OSU_orderListViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *customerNameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *streetAddressLabel;
-@property (strong, nonatomic) IBOutlet UILabel *cityStateAndZIPCodeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *creditCardTypeAndNumberLabel;
-@property (strong, nonatomic) IBOutlet UITableView *orderListTable;
+@property (weak, nonatomic) IBOutlet UILabel *customerNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *streetAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cityStateAndZIPCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *creditCardTypeAndNumberLabel;
+@property (weak, nonatomic) IBOutlet UITableView *orderListTable;
 
 @end

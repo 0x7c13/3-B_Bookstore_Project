@@ -30,7 +30,7 @@ typedef enum {
 @property (copy, nonatomic, readonly) NSString *creditCardNumber;
 @property (copy, nonatomic, readonly) NSString *creditCardExpirationDate;
 
-- (OSU_3BUser *)initWithUsername:(NSString *)username
+- (id)initWithUsername:(NSString *)username
                              PIN:(NSString *)PIN
                        firstName:(NSString *)firstName
                         lastName:(NSString *)lastName

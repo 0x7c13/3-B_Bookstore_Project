@@ -27,7 +27,7 @@
 @implementation OSU_3BUser
 
 
-- (OSU_3BUser *)initWithUsername:(NSString *)username
+- (id)initWithUsername:(NSString *)username
                              PIN:(NSString *)PIN
                        firstName:(NSString *)firstName
                         lastName:(NSString *)lastName
@@ -41,6 +41,7 @@
 {
 
     if (self = [super init]) {
+        
         _username = username;
         _PIN = PIN;
         _firstName = firstName;

@@ -3,7 +3,7 @@
 //  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-4-3.
-//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
+//  Copyright (c) 2013 The Ohio State University. All rights reserved.
 //
 
 #import "OSU_proofOfPurchaseViewController.h"
@@ -15,7 +15,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *upperBG;
 @property (strong, nonatomic) IBOutlet UIView *lowerBG;
-@property (strong, nonatomic) IBOutlet UIButton *updateProfileButton;
 @property (strong, nonatomic) IBOutlet UILabel *subtotalLabel;
 @property (strong, nonatomic) IBOutlet UILabel *shippingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalLabel;

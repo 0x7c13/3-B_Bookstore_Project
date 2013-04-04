@@ -3,7 +3,7 @@
 //  CSE3241_Bookstore_Project
 //
 //  Created by FlyinGeek on 13-4-3.
-//  Copyright (c) 2013年 The Ohio State University. All rights reserved.
+//  Copyright (c) 2013 The Ohio State University. All rights reserved.
 //
 
 #import "OSU_customerProfileViewController.h"

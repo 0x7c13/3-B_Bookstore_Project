@@ -1777,6 +1777,13 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -1825,7 +1832,6 @@ The books will be delivered within 5 business days.</string>
                 <relationship kind="outlet" name="streetAddressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="subtotalLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="updateProfileButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="upperBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="userIDLabel" candidateClass="UILabel"/>
             </relationships>
@@ -1847,6 +1853,7 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_shoppingCartViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_shoppingCartViewController.h"/>
             <relationships>
+                <relationship kind="action" name="checkoutButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="lowerLabelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="shoppingCartInfo" candidateClass="UILabel"/>

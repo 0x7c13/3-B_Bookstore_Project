@@ -12,18 +12,18 @@
 
 @interface OSU_customerRegistrationViewController : UIViewController <UITextFieldDelegate, NIDropDownDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *username;
-@property (strong, nonatomic) IBOutlet UITextField *PIN1;
-@property (strong, nonatomic) IBOutlet UITextField *PIN2;
-@property (strong, nonatomic) IBOutlet UITextField *firstName;
-@property (strong, nonatomic) IBOutlet UITextField *lastName;
-@property (strong, nonatomic) IBOutlet UITextField *address;
-@property (strong, nonatomic) IBOutlet UITextField *city;
-@property (strong, nonatomic) IBOutlet UIButton *state;
-@property (strong, nonatomic) IBOutlet UITextField *ZIPCode;
-@property (strong, nonatomic) IBOutlet UIButton *creditCardType;
-@property (strong, nonatomic) IBOutlet UITextField *creditCardNumber;
-@property (strong, nonatomic) IBOutlet UITextField *expirationDate;
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *PIN1;
+@property (weak, nonatomic) IBOutlet UITextField *PIN2;
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+@property (weak, nonatomic) IBOutlet UITextField *address;
+@property (weak, nonatomic) IBOutlet UITextField *city;
+@property (weak, nonatomic) IBOutlet UIButton *state;
+@property (weak, nonatomic) IBOutlet UITextField *ZIPCode;
+@property (weak, nonatomic) IBOutlet UIButton *creditCardType;
+@property (weak, nonatomic) IBOutlet UITextField *creditCardNumber;
+@property (weak, nonatomic) IBOutlet UITextField *expirationDate;
 
 
 @end
