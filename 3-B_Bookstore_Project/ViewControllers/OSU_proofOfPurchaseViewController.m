@@ -79,6 +79,38 @@
     
 }
 
+- (IBAction)printButtonPressed:(UIButton *)sender {
+    
+    UIWindow *window;
+    window = [UIApplication sharedApplication].keyWindow;
+    
+
+    
+    UIView *capView = [[UIView alloc] initWithFrame:self.view.bounds];
+    capView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:capView];
+    
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                        capView.alpha = 0.0;
+                     } completion:^(BOOL finishied){
+                         [capView removeFromSuperview];
+    }];
+    
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        CGSize capSize = CGSizeMake(window.bounds.size.width, window.bounds.size.height + self.navigationController.navigationBar.bounds.size.height - 20);
+        
+        UIGraphicsBeginImageContextWithOptions(capSize, NO, [UIScreen mainScreen].scale);
+    }
+    else {
+        UIGraphicsBeginImageContext(window.bounds.size);
+    }
+    [window.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+}
+
 
 - (IBAction)newSearchButtonPressed:(UIButton *)sender {
     

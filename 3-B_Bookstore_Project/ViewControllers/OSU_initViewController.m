@@ -154,7 +154,7 @@
             
             if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsExist:self.usernameTextField.text]) {
                 
-                OSU_3BUser *returningCusotmer = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectUserFromDatabaseWithUsername:self.usernameTextField.text];
+                OSU_3BUser *returningCusotmer = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectUserFromDatabaseByUsername:self.usernameTextField.text];
                 if ([returningCusotmer.PIN isEqualToString:self.passwordTextField.text]) {
                     [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:returningCusotmer];
                     [KGStatusBar showSuccessWithStatus:@"Login Successfully"];

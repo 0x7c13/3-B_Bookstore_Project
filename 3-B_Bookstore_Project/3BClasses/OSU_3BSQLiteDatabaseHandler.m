@@ -333,7 +333,7 @@
     sqlite3_finalize(statement);
 }
 
--(OSU_3BUser *)selectUserFromDatabaseWithUsername:(NSString *)username
+-(OSU_3BUser *)selectUserFromDatabaseByUsername:(NSString *)username
 {
     OSU_3BUser *user;
     

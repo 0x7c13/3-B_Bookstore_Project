@@ -1,9 +1,8 @@
 Best-Book-Buy Online Bookstore Project
 ======================================
+## The Ohio State University CSE 3241 Database Project
 
-Progress: About 65%… :(
-
-The Ohio State CSE 3241 Database Project
+Current Progress: About 65%… :(
 
 3-B_Bookstore_Project.app
 

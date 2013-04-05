@@ -13,7 +13,9 @@
 #import "OSU_3BUser.h"
 
 @interface OSU_3BSQLiteDatabaseHandler : NSObject{
-    sqlite3 *_3BBooksDataBase;
+
+@private sqlite3 *_3BBooksDataBase;
+    
 }
 
 @property (nonatomic, readonly) BOOL dataBaseLoadedCorrectly;
@@ -22,7 +24,7 @@
 + (id)sharedInstance;
 
 
-// public methods   
+// public APIs   
 - (void)loadDatabase;
 - (void)closeDatabase;
 - (NSArray *)getCategoriesFromDatabase;
@@ -37,7 +39,7 @@
 - (void)updateUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
 - (void)deleteUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
 
-- (OSU_3BUser *)selectUserFromDatabaseWithUsername:(NSString *)username;
+- (OSU_3BUser *)selectUserFromDatabaseByUsername:(NSString *)username;
 
 // return YES if the username exists in the database
 - (BOOL)usernameIsExist:(NSString *)username;

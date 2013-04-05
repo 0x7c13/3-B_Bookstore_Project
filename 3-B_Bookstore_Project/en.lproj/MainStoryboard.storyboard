@@ -1709,6 +1709,9 @@ The books will be delivered within 5 business days.</string>
                                 <state key="normal" title="Print" backgroundImage="black_button_1.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="printButtonPressed:" destination="ZQm-6N-suO" eventType="touchUpInside" id="waI-r3-6xv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="ud4-e4-M7U">
                                 <rect key="frame" x="175" y="440" width="125" height="50"/>
@@ -2201,6 +2204,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BShoppingCartCell.h"/>
             <relationships>
+                <relationship kind="action" name="deleteButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stepperPressed:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>
@@ -2214,6 +2219,13 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerProfileViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="cancelButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="updateButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -2231,6 +2243,13 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -2248,13 +2267,6 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
             <relationships>
-                <relationship kind="action" name="administratorButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="loginButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="newCustomerButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="passwordFieldTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="returningCustomerButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="usernameFieldTouchDown:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="bookLogo" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mainTitileLabel" candidateClass="UILabel"/>
@@ -2268,6 +2280,11 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_newCustomerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_newCustomerViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -2302,6 +2319,7 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_proofOfPurchaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_proofOfPurchaseViewController.h"/>
             <relationships>
+                <relationship kind="action" name="newSearchButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buyDateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buyTimeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cityStateAndZIPCodeLabel" candidateClass="UILabel"/>
