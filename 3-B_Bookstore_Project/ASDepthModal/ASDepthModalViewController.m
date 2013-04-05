@@ -60,6 +60,7 @@ static NSTimeInterval const kModalViewAnimationDuration = 0.3;
     [self.rootViewController.view removeFromSuperview];
     self.rootViewController.view.transform = window.rootViewController.view.transform;
     window.rootViewController = self.rootViewController;
+
 }
 
 - (void)dismiss
@@ -72,8 +73,8 @@ static NSTimeInterval const kModalViewAnimationDuration = 0.3;
                      }
                      completion:^(BOOL finished) {
                          [self restoreRootViewController];
-                         [self.delegate userDidDismissPopupView];
-                         [self.delegate popupViewDidDisappear];
+                         [self.delegate userDidDismissPopupView:self];
+                         [self.delegate popupViewDidDisappear:self];
                      }];
 }
 
@@ -220,7 +221,7 @@ static NSTimeInterval const kModalViewAnimationDuration = 0.3;
                          self.rootViewController.view.transform = window.rootViewController.view.transform;
                          window.rootViewController = self.rootViewController;
                          
-                         [self.delegate userDidDismissPopupView];
+                         [self.delegate userDidDismissPopupView:self];
                      }];
     
 

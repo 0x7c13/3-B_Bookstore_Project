@@ -82,6 +82,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="administratorButtonPressed:" destination="2" eventType="touchUpInside" id="0VH-Tc-Q69"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,6 +97,7 @@
                         <outlet property="usernameTextField" destination="d14-PL-Pvc" id="e2e-Fe-ifR"/>
                         <segue destination="e4R-dr-zNG" kind="modal" identifier="searchOnlySegue" modalTransitionStyle="flipHorizontal" id="DX3-3s-25u"/>
                         <segue destination="8S1-7v-6SF" kind="modal" identifier="startRegistrationSegue" id="93O-gr-9lU"/>
+                        <segue destination="Aot-aM-RAV" kind="modal" identifier="adminEntrySegue" modalTransitionStyle="flipHorizontal" id="gm2-41-XeL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -2043,7 +2047,100 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj2-DH-djk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1996" y="790"/>
+            <point key="canvasLocation" x="-1996" y="691"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wuo-dL-Bfc">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Aot-aM-RAV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eyk-Ub-v5P"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fUt-tz-0BQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1rG-HU-aeL" kind="relationship" relationship="rootViewController" id="Htu-Do-2NH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbM-no-nli" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1996" y="1519"/>
+        </scene>
+        <!--administrator Main Menu View Controller - Administrator Tasks-->
+        <scene sceneID="01k-Pd-5xb">
+            <objects>
+                <viewController id="1rG-HU-aeL" customClass="OSU_administratorMainMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hce-Mt-5Nv" userLabel="Menu View">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bg.png" id="mbd-X3-TMw" userLabel="BG - background@2x.png">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="8wM-t9-rN2">
+                                <rect key="frame" x="32" y="289" width="256" height="55"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Update Admin Profile" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="XxW-Ke-eNN">
+                                <rect key="frame" x="32" y="362" width="256" height="55"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="System Maintenance" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="y8H-H0-teZ">
+                                <rect key="frame" x="32" y="216" width="256" height="55"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Generate Reports" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="7kj-Yf-8in">
+                                <rect key="frame" x="32" y="70" width="256" height="55"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Manage Bookstore Catalog" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Awi-5Y-nsV">
+                                <rect key="frame" x="32" y="143" width="256" height="55"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Place Orders" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Administrator Tasks" id="trq-Xj-IMn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z43-UX-gJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1497" y="1519"/>
         </scene>
     </scenes>
     <resources>
@@ -2064,8 +2161,6 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
-                <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -2089,14 +2184,15 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BShoppingCartCell.h"/>
             <relationships>
-                <relationship kind="action" name="deleteButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="stepperPressed:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="quantityStepper" candidateClass="UIStepper"/>
             </relationships>
+        </class>
+        <class className="OSU_administratorMainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_administratorMainMenuViewController.h"/>
         </class>
         <class className="OSU_customerProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerProfileViewController.h"/>
@@ -2118,6 +2214,13 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -2135,6 +2238,7 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
             <relationships>
+                <relationship kind="action" name="administratorButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="loginButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="newCustomerButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="passwordFieldTouchDown:" candidateClass="UITextField"/>
@@ -2227,7 +2331,7 @@ The books will be delivered within 5 business days.</string>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="JR7-3T-jB1"/>

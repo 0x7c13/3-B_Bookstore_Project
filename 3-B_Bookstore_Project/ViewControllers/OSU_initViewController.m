@@ -10,9 +10,12 @@
 #import "OSU_3BSQLiteDatabaseHandler.h"
 #import "OSU_3BBook.h"
 #import "OSU_3BShoppingCart.h"
+#import "KGStatusBar.h"
 
 
-@interface OSU_initViewController ()
+@interface OSU_initViewController () {
+    OSU_3BUserUserTypes _currentUserType;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -34,6 +37,7 @@
 }
 
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,7 +48,7 @@
     self.popupView.layer.shouldRasterize = YES;
     self.popupView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
-    
+    _currentUserType = OSU_3BUserTypeCustomer;
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +70,7 @@
 
 - (IBAction)searchOnlyButtonPressed:(UIButton *)sender {
     
+    _currentUserType = OSU_3BUserTypeCustomer;
     [[OSU_3BShoppingCart sharedInstance] initShoppingCart];
     [self performSegueWithIdentifier:@"searchOnlySegue" sender:self];
     
@@ -73,23 +78,31 @@
 
 - (IBAction)newCustomerButtonPressed:(UIButton *)sender {
 
+    _currentUserType = OSU_3BUserTypeCustomer;
     [[OSU_3BShoppingCart sharedInstance] initShoppingCart];
     [self performSegueWithIdentifier:@"startRegistrationSegue" sender:self];
 }
 
 - (void)registrationDidFinished
 {
+    [KGStatusBar showSuccessWithStatus:@"Login successfully"];
     [self performSegueWithIdentifier:@"searchOnlySegue" sender:self];
 }
 
 - (IBAction)returningCustomerButtonPressed:(UIButton *)sender {
     
-    UIColor *color = nil;
-    [self.popManagerVC presentView:self.popupView withBackgroundColor:color popupAnimationStyle:ASDepthModalAnimationDefault];
-    
-    
-    
+    _currentUserType = OSU_3BUserTypeCustomer;
+    [self.popManagerVC presentView:self.popupView withBackgroundColor:nil popupAnimationStyle:ASDepthModalAnimationDefault];
 }
+
+
+- (IBAction)administratorButtonPressed:(UIButton *)sender {
+    
+    _currentUserType = OSU_3BUserTypeAdministrator;
+    [self.popManagerVC presentView:self.popupView withBackgroundColor:nil popupAnimationStyle:ASDepthModalAnimationDefault];
+}
+
+
 - (IBAction)usernameFieldTouchDown:(UITextField *)sender {
     
     [sender resignFirstResponder];
@@ -115,14 +128,35 @@
 
 - (BOOL)loginCheck
 {
-    if (![self.usernameTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
-        
-        if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsExist:self.usernameTextField.text]) {
+    if (_currentUserType == OSU_3BUserTypeCustomer) {
+        if (![self.usernameTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
             
-            OSU_3BUser *returningCusotmer = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectUserFromDatabaseWithUsername:self.usernameTextField.text];
-            if ([returningCusotmer.PIN isEqualToString:self.passwordTextField.text]) {
-                [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:returningCusotmer];
+            if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsExist:self.usernameTextField.text]) {
+                
+                OSU_3BUser *returningCusotmer = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectUserFromDatabaseWithUsername:self.usernameTextField.text];
+                if ([returningCusotmer.PIN isEqualToString:self.passwordTextField.text]) {
+                    [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:returningCusotmer];
+                    [KGStatusBar showSuccessWithStatus:@"Login successfully"];
+                    return YES;
+                }
+                else {
+                    [KGStatusBar showErrorWithStatus:@"Wrong password!"];
+                }
+            }
+            else {
+                [KGStatusBar showErrorWithStatus:@"Username doesn't exist!"];
+            }
+        }
+    }
+    else if (_currentUserType == OSU_3BUserTypeAdministrator) {
+        if (![self.usernameTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
+
+            if ([self.passwordTextField.text isEqualToString:@"admin"] && [self.usernameTextField.text isEqualToString:@"admin"]) {
+                [KGStatusBar showSuccessWithStatus:@"Login successfully"];
                 return YES;
+            }
+            else {
+                [KGStatusBar showErrorWithStatus:@"Wrong admin username or password!"];
             }
         }
     }
@@ -154,6 +188,8 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    
+    
     if ([self loginCheck]) {
         [self.popManagerVC dismiss];
     }
@@ -201,23 +237,37 @@
 
 #pragma -- protocal
 
-- (void)popupViewDidDisappear
+- (void)popupViewDidDisappear:(ASDepthModalViewController *)sender
 {
     self.view.userInteractionEnabled = NO;
-    [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(Go:) userInfo:nil repeats:NO];
+    
+    if (_currentUserType == OSU_3BUserTypeCustomer) {
+        [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(GoSearch:) userInfo:nil repeats:NO];
+    }
+    else if (_currentUserType == OSU_3BUserTypeAdministrator){
+        [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(GoAdmin:) userInfo:nil repeats:NO];
+    }
 }
 
-- (void)Go:(NSTimer *)timer
+- (void)GoSearch:(NSTimer *)timer
 {
     [self performSegueWithIdentifier:@"searchOnlySegue" sender:self];
     self.view.userInteractionEnabled = YES;
     [timer invalidate];
 }
 
-- (void)userDidDismissPopupView
+- (void)GoAdmin:(NSTimer *)timer
+{
+    [self performSegueWithIdentifier:@"adminEntrySegue" sender:self];
+    self.view.userInteractionEnabled = YES;
+    [timer invalidate];
+}
+
+- (void)userDidDismissPopupView:(ASDepthModalViewController *)sender
 {
     self.usernameTextField.text = @"";
     self.passwordTextField.text = @"";
+
 }
 
 @end

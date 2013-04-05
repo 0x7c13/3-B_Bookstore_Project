@@ -57,6 +57,7 @@
 		F78E2706170D4A1D00F2DFA6 /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F78E2705170D4A1D00F2DFA6 /* login_bg.png */; };
 		F78E2709170D4B3300F2DFA6 /* login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F78E2707170D4B3300F2DFA6 /* login_button.png */; };
 		F78E270A170D4B3300F2DFA6 /* login_field.png in Resources */ = {isa = PBXBuildFile; fileRef = F78E2708170D4B3300F2DFA6 /* login_field.png */; };
+		F78E270D170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78E270C170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.m */; };
 		F79870601709083B00CCD89C /* OSU_customerRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */; };
 		F79870641709218000CCD89C /* URBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870631709218000CCD89C /* URBAlertView.m */; };
 		F79870661709229B00CCD89C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79870651709229B00CCD89C /* Accelerate.framework */; };
@@ -67,6 +68,7 @@
 		F79870741709426E00CCD89C /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870731709426E00CCD89C /* NIDropDown.m */; };
 		F7987077170A7E0400CCD89C /* OSU_3BUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F7987076170A7E0400CCD89C /* OSU_3BUser.m */; };
 		F798707A170BC56400CCD89C /* OSU_orderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7987079170BC56400CCD89C /* OSU_orderListViewController.m */; };
+		F7F94F9A170E8A6900A34F69 /* KGStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F94F99170E8A6900A34F69 /* KGStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +143,8 @@
 		F78E2705170D4A1D00F2DFA6 /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
 		F78E2707170D4B3300F2DFA6 /* login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button.png; sourceTree = "<group>"; };
 		F78E2708170D4B3300F2DFA6 /* login_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_field.png; sourceTree = "<group>"; };
+		F78E270B170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_administratorMainMenuViewController.h; sourceTree = "<group>"; };
+		F78E270C170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_administratorMainMenuViewController.m; sourceTree = "<group>"; };
 		F798705E1709083A00CCD89C /* OSU_customerRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_customerRegistrationViewController.h; sourceTree = "<group>"; };
 		F798705F1709083A00CCD89C /* OSU_customerRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_customerRegistrationViewController.m; sourceTree = "<group>"; };
 		F79870621709218000CCD89C /* URBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBAlertView.h; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 		F7987076170A7E0400CCD89C /* OSU_3BUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BUser.m; sourceTree = "<group>"; };
 		F7987078170BC56400CCD89C /* OSU_orderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_orderListViewController.h; sourceTree = "<group>"; };
 		F7987079170BC56400CCD89C /* OSU_orderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_orderListViewController.m; sourceTree = "<group>"; };
+		F7F94F98170E8A6900A34F69 /* KGStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGStatusBar.h; sourceTree = "<group>"; };
+		F7F94F99170E8A6900A34F69 /* KGStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGStatusBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +271,7 @@
 				F775232617027DF6004D7A4D /* MainStoryboard.storyboard */,
 				F775233E170283C6004D7A4D /* 3BClasses */,
 				F7752333170282CA004D7A4D /* ViewControllers */,
+				F7F94F97170E8A6900A34F69 /* KGStatusBar */,
 				F78E2701170D409300F2DFA6 /* ASDepthModal */,
 				F79870711709426E00CCD89C /* NIDropDown */,
 				F79870611709218000CCD89C /* URBAlertView */,
@@ -317,6 +324,8 @@
 				F78E26FC170D0FD500F2DFA6 /* OSU_proofOfPurchaseViewController.m */,
 				F78E26FE170D319D00F2DFA6 /* OSU_newCustomerViewController.h */,
 				F78E26FF170D319D00F2DFA6 /* OSU_newCustomerViewController.m */,
+				F78E270B170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.h */,
+				F78E270C170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -363,6 +372,15 @@
 				F79870731709426E00CCD89C /* NIDropDown.m */,
 			);
 			path = NIDropDown;
+			sourceTree = "<group>";
+		};
+		F7F94F97170E8A6900A34F69 /* KGStatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				F7F94F98170E8A6900A34F69 /* KGStatusBar.h */,
+				F7F94F99170E8A6900A34F69 /* KGStatusBar.m */,
+			);
+			path = KGStatusBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +497,8 @@
 				F78E26FD170D0FD500F2DFA6 /* OSU_proofOfPurchaseViewController.m in Sources */,
 				F78E2700170D319E00F2DFA6 /* OSU_newCustomerViewController.m in Sources */,
 				F78E2704170D409300F2DFA6 /* ASDepthModalViewController.m in Sources */,
+				F78E270D170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.m in Sources */,
+				F7F94F9A170E8A6900A34F69 /* KGStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

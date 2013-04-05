@@ -44,6 +44,8 @@ URBAlertView : https://github.com/u10int/URBAlertView
 
 ASDepthModal : https://github.com/autresphere/ASDepthModal
 
+KGStatusBar : https://github.com/kevingibbon/KGStatusBar
+
 --------------------------------
 
 ##To do List:

@@ -52,7 +52,7 @@ Mostly inspired by http://lab.hakim.se/avgrund/
 
 @protocol ASDepthModalViewControllerDelegate <NSObject>
 
-- (void)popupViewDidDisappear;
-- (void)userDidDismissPopupView;
+- (void)popupViewDidDisappear:(ASDepthModalViewController *)sender;
+- (void)userDidDismissPopupView:(ASDepthModalViewController *)sender;
 
 @end
