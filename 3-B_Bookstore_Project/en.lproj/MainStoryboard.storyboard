@@ -16,8 +16,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="book_logo.png" id="IHc-Gh-7De">
+                                <rect key="frame" x="120" y="21" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Best Book Buy Online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="eOI-pZ-0Oh">
-                                <rect key="frame" x="15" y="74" width="290" height="36"/>
+                                <rect key="frame" x="15" y="109" width="290" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -25,8 +29,14 @@
                                 <size key="shadowOffset" width="1" height="-1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3-B.com Online Bookstore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="85B-sS-VHZ">
-                                <rect key="frame" x="20" y="122" width="280" height="27"/>
+                                <rect key="frame" x="20" y="153" width="280" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CSE 3241 Project - JIAQI LIU 2013" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KcC-nS-6eZ">
+                                <rect key="frame" x="90" y="501" width="215" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -91,7 +101,11 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="bookLogo" destination="IHc-Gh-7De" id="pIG-Vg-pSP"/>
                         <outlet property="loginButton" destination="048-WK-hgy" id="WTJ-jZ-otm"/>
+                        <outlet property="mainTitileLabel" destination="eOI-pZ-0Oh" id="V3r-7U-SfM"/>
+                        <outlet property="miniTitleLabel" destination="85B-sS-VHZ" id="YSO-GK-bMS"/>
+                        <outlet property="myInfoLabel" destination="KcC-nS-6eZ" id="hpE-lH-IEJ"/>
                         <outlet property="passwordTextField" destination="VdL-IN-Dh1" id="9e1-cf-ar9"/>
                         <outlet property="popupView" destination="Rv4-oy-GSY" id="Pz4-Ij-a8e"/>
                         <outlet property="usernameTextField" destination="d14-PL-Pvc" id="e2e-Fe-ifR"/>
@@ -101,20 +115,20 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <view clipsSubviews="YES" contentMode="scaleToFill" id="Rv4-oy-GSY" userLabel="Login View">
-                    <rect key="frame" x="0.0" y="0.0" width="270" height="200"/>
+                <view contentMode="scaleToFill" id="Rv4-oy-GSY" userLabel="Login View">
+                    <rect key="frame" x="0.0" y="0.0" width="260" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="login_bg.png" id="riO-7P-y10">
-                            <rect key="frame" x="0.0" y="0.0" width="270" height="200"/>
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="180"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="login_field.png" id="8qV-lO-59P">
-                            <rect key="frame" x="-65" y="-85" width="400" height="400"/>
+                            <rect key="frame" x="-60" y="-93" width="380" height="400"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="048-WK-hgy">
-                            <rect key="frame" x="18" y="135" width="234" height="50"/>
+                            <rect key="frame" x="13" y="120" width="234" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" backgroundImage="login_button.png">
@@ -129,7 +143,7 @@
                             </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" id="d14-PL-Pvc">
-                            <rect key="frame" x="51" y="32" width="183" height="30"/>
+                            <rect key="frame" x="49" y="26" width="183" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -139,7 +153,7 @@
                             </connections>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" id="VdL-IN-Dh1">
-                            <rect key="frame" x="51" y="79" width="183" height="30"/>
+                            <rect key="frame" x="49" y="72" width="183" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -2151,6 +2165,7 @@ The books will be delivered within 5 business days.</string>
         <image name="bigButton.png" width="480" height="360"/>
         <image name="black_bg.png" width="640" height="960"/>
         <image name="black_button_1.png" width="220" height="77"/>
+        <image name="book_logo.png" width="278" height="204"/>
         <image name="cellButton.png" width="86" height="32"/>
         <image name="login_bg.png" width="400" height="398"/>
         <image name="login_button.png" width="246" height="53"/>
@@ -2161,6 +2176,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
+                <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -2214,13 +2231,6 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -2245,7 +2255,11 @@ The books will be delivered within 5 business days.</string>
                 <relationship kind="action" name="returningCustomerButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="usernameFieldTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bookLogo" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mainTitileLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="miniTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myInfoLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="popupView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>

@@ -14,6 +14,6 @@
 
 @interface OSU_initViewController : UIViewController <OSU_newCustomerViewControllerDelegate, UITextFieldDelegate, ASDepthModalViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UIView *popupView;
+@property (weak, nonatomic) IBOutlet UIView *popupView;
 
 @end

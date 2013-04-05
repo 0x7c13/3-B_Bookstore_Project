@@ -21,6 +21,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) ASDepthModalViewController *popManagerVC;
+@property (weak, nonatomic) IBOutlet UIImageView *bookLogo;
+@property (weak, nonatomic) IBOutlet UILabel *mainTitileLabel;
+@property (weak, nonatomic) IBOutlet UILabel *miniTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *myInfoLabel;
 
 @end
 
@@ -44,11 +48,28 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.popupView.layer.cornerRadius = 12;
     self.popupView.layer.shadowOpacity = 0.7;
-    self.popupView.layer.shadowOffset = CGSizeMake(6, 6);
+    self.popupView.layer.shadowOffset = CGSizeMake(6.0f, 6.0f);
+    [self.popupView.layer setShadowRadius:6.0];
     self.popupView.layer.shouldRasterize = YES;
     self.popupView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
     _currentUserType = OSU_3BUserTypeCustomer;
+    [self addShadow:self.bookLogo];
+    
+    [self.mainTitileLabel.layer setShadowColor:[[UIColor blackColor] CGColor]];
+    [self.mainTitileLabel.layer setShadowOffset:CGSizeMake(0.0f, 8.0f)];
+    [self.mainTitileLabel.layer setShadowOpacity:0.4];
+    [self.mainTitileLabel.layer setShadowRadius:6.0];
+    
+    [self.miniTitleLabel.layer setShadowColor:[[UIColor blackColor] CGColor]];
+    [self.miniTitleLabel.layer setShadowOffset:CGSizeMake(0.0f, 8.0f)];
+    [self.miniTitleLabel.layer setShadowOpacity:0.4];
+    [self.miniTitleLabel.layer setShadowRadius:6.0];
+    
+    [self.myInfoLabel.layer setShadowColor:[[UIColor blackColor] CGColor]];
+    [self.myInfoLabel.layer setShadowOffset:CGSizeMake(0.0f, 8.0f)];
+    [self.myInfoLabel.layer setShadowOpacity:0.4];
+    [self.myInfoLabel.layer setShadowRadius:6.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,7 +106,7 @@
 
 - (void)registrationDidFinished
 {
-    [KGStatusBar showSuccessWithStatus:@"Login successfully"];
+    [KGStatusBar showSuccessWithStatus:@"Login Successfully"];
     [self performSegueWithIdentifier:@"searchOnlySegue" sender:self];
 }
 
@@ -99,7 +120,7 @@
 - (IBAction)administratorButtonPressed:(UIButton *)sender {
     
     _currentUserType = OSU_3BUserTypeAdministrator;
-    [self.popManagerVC presentView:self.popupView withBackgroundColor:nil popupAnimationStyle:ASDepthModalAnimationDefault];
+    [self.popManagerVC presentView:self.popupView withBackgroundColor:nil popupAnimationStyle:ASDepthModalAnimationShrink];
 }
 
 
@@ -136,11 +157,11 @@
                 OSU_3BUser *returningCusotmer = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectUserFromDatabaseWithUsername:self.usernameTextField.text];
                 if ([returningCusotmer.PIN isEqualToString:self.passwordTextField.text]) {
                     [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:returningCusotmer];
-                    [KGStatusBar showSuccessWithStatus:@"Login successfully"];
+                    [KGStatusBar showSuccessWithStatus:@"Login Successfully"];
                     return YES;
                 }
                 else {
-                    [KGStatusBar showErrorWithStatus:@"Wrong password!"];
+                    [KGStatusBar showErrorWithStatus:@"Wrong Password!"];
                 }
             }
             else {
@@ -152,7 +173,7 @@
         if (![self.usernameTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
 
             if ([self.passwordTextField.text isEqualToString:@"admin"] && [self.usernameTextField.text isEqualToString:@"admin"]) {
-                [KGStatusBar showSuccessWithStatus:@"Login successfully"];
+                [KGStatusBar showSuccessWithStatus:@"Login Successfully"];
                 return YES;
             }
             else {
@@ -268,6 +289,19 @@
     self.usernameTextField.text = @"";
     self.passwordTextField.text = @"";
 
+}
+
+
+- (void)addShadow: (UIImageView *)view
+{
+    [view.layer setShadowColor:[[UIColor blackColor] CGColor]];
+    [view.layer setShadowOffset:CGSizeMake(0.0f, 5.0f)];
+    [view.layer setShadowOpacity:0.4];
+    [view.layer setShadowRadius:6.0];
+    
+    // improve performance
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:view.bounds];
+    view.layer.shadowPath = path.CGPath;
 }
 
 @end
