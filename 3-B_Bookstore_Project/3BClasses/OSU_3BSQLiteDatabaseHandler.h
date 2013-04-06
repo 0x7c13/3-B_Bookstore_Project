@@ -39,9 +39,14 @@
 - (void)updateUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
 - (void)deleteUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
 
+- (void)insertNewBook:(OSU_3BBook *)book;
+- (void)updateBook:(OSU_3BBook *)book;
+- (void)deleteABookByISBN:(NSString *)ISBN;
+
 - (OSU_3BUser *)selectUserFromDatabaseByUsername:(NSString *)username;
 
 // return YES if the username exists in the database
-- (BOOL)usernameIsExist:(NSString *)username;
+- (BOOL)usernameIsInDatabase:(NSString *)username;
+- (BOOL)bookIsInDatabase:(NSString *)ISBN;
 
 @end

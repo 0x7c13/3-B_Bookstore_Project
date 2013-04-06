@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *miniTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *myInfoLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *loginViewBG;
+
 @end
 
 @implementation OSU_initViewController
@@ -46,6 +48,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.loginViewBG.layer.cornerRadius = 8;
+    [self.loginViewBG.layer setMasksToBounds:YES];
+    
     self.popupView.layer.cornerRadius = 12;
     self.popupView.layer.shadowOpacity = 0.7;
     self.popupView.layer.shadowOffset = CGSizeMake(6.0f, 6.0f);
@@ -152,7 +158,7 @@
     if (_currentUserType == OSU_3BUserTypeCustomer) {
         if (![self.usernameTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
             
-            if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsExist:self.usernameTextField.text]) {
+            if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsInDatabase:self.usernameTextField.text]) {
                 
                 OSU_3BUser *returningCusotmer = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectUserFromDatabaseByUsername:self.usernameTextField.text];
                 if ([returningCusotmer.PIN isEqualToString:self.passwordTextField.text]) {

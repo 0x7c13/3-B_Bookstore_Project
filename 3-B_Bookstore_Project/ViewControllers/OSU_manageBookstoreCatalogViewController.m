@@ -49,11 +49,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)insertNewBookButtonPressed:(UIButton *)sender {
-
-    [self performSegueWithIdentifier:@"pushInsertNewBookSegue" sender:self];
-
-}
 
 
 @end

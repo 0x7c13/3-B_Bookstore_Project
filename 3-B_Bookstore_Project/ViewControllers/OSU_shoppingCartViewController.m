@@ -23,13 +23,14 @@
     }
     return self;
 }
-- (void)viewDidAppear:(BOOL)animated
+
+- (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
     [self.shoppingCartTableView reloadData];
     [self updateShoppingCartInfo];
-
-    
 }
 
 - (void)viewDidLoad

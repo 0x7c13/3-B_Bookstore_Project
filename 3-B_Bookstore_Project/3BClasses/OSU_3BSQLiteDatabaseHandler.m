@@ -118,10 +118,12 @@
                                               Title:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)]
                                              Author:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)]
                                           Publisher:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 3)]
-                                               Year:(int)sqlite3_column_int(statement, 4)
+                                               Year:(NSUInteger)sqlite3_column_int(statement, 4)
                                               Price:[[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue]
-                                           Category:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]];
-
+                                           Category:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]
+                                            Reviews:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 7)]
+                                     MinQtyRequired:(NSUInteger)sqlite3_column_int(statement, 8)];
+                            
         } 
     }
     sqlite3_finalize(statement);
@@ -164,11 +166,12 @@
                                           Category:(NSString *)category
                                            RowName:(NSString *)row
 {
+    
     OSU_3BBooks *books = [[OSU_3BBooks alloc]init];
     
     NSString *queryString;
     
-    NSArray *titleOfRows = [NSArray arrayWithObjects:@"ISBN", @"Title", @"Author", @"Publisher", nil];
+    NSArray *titleOfRows = @[@"ISBN", @"Title", @"Author", @"Publisher"];
     
     if ([row isEqualToString:@"Keyword Anywhere"]) {
         
@@ -207,15 +210,27 @@
     }
     else
     {
+
         while (sqlite3_step(statement) == SQLITE_ROW) {
+            
+    
+            NSString *reviews;
+            if (!(char*)sqlite3_column_text(statement, 7)) {
+                reviews = @"";
+            }
+            else {
+                reviews = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 7)];
+            }
             
             OSU_3BBook *book = [[OSU_3BBook alloc] initWithISBN:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)]
                                               Title:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)]
                                              Author:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)]
                                           Publisher:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 3)]
-                                               Year:(int)sqlite3_column_int(statement, 4)
+                                               Year:(NSUInteger)sqlite3_column_int(statement, 4)
                                               Price:[[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue]
-                                           Category:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]];
+                                           Category:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]
+                                            Reviews:reviews
+                                     MinQtyRequired:(NSUInteger)sqlite3_column_int(statement, 8)];
 
             [books addABook:book];
         }
@@ -225,7 +240,7 @@
     return books;
 }
 
-- (BOOL)usernameIsExist:(NSString *)username
+- (BOOL)usernameIsInDatabase:(NSString *)username
 {
     BOOL result = NO;
     
@@ -243,9 +258,7 @@
     else
     {
         while (sqlite3_step(statement) == SQLITE_ROW) {
-            
             result = YES;
-            
         }
     }
     sqlite3_finalize(statement);
@@ -253,13 +266,35 @@
     return result;
 }
 
+- (BOOL)bookIsInDatabase:(NSString *)ISBN
+{
+    BOOL result = NO;
+    
+    NSString *queryString = [NSString stringWithFormat:@"SELECT * FROM Books WHERE ISBN = '%@'", ISBN];
+    
+    const char *sql = [queryString UTF8String];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
+        
+        NSLog(@"sql problem occured with: %s", sql);
+        NSLog(@"%s", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    else
+    {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            result = YES;
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return result;
+}
+
+
 - (void)insertNewUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
 {
-    if ([self usernameIsExist:user.username]) {
-        NSLog(@"Username already exists!");
-        return;
-    }
-
     if (userType == OSU_3BUserTypeCustomer) {
         
         static sqlite3_stmt *insertStmt = nil;
@@ -292,7 +327,6 @@
         sqlite3_finalize(insertStmt);
         insertStmt = nil;
     }
-
 }
 
 -(void)updateUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
@@ -302,12 +336,15 @@
     [self insertNewUser:user withUserType:userType];
 }
 
-- (void)deleteUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
+- (void)updateBook:(OSU_3BBook *)book
 {
-    if (![self usernameIsExist:user.username]) {
-        NSLog(@"Username doesn't exists!");
-    }
+    [self deleteABookByISBN:book.ISBN];
     
+    [self insertNewBook:book];
+}
+
+- (void)deleteUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
+{    
     sqlite3_stmt* statement;
     
     // Create Query String.
@@ -332,6 +369,36 @@
     // Finalize and close database.
     sqlite3_finalize(statement);
 }
+
+- (void)deleteABookByISBN:(NSString *)ISBN
+{
+    sqlite3_stmt* statement;
+    
+    // Create Query String.
+    NSString* sqlStatement = [NSString stringWithFormat:@"DELETE FROM Books WHERE ISBN ='%@'", ISBN];
+    
+    if( sqlite3_prepare_v2(_3BBooksDataBase, [sqlStatement UTF8String], -1, &statement, NULL) == SQLITE_OK )
+    {
+        if( sqlite3_step(statement) == SQLITE_DONE )
+        {
+            NSLog( @"Book with ISBN: \"%@\" was deleted.", ISBN);
+        }
+        else
+        {
+            NSLog( @"DeleteFromDataBase: Failed from sqlite3_step. Error is:  %s", sqlite3_errmsg(_3BBooksDataBase) );
+        }
+    }
+    else
+    {
+        NSLog( @"DeleteFromDataBase: Failed from sqlite3_prepare_v2. Error is:  %s", sqlite3_errmsg(_3BBooksDataBase) );
+    }
+    
+    // Finalize and close database.
+    sqlite3_finalize(statement);
+
+}
+
+
 
 -(OSU_3BUser *)selectUserFromDatabaseByUsername:(NSString *)username
 {
@@ -371,4 +438,36 @@
     return user;
 }
 
+
+-(void)insertNewBook:(OSU_3BBook *)book
+{
+    static sqlite3_stmt *insertStmt = nil;
+    
+    if(insertStmt == nil)
+    {
+        const char *sql = [@"INSERT INTO Books (ISBN, Title, Author, Publisher, Year, Price, Category, Reviews, MinQtyRequired) VALUES(?,?,?,?,?,?,?,?,?)" UTF8String];
+        
+        if(sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &insertStmt, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    
+    sqlite3_bind_text(insertStmt, 1, [book.ISBN UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 2, [book.Titile UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 3, [book.Author UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 4, [book.Publisher UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_int (insertStmt, 5, (int)book.Year);
+    sqlite3_bind_double(insertStmt, 6, (double)book.Price);
+    sqlite3_bind_text(insertStmt, 7, [book.Category UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 8, [book.Reviews UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_int (insertStmt, 9, (int)book.MinQtyRequired);
+    
+    if(SQLITE_DONE != sqlite3_step(insertStmt))
+        NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(_3BBooksDataBase));
+    else
+        NSLog(@"New Book Inserted.");
+    
+    sqlite3_finalize(insertStmt);
+    insertStmt = nil;
+    
+}
 @end

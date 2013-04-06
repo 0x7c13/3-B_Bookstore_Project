@@ -14,9 +14,11 @@
              Title:(NSString *)Title
             Author:(NSString *)Author
          Publisher:(NSString *)Publisher
-              Year:(int)Year
+              Year:(NSUInteger)Year
              Price:(double)Price
           Category:(NSString *)Category
+           Reviews:(NSString *)Reviews
+    MinQtyRequired:(NSUInteger)MinQtyRequired
 {
     if (self = [super init]) {
         
@@ -28,15 +30,10 @@
         _Price = Price;
         _Category = Category;
         _Quantity = 0;
+        _Reviews = Reviews;
+        _MinQtyRequired = MinQtyRequired;
     }
     return self;
-}
-
-
-- (void)print
-{
-    NSLog(@"\n%@\n%@\n%@\n%@\n%ld\n%.2f\n%@", self.ISBN, self.Titile, self.Author, self.Publisher, (long)self.Year, self.Price, self.Category);
-
 }
 
 - (BOOL)isEqual:(id)object

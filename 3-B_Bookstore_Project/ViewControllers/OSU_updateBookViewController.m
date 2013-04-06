@@ -1,27 +1,24 @@
 //
-//  OSU_insertNewBookViewController.m
+//  OSU_updateBookViewController.m
 //  CSE3241_Bookstore_Project
 //
-//  Created by FlyinGeek on 13-4-5.
+//  Created by FlyinGeek on 13-4-6.
 //  Copyright (c) 2013 The Ohio State University. All rights reserved.
 //
 
-#import "OSU_insertNewBookViewController.h"
+#import "OSU_updateBookViewController.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
-#import "OSU_3BBook.h"
 #import "KGStatusBar.h"
 
-
-@interface OSU_insertNewBookViewController () 
+@interface OSU_updateBookViewController ()
 
 @property (strong, nonatomic) NIDropDown *categoryDropUp;
 @property (strong, nonatomic) NSArray *category;
 @property (strong, nonatomic) URBAlertView *alertView;
-@property (strong, nonatomic) URBAlertView *ISBNIssueAlertView;
 
 @end
 
-@implementation OSU_insertNewBookViewController
+@implementation OSU_updateBookViewController
 
 - (NSArray *)category
 {
@@ -46,7 +43,7 @@
 	// Do any additional setup after loading the view.
     
     self.navigationItem.hidesBackButton = YES;
-
+    
     [self.authorField.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
     [self.authorField.layer setBorderColor: [[UIColor grayColor] CGColor]];
     [self.authorField.layer setBorderWidth: 1.0];
@@ -60,7 +57,9 @@
     [self.reviewsField.layer setMasksToBounds:YES];
     
     [self.categoryButton setTitle:@"Select a Category" forState:UIControlStateNormal];
+    
     self.minQtyField.text = @"0";
+    self.ISBNLabel.text = self.currentBook.ISBN;
     
     URBAlertView *alertView = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"Please fill out all fields!"];
 	alertView.blurBackground = NO;
@@ -72,18 +71,6 @@
 	}];
     
     self.alertView = alertView;
-    
-    
-    URBAlertView *ISBNIssueAlertView = [URBAlertView dialogWithTitle:@"Sorry:" subtitle:@"Book already exists!"];
-	ISBNIssueAlertView.blurBackground = NO;
-	[ISBNIssueAlertView addButtonWithTitle:@"OK"];
-	[ISBNIssueAlertView setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *ISBNIssueAlertView) {
-        // do stuff here
-		[self.ISBNIssueAlertView hideWithCompletionBlock:^{
-		}];
-	}];
-    
-    self.ISBNIssueAlertView = ISBNIssueAlertView;
     
 }
 
@@ -104,35 +91,29 @@
 }
 
 
-- (IBAction)insertButtonPressed:(UIButton *)sender {
-    if (![self.ISBNField.text isEqualToString:@""] && ![self.titleField.text isEqualToString:@""] &&
-        ![self.authorField.text isEqualToString:@""] && ![self.publisherField.text isEqualToString:@""] &&
-        ![self.yearField.text isEqualToString:@""] && ![self.priceField.text isEqualToString:@""] &&
-        ![self.minQtyField.text isEqualToString:@""] && ![self.categoryButton.titleLabel.text isEqualToString:@"Select a Category"]) {
-        
+- (IBAction)updateButtonPressed:(UIButton *)sender {
 
+    if (![self.titleField.text isEqualToString:@""] && ![self.authorField.text isEqualToString:@""] &&
+        ![self.publisherField.text isEqualToString:@""] && ![self.yearField.text isEqualToString:@""] &&
+        ![self.priceField.text isEqualToString:@""] && ![self.minQtyField.text isEqualToString:@""] &&
+        ![self.categoryButton.titleLabel.text isEqualToString:@"Select a Category"]) {
         
-        if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] bookIsInDatabase:self.ISBNField.text]) {
-            [self.ISBNIssueAlertView showWithAnimation:URBAlertAnimationTumble];
-        }
-        else {
-            // everything is clear
-            OSU_3BBook *newBook = [[OSU_3BBook alloc] initWithISBN:self.ISBNField.text
-                                                             Title:self.titleField.text
-                                                            Author:self.authorField.text
-                                                         Publisher:self.publisherField.text
-                                                              Year:(NSUInteger)[self.yearField.text integerValue]
-                                                             Price:[[NSString stringWithFormat:@"%.2f", [self.priceField.text doubleValue]]doubleValue]
-                                                          Category:self.categoryButton.titleLabel.text
-                                                           Reviews:self.reviewsField.text
-                                                    MinQtyRequired:[self.minQtyField.text integerValue]];
-            
-            [[OSU_3BSQLiteDatabaseHandler sharedInstance]insertNewBook:newBook];
-            
-            [KGStatusBar showSuccessWithStatus:@"Insert Successfully"];
-            
-            [self.navigationController popViewControllerAnimated:YES];
-        }
+        // everything is clear
+        OSU_3BBook *newBook = [[OSU_3BBook alloc] initWithISBN:self.ISBNLabel.text
+                                                         Title:self.titleField.text
+                                                        Author:self.authorField.text
+                                                     Publisher:self.publisherField.text
+                                                          Year:(NSUInteger)[self.yearField.text integerValue]
+                                                         Price:[[NSString stringWithFormat:@"%.2f", [self.priceField.text doubleValue]]doubleValue]
+                                                      Category:self.categoryButton.titleLabel.text
+                                                       Reviews:self.reviewsField.text
+                                                MinQtyRequired:[self.minQtyField.text integerValue]];
+        
+        [[OSU_3BSQLiteDatabaseHandler sharedInstance] updateBook:newBook];
+        
+        [KGStatusBar showSuccessWithStatus:@"Update Successfully"];
+        
+        [self.navigationController popViewControllerAnimated:YES];
         
     }
     else {
@@ -159,7 +140,7 @@
 #pragma -- Protocols
 
 - (IBAction)userDidTapOnBackground:(UITapGestureRecognizer *)sender {
-    [self.ISBNField resignFirstResponder];
+
     [self.titleField resignFirstResponder];
     [self.authorField resignFirstResponder];
     [self.publisherField resignFirstResponder];
@@ -223,7 +204,7 @@
         self.view.frame = rect;
     }
     [UIView commitAnimations];
-
+    
 }
 
 - (void) niDropDownDelegateMethod: (NIDropDown *) sender {

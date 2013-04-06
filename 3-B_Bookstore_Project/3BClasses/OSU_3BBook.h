@@ -14,21 +14,24 @@
 @property (copy, nonatomic) NSString *Titile;
 @property (copy, nonatomic) NSString *Author;
 @property (copy, nonatomic) NSString *Publisher;
-@property (nonatomic) NSInteger Year;
+@property (nonatomic) NSUInteger Year;
 @property (nonatomic) double Price;
 @property (copy, nonatomic) NSString *Category;
 @property (nonatomic) NSUInteger Quantity;
+@property (nonatomic) NSUInteger MinQtyRequired;
+@property (copy, nonatomic) NSString *Reviews;
 
 // custom setter
 - (id)initWithISBN:(NSString *)ISBN
              Title:(NSString *)Title
             Author:(NSString *)Author
          Publisher:(NSString *)Publisher
-              Year:(int)Year
+              Year:(NSUInteger)Year
              Price:(double)Price
-          Category:(NSString *)Category;
+          Category:(NSString *)Category
+           Reviews:(NSString *)Reviews
+    MinQtyRequired:(NSUInteger)MinQtyRequired;
 
-- (void)print;
 
 - (BOOL)isEqual:(id)object;
 

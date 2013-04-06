@@ -156,7 +156,7 @@
         }
         else {
             
-            if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsExist:self.username.text]) {
+            if ([[OSU_3BSQLiteDatabaseHandler sharedInstance] usernameIsInDatabase:self.username.text]) {
                 [self.alertView4 showWithAnimation:URBAlertAnimationTumble];
             }
             else {

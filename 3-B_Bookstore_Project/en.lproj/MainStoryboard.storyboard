@@ -103,6 +103,7 @@
                     <connections>
                         <outlet property="bookLogo" destination="IHc-Gh-7De" id="pIG-Vg-pSP"/>
                         <outlet property="loginButton" destination="048-WK-hgy" id="WTJ-jZ-otm"/>
+                        <outlet property="loginViewBG" destination="riO-7P-y10" id="XRX-vQ-Kbp"/>
                         <outlet property="mainTitileLabel" destination="eOI-pZ-0Oh" id="V3r-7U-SfM"/>
                         <outlet property="miniTitleLabel" destination="85B-sS-VHZ" id="YSO-GK-bMS"/>
                         <outlet property="myInfoLabel" destination="KcC-nS-6eZ" id="hpE-lH-IEJ"/>
@@ -166,7 +167,7 @@
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-2555" y="547"/>
+            <point key="canvasLocation" x="-2971" y="435"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mQ7-6g-OAb">
@@ -187,7 +188,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIO-4J-GfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1996" y="-82"/>
+            <point key="canvasLocation" x="-2412" y="-194"/>
         </scene>
         <!--shopping Cart View Controller - Shopping Cart-->
         <scene sceneID="7ya-Lf-Y7U">
@@ -355,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBl-Hp-vCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-883" y="288"/>
+            <point key="canvasLocation" x="-1299" y="176"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3BR-Is-PZA">
@@ -375,7 +376,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-1N-eTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-396" y="288"/>
+            <point key="canvasLocation" x="-238" y="-104"/>
         </scene>
         <!--customer Registration View Controller - Customer Registration-->
         <scene sceneID="JNU-XI-cPr">
@@ -658,7 +659,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="89" y="288"/>
+            <point key="canvasLocation" x="205" y="-104"/>
         </scene>
         <!--order List View Controller - Confirm Order-->
         <scene sceneID="KnM-vl-0YA">
@@ -937,7 +938,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gaq-11-08N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621" y="1007"/>
+            <point key="canvasLocation" x="755" y="596"/>
         </scene>
         <!--search View Controller - Search-->
         <scene sceneID="q5N-0d-AYI">
@@ -990,7 +991,7 @@ The books will be delivered within 5 business days.</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-883" y="-410"/>
+            <point key="canvasLocation" x="-1299" y="-632"/>
         </scene>
         <!--search Result View Controller - Search Results-->
         <scene sceneID="pKw-uQ-NqG">
@@ -1160,7 +1161,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suz-Af-HYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-396" y="-410"/>
+            <point key="canvasLocation" x="-840" y="-632"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUY-i9-If0">
@@ -1184,7 +1185,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCT-Yd-s6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1367" y="-410"/>
+            <point key="canvasLocation" x="-1783" y="-632"/>
         </scene>
         <!--Navigation Controller - Shopping Cart-->
         <scene sceneID="gFA-5R-R3p">
@@ -1203,7 +1204,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmN-1c-51n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1367" y="288"/>
+            <point key="canvasLocation" x="-1783" y="176"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sbu-80-K9R">
@@ -1223,7 +1224,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPc-pL-B4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="1007"/>
+            <point key="canvasLocation" x="-238" y="593"/>
         </scene>
         <!--customer Profile View Controller - Customer Profile-->
         <scene sceneID="fSi-19-dlu">
@@ -1503,7 +1504,7 @@ The books will be delivered within 5 business days.</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1165" y="611"/>
+            <point key="canvasLocation" x="1297" y="202"/>
         </scene>
         <!--proof Of Purchase View Controller - Proof Of Purchase-->
         <scene sceneID="uqm-Ee-ykS">
@@ -1820,7 +1821,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9U-1C-j34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1165" y="1365"/>
+            <point key="canvasLocation" x="1297" y="956"/>
         </scene>
         <!--new Customer View Controller - Customer Registration-->
         <scene sceneID="xnb-Qh-55M">
@@ -2115,7 +2116,7 @@ The books will be delivered within 5 business days.</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1996" y="691"/>
+            <point key="canvasLocation" x="-2412" y="579"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wuo-dL-Bfc">
@@ -2132,7 +2133,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbM-no-nli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1996" y="1519"/>
+            <point key="canvasLocation" x="-2412" y="1407"/>
         </scene>
         <!--administrator Main Menu View Controller - Administrator Tasks-->
         <scene sceneID="01k-Pd-5xb">
@@ -2214,7 +2215,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z43-UX-gJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1497" y="1519"/>
+            <point key="canvasLocation" x="-1989" y="1407"/>
         </scene>
         <!--manage Bookstore Catalog View Controller - Manage Boostore Catalog-->
         <scene sceneID="n7b-sN-GE9">
@@ -2239,7 +2240,7 @@ The books will be delivered within 5 business days.</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="insertNewBookButtonPressed:" destination="aNZ-oH-y4T" eventType="touchUpInside" id="zG0-vn-ENa"/>
+                                    <segue destination="0hP-Kg-WNH" kind="push" id="C4i-p5-akv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="u4H-NX-GI9">
@@ -2252,18 +2253,18 @@ The books will be delivered within 5 business days.</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="QoQ-oS-77n" kind="push" id="IuG-za-uIF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Manage Boostore Catalog" id="seP-Zj-Jig"/>
-                    <connections>
-                        <segue destination="0hP-Kg-WNH" kind="push" identifier="pushInsertNewBookSegue" id="nSB-HX-haq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dad-8b-bgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1056" y="1519"/>
+            <point key="canvasLocation" x="-1440" y="919"/>
         </scene>
         <!--insert New Book View Controller - Insert New Book-->
         <scene sceneID="u99-Q8-tJf">
@@ -2436,7 +2437,7 @@ The books will be delivered within 5 business days.</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="0hP-Kg-WNH" id="5oN-s3-9On"/>
                                         </connections>
@@ -2473,11 +2474,11 @@ The books will be delivered within 5 business days.</string>
                         <outlet property="authorField" destination="5Xo-YE-llR" id="tdG-6r-daE"/>
                         <outlet property="categoryButton" destination="OAc-Vd-9ZB" id="iQV-4P-sE1"/>
                         <outlet property="minQtyField" destination="rnh-aR-duS" id="EIw-Cb-KE2"/>
-                        <outlet property="priceFIeld" destination="rop-gg-jza" id="jUK-ul-NcK"/>
+                        <outlet property="priceField" destination="rop-gg-jza" id="5eG-fI-11v"/>
                         <outlet property="publisherField" destination="0d8-6U-CDF" id="RIC-R9-oQV"/>
                         <outlet property="reviewsField" destination="aKi-nu-QtR" id="lz1-og-yO2"/>
                         <outlet property="titleField" destination="BOx-Zh-odA" id="0Mc-cd-KdR"/>
-                        <outlet property="yearFIeld" destination="ECY-ho-SfB" id="haW-Jn-age"/>
+                        <outlet property="yearField" destination="ECY-ho-SfB" id="kwl-Tf-NgZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIL-5m-CUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2487,7 +2488,450 @@ The books will be delivered within 5 business days.</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-608" y="1519"/>
+            <point key="canvasLocation" x="-880" y="919"/>
+        </scene>
+        <!--modify And Delete Books Search View Controller - Search-->
+        <scene sceneID="O0F-P7-NaO">
+            <objects>
+                <viewController storyboardIdentifier="" modalTransitionStyle="crossDissolve" id="QoQ-oS-77n" customClass="OSU_modifyAndDeleteBooksSearchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ajw-cp-lG7" userLabel="SearchView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="ybM-eL-m4h" userLabel="BG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bg.png" id="m45-Ub-6x3" userLabel="background image">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="Search For" showsCancelButton="YES" id="s0T-Q7-XeB">
+                                        <rect key="frame" x="0.0" y="1" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="QoQ-oS-77n" id="fIV-RR-H6l"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13620057399999999" green="0.13620057399999999" blue="0.13620057399999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="KAW-Jq-y5A"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="fad-XO-N8U" id="MdX-Fy-Cap"/>
+                        <outlet property="searchField" destination="s0T-Q7-XeB" id="pSP-1D-7dR"/>
+                        <segue destination="3LX-RV-sve" kind="push" identifier="pushAdminSearchResultsSegue" id="o36-AR-PB1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFq-Ct-2R6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="731-Az-aeD">
+                    <connections>
+                        <outlet property="delegate" destination="QoQ-oS-77n" id="Vo3-xD-HVD"/>
+                        <outlet property="searchContentsController" destination="QoQ-oS-77n" id="Vim-cA-XYq"/>
+                        <outlet property="searchResultsDataSource" destination="QoQ-oS-77n" id="dco-Ql-Ddj"/>
+                        <outlet property="searchResultsDelegate" destination="QoQ-oS-77n" id="htj-EX-0ve"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-880" y="1615"/>
+        </scene>
+        <!--modify And Delete Books Search Results View Controller - Search Results-->
+        <scene sceneID="TRF-V1-5PC">
+            <objects>
+                <viewController storyboardIdentifier="" id="3LX-RV-sve" customClass="OSU_modifyAndDeleteBooksSearchResultsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JUG-Aq-6TA" userLabel="SearchResultView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="136" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zwb-QF-9Za">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdminBookCell" rowHeight="140" id="CLl-qN-XaD" customClass="OSU_3BModifyAndDeleteBookCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="CellBackground.png" id="kb8-8P-euS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n97-54-d7y" userLabel="Label - Book Title">
+                                                    <rect key="frame" x="20" y="9" width="280" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vv8-ui-U6w" userLabel="Label - Book Author">
+                                                    <rect key="frame" x="51" y="31" width="249" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="akO-dG-dnU" userLabel="Label - Book Publisher">
+                                                    <rect key="frame" x="102" y="53" width="198" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C4U-ur-0SQ" userLabel="Label - Book Price">
+                                                    <rect key="frame" x="70" y="75" width="82" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yza-Hv-jcE">
+                                                    <rect key="frame" x="20" y="31" width="32" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Publisher:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Ud-5S-9h3">
+                                                    <rect key="frame" x="20" y="53" width="83" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vnE-kI-CB4">
+                                                    <rect key="frame" x="20" y="75" width="51" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="brV-2C-YT6">
+                                                    <rect key="frame" x="39" y="103" width="95" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <state key="normal" title="Delete" backgroundImage="cellButton.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteButtonPressed:" destination="CLl-qN-XaD" eventType="touchUpInside" id="nld-wm-VN1"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="CNt-As-uOl">
+                                                    <rect key="frame" x="191" y="103" width="95" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <state key="normal" title="Update" backgroundImage="cellButton.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="updateButtonPressed:" destination="CLl-qN-XaD" eventType="touchUpInside" id="iGf-8c-Cqy"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DELETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mft-qu-TmB">
+                                                    <rect key="frame" x="185" y="76" width="106" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" red="0.79512117346938771" green="0.0" blue="0.008627864892124892" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="shadowOffset" width="1" height="-1"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.89556760199999996" green="0.89556760199999996" blue="0.89556760199999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="bookAuthor" destination="vv8-ui-U6w" id="dEZ-Ze-Tol"/>
+                                            <outlet property="bookPrice" destination="C4U-ur-0SQ" id="cJn-kt-bZa"/>
+                                            <outlet property="bookPublisher" destination="akO-dG-dnU" id="O2s-5v-Noz"/>
+                                            <outlet property="bookTitle" destination="n97-54-d7y" id="mG5-pu-9Bf"/>
+                                            <outlet property="deleteButton" destination="brV-2C-YT6" id="ZPM-Ee-pKC"/>
+                                            <outlet property="deletedLabel" destination="Mft-qu-TmB" id="Yde-3i-yaw"/>
+                                            <outlet property="updateButton" destination="CNt-As-uOl" id="ChT-ZX-wtj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3LX-RV-sve" id="nyK-4K-XFK"/>
+                                    <outlet property="delegate" destination="3LX-RV-sve" id="IJc-dB-bJ8"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bg2.png" id="fhn-mi-hyI" userLabel="BG - background@2x.png">
+                                <rect key="frame" x="0.0" y="442" width="320" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="g2t-Oz-qZe">
+                                <rect key="frame" x="175" y="447" width="125" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Done" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="3LX-RV-sve" eventType="touchUpInside" id="Ccy-6z-Jtw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="1te-Hw-ilv">
+                                <rect key="frame" x="20" y="447" width="125" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Cancel" backgroundImage="black_button_1.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="3LX-RV-sve" eventType="touchUpInside" id="bnf-21-Pg5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Results" id="bRd-I5-p91"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="lowerBG" destination="fhn-mi-hyI" id="XrE-vU-8yX"/>
+                        <outlet property="resultTable" destination="Zwb-QF-9Za" id="0A8-BC-51M"/>
+                        <segue destination="Q6u-ow-EWX" kind="push" identifier="pushUpdateBookSegue" id="Q9d-X7-2BX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xbY-9l-Bzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-442" y="1615"/>
+        </scene>
+        <!--update Book View Controller - Update Book-->
+        <scene sceneID="ybU-d3-OR1">
+            <objects>
+                <viewController id="Q6u-ow-EWX" customClass="OSU_updateBookViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PfJ-7C-cSO" userLabel="Insert New Book View">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="c1V-tG-zZS" userLabel="Lower View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bg.png" id="Du2-oa-5yz" userLabel="BG - background@2x.png">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="iB5-xV-zku">
+                                        <rect key="frame" x="20" y="434" width="125" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <state key="normal" title="Update" backgroundImage="black_button_1.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateButtonPressed:" destination="Q6u-ow-EWX" eventType="touchUpInside" id="F8r-Ao-fDD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Sx7-eB-jrS">
+                                        <rect key="frame" x="175" y="434" width="125" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <state key="normal" title="Cancel" backgroundImage="black_button_1.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed" destination="Q6u-ow-EWX" eventType="touchUpInside" id="4YZ-mk-ZFr"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ISBN:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fzH-ht-r2V">
+                                        <rect key="frame" x="20" y="20" width="67" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="81Q-a4-Evx">
+                                        <rect key="frame" x="20" y="58" width="67" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Author(s):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fiO-CQ-Kxx">
+                                        <rect key="frame" x="20" y="96" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Publisher:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zrj-nd-XvH">
+                                        <rect key="frame" x="20" y="188" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Category:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jd4-iP-Xd9">
+                                        <rect key="frame" x="20" y="226" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Year:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ufk-Xi-hDe">
+                                        <rect key="frame" x="20" y="264" width="53" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Min. Qty Required In-Stock: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bfT-Ya-pKC">
+                                        <rect key="frame" x="20" y="302" width="217" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="hhd-SF-bVa">
+                                        <rect key="frame" x="81" y="264" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q6u-ow-EWX" id="UI6-VC-7hf"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nEA-9R-zkE">
+                                        <rect key="frame" x="149" y="264" width="72" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title Of The Book" minimumFontSize="17" clearButtonMode="whileEditing" id="Qqh-xg-no6">
+                                        <rect key="frame" x="95" y="58" width="205" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q6u-ow-EWX" id="KEk-tn-ky2"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="WNH-pI-bD2">
+                                        <rect key="frame" x="245" y="302" width="55" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q6u-ow-EWX" id="2qw-2S-IoP"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="beC-xa-G1D" userLabel="Text Field Price">
+                                        <rect key="frame" x="229" y="264" width="71" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q6u-ow-EWX" id="akn-to-PyV"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="rOx-Hn-ure">
+                                        <rect key="frame" x="124" y="188" width="176" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q6u-ow-EWX" id="Ihc-GJ-5Cr"/>
+                                        </connections>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NQF-0g-V9T">
+                                        <rect key="frame" x="124" y="96" width="176" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q6u-ow-EWX" id="8cp-WC-ZYS"/>
+                                        </connections>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Reviews:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yhN-HG-s5A">
+                                        <rect key="frame" x="20" y="340" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rKu-rb-Cer">
+                                        <rect key="frame" x="124" y="340" width="176" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q6u-ow-EWX" id="G7e-KY-U4q"/>
+                                        </connections>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ySQ-ko-K73">
+                                        <rect key="frame" x="107" y="20" width="193" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PFg-2f-zEQ" appends="YES" id="c3w-aL-Uob"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="OdR-pT-Kc9" userLabel="Category Button">
+                                <rect key="frame" x="122" y="224" width="180" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="bigButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="creditCardTypeButtonPressed:" destination="Q6u-ow-EWX" eventType="touchUpInside" id="KJp-0n-nlE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update Book" id="tLu-jn-8Xy"/>
+                    <connections>
+                        <outlet property="ISBNLabel" destination="ySQ-ko-K73" id="35T-w7-bix"/>
+                        <outlet property="authorField" destination="NQF-0g-V9T" id="BAO-pW-5Vl"/>
+                        <outlet property="categoryButton" destination="OdR-pT-Kc9" id="nXE-Lk-LC3"/>
+                        <outlet property="minQtyField" destination="WNH-pI-bD2" id="IjA-lq-OFH"/>
+                        <outlet property="priceField" destination="beC-xa-G1D" id="NsV-Ng-rMp"/>
+                        <outlet property="publisherField" destination="rOx-Hn-ure" id="L9R-pq-e1w"/>
+                        <outlet property="reviewsField" destination="rKu-rb-Cer" id="HhG-jC-Y63"/>
+                        <outlet property="titleField" destination="Qqh-xg-no6" id="PO4-tY-xa8"/>
+                        <outlet property="yearField" destination="hhd-SF-bVa" id="hPT-Gb-QkB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJn-d5-ScO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PFg-2f-zEQ">
+                    <connections>
+                        <action selector="userDidTapOnBackground:" destination="Q6u-ow-EWX" id="TYZ-KY-8uL"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="6" y="1615"/>
         </scene>
     </scenes>
     <resources>
@@ -2497,6 +2941,7 @@ The books will be delivered within 5 business days.</string>
         <image name="background@2x.png" width="640" height="920"/>
         <image name="bigButton.png" width="480" height="360"/>
         <image name="black_bg.png" width="640" height="960"/>
+        <image name="black_bg2.png" width="506" height="900"/>
         <image name="black_button_1.png" width="220" height="77"/>
         <image name="book_logo.png" width="278" height="204"/>
         <image name="cellButton.png" width="86" height="32"/>
@@ -2509,6 +2954,7 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
+                <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -2517,6 +2963,18 @@ The books will be delivered within 5 business days.</string>
                 <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="checkMark" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="reviewsButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="OSU_3BModifyAndDeleteBookCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BModifyAndDeleteBookCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookPublisher" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="deleteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="deletedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="updateButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="OSU_3BOrderListCell" superclassName="UITableViewCell">
@@ -2532,6 +2990,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BShoppingCartCell.h"/>
             <relationships>
+                <relationship kind="action" name="deleteButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stepperPressed:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>
@@ -2579,8 +3039,16 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
             <relationships>
+                <relationship kind="action" name="administratorButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="loginButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="newCustomerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="passwordFieldTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="returningCustomerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="usernameFieldTouchDown:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="bookLogo" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginViewBG" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="mainTitileLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="miniTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="myInfoLabel" candidateClass="UILabel"/>
@@ -2592,23 +3060,45 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_insertNewBookViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_insertNewBookViewController.h"/>
             <relationships>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="ISBNField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="authorField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="categoryButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="minQtyField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="priceFIeld" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priceField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="publisherField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="reviewsField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="yearFIeld" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="yearField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="OSU_manageBookstoreCatalogViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_manageBookstoreCatalogViewController.h"/>
         </class>
+        <class className="OSU_modifyAndDeleteBooksSearchResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_modifyAndDeleteBooksSearchResultsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lowerBG" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="resultTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="OSU_modifyAndDeleteBooksSearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_modifyAndDeleteBooksSearchViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchField" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
         <class className="OSU_newCustomerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_newCustomerViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="userDidTapOnBackground:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -2675,11 +3165,26 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_shoppingCartViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_shoppingCartViewController.h"/>
             <relationships>
+                <relationship kind="action" name="checkoutButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="lowerLabelBG" candidateClass="UIView"/>
                 <relationship kind="outlet" name="shoppingCartInfo" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="shoppingCartTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="subtotalInfo" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OSU_updateBookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_updateBookViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ISBNLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="authorField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="categoryButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="minQtyField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priceField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="publisherField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="reviewsField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="yearField" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>
@@ -2689,6 +3194,6 @@ The books will be delivered within 5 business days.</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JR7-3T-jB1"/>
+        <segue reference="6kE-at-BNp"/>
     </inferredMetricsTieBreakers>
 </document>
