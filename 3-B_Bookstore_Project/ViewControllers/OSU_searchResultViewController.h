@@ -11,8 +11,9 @@
 #import "OSU_3BBook.h"
 #import "OSU_3BBooks.h"
 #import "OSU_3BBookCell.h"
+#import "PopoverView.h"
 
-@interface OSU_searchResultViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MBProgressHUDDelegate, OSU_3BBookCellDelegate>
+@interface OSU_searchResultViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MBProgressHUDDelegate, OSU_3BBookCellDelegate> 
 
 @property (weak, nonatomic) IBOutlet UILabel *shoppingCartInfo;
 @property (strong, nonatomic) OSU_3BBooks *resultBooks;

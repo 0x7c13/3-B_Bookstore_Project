@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "OSU_3BBook.h"
+#import "PopoverView.h"
 
 @protocol OSU_3BBookCellDelegate;
 
-@interface OSU_3BBookCell : UITableViewCell
+@interface OSU_3BBookCell : UITableViewCell <PopoverViewDelegate>
+{
+    PopoverView *popoverReviews;
+}
 
 @property (strong, nonatomic) OSU_3BBook *book;
 @property (weak, nonatomic) IBOutlet UILabel *bookTitle;
@@ -19,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *bookPublisher;
 @property (weak, nonatomic) IBOutlet UILabel *bookISBN;
 @property (weak, nonatomic) IBOutlet UILabel *bookPrice;
+@property (strong, nonatomic) NSString *bookReviews;
 
 @property (weak, nonatomic) IBOutlet UIButton *addToCartButton;
 @property (weak, nonatomic) IBOutlet UIButton *reviewsButton;

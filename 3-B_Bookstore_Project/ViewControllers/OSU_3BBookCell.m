@@ -43,6 +43,10 @@
 
 - (IBAction)reviewsButtonPressed:(UIButton *)sender {
  
+    popoverReviews = [PopoverView showPopoverAtPoint:CGPointMake(25, 0)
+                                              inView:self.reviewsButton.viewForBaselineLayout
+                                            withText:self.bookReviews delegate:self];
+    
     [self.delegate userDidPressReviewsButton:self];
 }
 

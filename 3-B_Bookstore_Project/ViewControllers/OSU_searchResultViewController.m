@@ -165,6 +165,7 @@
     cell.bookPublisher.text = cell.book.Publisher;
     cell.bookISBN.text = cell.book.ISBN;
     cell.bookPrice.text = [NSString stringWithFormat:@"$ %.2f",cell.book.Price];
+    cell.bookReviews = cell.book.Reviews;
     
     if (![[OSU_3BShoppingCart sharedInstance] isInShoppingCart:cell.book]) {
         cell.addToCartButton.userInteractionEnabled = YES;
@@ -175,6 +176,11 @@
         cell.addToCartButton.userInteractionEnabled = NO;
         [cell.addToCartButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         cell.checkMark.alpha = 1.0;
+    }
+    
+    if ([cell.book.Reviews isEqualToString:@""]) {
+        cell.reviewsButton.userInteractionEnabled = NO;
+        [cell.reviewsButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     }
     
     return cell;
@@ -211,7 +217,6 @@
 
 - (void)userDidPressReviewsButton:(OSU_3BBookCell *)cell
 {
-
 
 }
 
