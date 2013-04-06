@@ -28,6 +28,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:YES];
     [self updateResultsInfo];
 }
 

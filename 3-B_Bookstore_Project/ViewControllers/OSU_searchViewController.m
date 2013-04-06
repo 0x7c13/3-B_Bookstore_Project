@@ -69,7 +69,7 @@
 
 - (void)addPickers;
 {
-    titleOfRows = [NSArray arrayWithObjects:@"Keyword Anywhere", @"ISBN", @"Title", @"Author", @"Publisher", nil];
+    titleOfRows = @[@"Keyword Anywhere", @"ISBN", @"Title", @"Author", @"Publisher"];
     
     titleOfCategories = [[NSArray alloc] initWithObjects:@"All Categories", nil];
     titleOfCategories = [titleOfCategories arrayByAddingObjectsFromArray:[[OSU_3BSQLiteDatabaseHandler sharedInstance] getCategoriesFromDatabase]];

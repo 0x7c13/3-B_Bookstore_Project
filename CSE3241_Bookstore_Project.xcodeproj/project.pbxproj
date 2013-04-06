@@ -70,6 +70,8 @@
 		F798707A170BC56400CCD89C /* OSU_orderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7987079170BC56400CCD89C /* OSU_orderListViewController.m */; };
 		F7F94F9A170E8A6900A34F69 /* KGStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F94F99170E8A6900A34F69 /* KGStatusBar.m */; };
 		F7F94F9E170E92D000A34F69 /* book_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F7F94F9D170E92D000A34F69 /* book_logo.png */; };
+		F7F94FA1170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F94FA0170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.m */; };
+		F7F94FA4170F9B1C00A34F69 /* OSU_insertNewBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F94FA3170F9B1C00A34F69 /* OSU_insertNewBookViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +166,10 @@
 		F7F94F98170E8A6900A34F69 /* KGStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGStatusBar.h; sourceTree = "<group>"; };
 		F7F94F99170E8A6900A34F69 /* KGStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGStatusBar.m; sourceTree = "<group>"; };
 		F7F94F9D170E92D000A34F69 /* book_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book_logo.png; sourceTree = "<group>"; };
+		F7F94F9F170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_manageBookstoreCatalogViewController.h; sourceTree = "<group>"; };
+		F7F94FA0170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_manageBookstoreCatalogViewController.m; sourceTree = "<group>"; };
+		F7F94FA2170F9B1C00A34F69 /* OSU_insertNewBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_insertNewBookViewController.h; sourceTree = "<group>"; };
+		F7F94FA3170F9B1C00A34F69 /* OSU_insertNewBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_insertNewBookViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +335,10 @@
 				F78E26FF170D319D00F2DFA6 /* OSU_newCustomerViewController.m */,
 				F78E270B170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.h */,
 				F78E270C170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.m */,
+				F7F94F9F170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.h */,
+				F7F94FA0170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.m */,
+				F7F94FA2170F9B1C00A34F69 /* OSU_insertNewBookViewController.h */,
+				F7F94FA3170F9B1C00A34F69 /* OSU_insertNewBookViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -503,6 +513,8 @@
 				F78E2704170D409300F2DFA6 /* ASDepthModalViewController.m in Sources */,
 				F78E270D170E77CB00F2DFA6 /* OSU_administratorMainMenuViewController.m in Sources */,
 				F7F94F9A170E8A6900A34F69 /* KGStatusBar.m in Sources */,
+				F7F94FA1170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.m in Sources */,
+				F7F94FA4170F9B1C00A34F69 /* OSU_insertNewBookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

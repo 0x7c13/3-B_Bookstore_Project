@@ -190,6 +190,28 @@
     
 }
 
+- (IBAction)userDidTapOnBackground:(UITapGestureRecognizer *)sender {
+    [self.username resignFirstResponder];
+    [self.PIN1 resignFirstResponder];
+    [self.PIN2 resignFirstResponder];
+    [self.firstName resignFirstResponder];
+    [self.lastName resignFirstResponder];
+    [self.address resignFirstResponder];
+    [self.city resignFirstResponder];
+    [self.ZIPCode resignFirstResponder];
+    [self.creditCardNumber resignFirstResponder];
+    [self.expirationDate resignFirstResponder];
+    
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    CGRect rect = CGRectMake(0.0f, 20.0f, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = rect;
+    [UIView commitAnimations];
+}
+
+
+
 #pragma protocols
 
 - (void) niDropDownDelegateMethod: (NIDropDown *) sender {
