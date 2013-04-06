@@ -114,6 +114,14 @@
     {
         while (sqlite3_step(statement) == SQLITE_ROW) {
             
+            NSString *reviews;
+            if (!(char*)sqlite3_column_text(statement, 7)) {
+                reviews = @"";
+            }
+            else {
+                reviews = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 7)];
+            }
+            
             book = [[OSU_3BBook alloc] initWithISBN:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)]
                                               Title:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)]
                                              Author:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)]
@@ -121,7 +129,7 @@
                                                Year:(NSUInteger)sqlite3_column_int(statement, 4)
                                               Price:[[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue]
                                            Category:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]
-                                            Reviews:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 7)]
+                                            Reviews:reviews
                                      MinQtyRequired:(NSUInteger)sqlite3_column_int(statement, 8)];
                             
         } 
