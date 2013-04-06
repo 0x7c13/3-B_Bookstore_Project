@@ -88,9 +88,10 @@
         [self setup];
         
         // backgound
-        UIImageView *bacground = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
-        bacground.image = [UIImage imageNamed:@"pickerBackground@2x.png"];
-        [self addSubview:bacground];
+        //UIImageView *bacground = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
+//        bacground.image = [UIImage imageNamed:@"pickerBackground@2x.png"];
+        //bacground.image = [UIImage imageNamed:@"black_bg2.png"];
+        //[self addSubview:bacground];
         
         // content
         contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
@@ -276,7 +277,7 @@
 				label = [[UILabel alloc] initWithFrame:CGRectMake(_rowIndent, 0, self.frame.size.width - _rowIndent, 39.0)];
                 label.backgroundColor = [UIColor clearColor];
                 label.font = self.rowFont;
-                label.textColor = [UIColor blackColor];
+                label.textColor = [UIColor whiteColor];
             }
             
             [self configureView:label atIndex:index];

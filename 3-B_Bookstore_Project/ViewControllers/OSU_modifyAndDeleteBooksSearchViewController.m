@@ -69,7 +69,7 @@
     self.databaseRowPicker.dataSource = self;
     self.databaseRowPicker.delegate = self;
     self.databaseRowPicker.rowFont = [UIFont boldSystemFontOfSize:15.0];
-    self.databaseRowPicker.rowIndent = 10.0;
+    self.databaseRowPicker.rowIndent = 20.0;
     [self.databaseRowPicker reloadData];
     [self.view addSubview:self.databaseRowPicker];
     
@@ -77,7 +77,7 @@
     self.categoryPicker.dataSource = self;
     self.categoryPicker.delegate = self;
     self.categoryPicker.rowFont = [UIFont boldSystemFontOfSize:15.0];
-    self.categoryPicker.rowIndent = 10.0;
+    self.categoryPicker.rowIndent = 20.0;
     [self.categoryPicker reloadData];
     [self.view addSubview:self.categoryPicker];
     

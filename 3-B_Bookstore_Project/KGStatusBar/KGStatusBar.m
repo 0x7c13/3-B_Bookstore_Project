@@ -27,7 +27,7 @@
 
 + (void)showSuccessWithStatus:(NSString*)status
 {
-    [[KGStatusBar sharedView] showWithStatus:status barColor:[UIColor darkGrayColor] textColor:[UIColor colorWithRed:191.0/255.0 green:191.0/255.0 blue:191.0/255.0 alpha:1.0]];
+    [[KGStatusBar sharedView] showWithStatus:status barColor:[UIColor colorWithRed:60.0/255.0 green:120.0/255.0 blue:80.0/225.0 alpha:1.0] textColor:[UIColor colorWithRed:191.0/255.0 green:191.0/255.0 blue:191.0/255.0 alpha:1.0]];
     [KGStatusBar performSelector:@selector(dismiss) withObject:self afterDelay:2.0 ];
 }
 
