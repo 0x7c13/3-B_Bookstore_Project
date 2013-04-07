@@ -58,8 +58,16 @@
     
     [self.categoryButton setTitle:@"Select a Category" forState:UIControlStateNormal];
     
-    self.minQtyField.text = @"0";
+
     self.ISBNLabel.text = self.currentBook.ISBN;
+    self.titleField.text = self.currentBook.Titile;
+    self.authorField.text = self.currentBook.Author;
+    self.publisherField.text = self.currentBook.Publisher;
+    [self.categoryButton setTitle:self.currentBook.Category forState:UIControlStateNormal];
+    self.yearField.text = [NSString stringWithFormat:@"%u", self.currentBook.Year];
+    self.priceField.text = [NSString stringWithFormat:@"%.2f", self.currentBook.Price];
+    self.minQtyField.text = [NSString stringWithFormat:@"%u", self.currentBook.MinQtyRequired];
+    self.reviewsField.text = self.currentBook.Reviews;
     
     URBAlertView *alertView = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"Please fill out all fields!"];
 	alertView.blurBackground = NO;

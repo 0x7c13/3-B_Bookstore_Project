@@ -46,6 +46,15 @@
     self.currentUser = [[OSU_3BShoppingCart sharedInstance]getCurrentCustomer];
     
     self.username.text = self.currentUser.username;
+    self.firstName.text = self.currentUser.firstName;
+    self.lastName.text = self.currentUser.lastName;
+    self.address.text = self.currentUser.address;
+    self.city.text = self.currentUser.city;
+    [self.state setTitle:self.currentUser.state forState:UIControlStateNormal];
+    self.ZIPCode.text = [NSString stringWithFormat:@"%u", self.currentUser.ZIPCode];
+    [self.creditCardType setTitle:self.currentUser.creditCardType forState:UIControlStateNormal];
+    self.creditCardNumber.text = self.currentUser.creditCardNumber;
+    self.expirationDate.text = self.currentUser.creditCardExpirationDate;
     
     URBAlertView *alertView2 = [URBAlertView dialogWithTitle:@"Attention:" subtitle:@"Please fill out all fields!"];
 	alertView2.blurBackground = NO;

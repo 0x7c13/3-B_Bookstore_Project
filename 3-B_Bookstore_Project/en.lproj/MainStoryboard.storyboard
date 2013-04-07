@@ -2355,7 +2355,7 @@ The books will be delivered within 5 business days.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="ECY-ho-SfB">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY" textAlignment="center" minimumFontSize="17" id="ECY-ho-SfB">
                                         <rect key="frame" x="81" y="264" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2398,7 +2398,7 @@ The books will be delivered within 5 business days.</string>
                                             <outlet property="delegate" destination="0hP-Kg-WNH" id="tgu-ym-nIX"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="rop-gg-jza" userLabel="Text Field Price">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="rop-gg-jza" userLabel="Text Field Price">
                                         <rect key="frame" x="229" y="264" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2800,7 +2800,7 @@ The books will be delivered within 5 business days.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="hhd-SF-bVa">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY" textAlignment="center" minimumFontSize="17" id="hhd-SF-bVa">
                                         <rect key="frame" x="81" y="264" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2834,7 +2834,7 @@ The books will be delivered within 5 business days.</string>
                                             <outlet property="delegate" destination="Q6u-ow-EWX" id="2qw-2S-IoP"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="beC-xa-G1D" userLabel="Text Field Price">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="beC-xa-G1D" userLabel="Text Field Price">
                                         <rect key="frame" x="229" y="264" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2955,8 +2955,6 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
-                <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -2992,6 +2990,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BShoppingCartCell.h"/>
             <relationships>
+                <relationship kind="action" name="deleteButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stepperPressed:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>
@@ -3005,14 +3005,7 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerProfileViewController.h"/>
             <relationships>
-                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
                 <relationship kind="action" name="cancelButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
-                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="updateButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="userDidTapOnBackground:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -3030,6 +3023,14 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerRegistrationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="userDidTapOnBackground:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -3047,6 +3048,13 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_initViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_initViewController.h"/>
             <relationships>
+                <relationship kind="action" name="administratorButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="loginButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="newCustomerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="passwordFieldTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="returningCustomerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="searchOnlyButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="usernameFieldTouchDown:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="bookLogo" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginViewBG" candidateClass="UIImageView"/>
@@ -3061,6 +3069,9 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_insertNewBookViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_insertNewBookViewController.h"/>
             <relationships>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="insertButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="userDidTapOnBackground:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="ISBNField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="authorField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="categoryButton" candidateClass="UIButton"/>
@@ -3091,6 +3102,14 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_newCustomerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_newCustomerViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="registerButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="skipRegistrationButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="userDidTapOnBackground:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -3109,7 +3128,6 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_orderListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_orderListViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cityStateAndZIPCodeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="creditCardTypeAndNumberLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="customerNameLabel" candidateClass="UILabel"/>

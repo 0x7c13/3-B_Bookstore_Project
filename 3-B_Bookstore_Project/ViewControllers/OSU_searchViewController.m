@@ -94,6 +94,7 @@
             
             currentUser.smartCategory = @"";
             [[OSU_3BShoppingCart sharedInstance]setCurrentCustomer:currentUser];
+            
         }
         
         firstLoad = NO;
