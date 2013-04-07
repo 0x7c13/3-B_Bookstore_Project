@@ -47,7 +47,7 @@
     
     if (self.updated) {
         
-        OSU_3BBook *targetBook = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectABookFromDatabaseWithISBN:[self.resultBooks objectAtIndexedSubscript:_updatedRow].ISBN];
+        OSU_3BBook *targetBook = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectABookFromDatabaseByISBN:[self.resultBooks objectAtIndexedSubscript:_updatedRow].ISBN];
         
         [self.resultBooks removeABook:[self.resultBooks objectAtIndexedSubscript:_updatedRow]];
         

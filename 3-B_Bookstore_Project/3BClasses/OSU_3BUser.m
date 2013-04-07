@@ -53,6 +53,7 @@
         _creditCardType = creditCardType;
         _creditCardNumber = creditCardNumber;
         _creditCardExpirationDate = expirationDate;
+        _smartCategory = @"";
     }
     
     return  self;

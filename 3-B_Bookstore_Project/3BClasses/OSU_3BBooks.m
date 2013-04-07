@@ -63,10 +63,13 @@
     return (NSUInteger)self.listOfBooks.count;
 }
 
-- (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)bookNumber
+- (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)index
 {
-    return [self.listOfBooks objectAtIndex:bookNumber];
-
+    if (index < [self count])
+        return [self.listOfBooks objectAtIndex:index];
+    else {
+        return nil;
+    }
 }
 
 @end

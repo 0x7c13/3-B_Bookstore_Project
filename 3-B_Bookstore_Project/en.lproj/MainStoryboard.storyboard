@@ -188,7 +188,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIO-4J-GfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2412" y="-194"/>
+            <point key="canvasLocation" x="-2424" y="-450"/>
         </scene>
         <!--shopping Cart View Controller - Shopping Cart-->
         <scene sceneID="7ya-Lf-Y7U">
@@ -356,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBl-Hp-vCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1299" y="176"/>
+            <point key="canvasLocation" x="-1311" y="-80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3BR-Is-PZA">
@@ -376,7 +376,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-1N-eTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-238" y="-104"/>
+            <point key="canvasLocation" x="-250" y="-360"/>
         </scene>
         <!--customer Registration View Controller - Customer Registration-->
         <scene sceneID="JNU-XI-cPr">
@@ -659,7 +659,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="205" y="-104"/>
+            <point key="canvasLocation" x="193" y="-360"/>
         </scene>
         <!--order List View Controller - Confirm Order-->
         <scene sceneID="KnM-vl-0YA">
@@ -875,6 +875,7 @@ The books will be delivered within 5 business days.</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="checkOutButtonPressed" destination="O4l-Fw-whj" eventType="touchUpInside" id="Qeq-va-hQg"/>
                                     <segue destination="ZQm-6N-suO" kind="push" id="asO-Pr-zVJ"/>
                                 </connections>
                             </button>
@@ -938,7 +939,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gaq-11-08N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="755" y="596"/>
+            <point key="canvasLocation" x="743" y="340"/>
         </scene>
         <!--search View Controller - Search-->
         <scene sceneID="q5N-0d-AYI">
@@ -991,7 +992,7 @@ The books will be delivered within 5 business days.</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-1299" y="-632"/>
+            <point key="canvasLocation" x="-1311" y="-888"/>
         </scene>
         <!--search Result View Controller - Search Results-->
         <scene sceneID="pKw-uQ-NqG">
@@ -1161,7 +1162,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suz-Af-HYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-840" y="-632"/>
+            <point key="canvasLocation" x="-852" y="-888"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUY-i9-If0">
@@ -1185,7 +1186,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCT-Yd-s6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1783" y="-632"/>
+            <point key="canvasLocation" x="-1795" y="-888"/>
         </scene>
         <!--Navigation Controller - Shopping Cart-->
         <scene sceneID="gFA-5R-R3p">
@@ -1204,7 +1205,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmN-1c-51n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1783" y="176"/>
+            <point key="canvasLocation" x="-1795" y="-80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sbu-80-K9R">
@@ -1224,7 +1225,7 @@ The books will be delivered within 5 business days.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPc-pL-B4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-238" y="593"/>
+            <point key="canvasLocation" x="-250" y="337"/>
         </scene>
         <!--customer Profile View Controller - Customer Profile-->
         <scene sceneID="fSi-19-dlu">
@@ -1504,7 +1505,7 @@ The books will be delivered within 5 business days.</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1297" y="202"/>
+            <point key="canvasLocation" x="1285" y="-54"/>
         </scene>
         <!--proof Of Purchase View Controller - Proof Of Purchase-->
         <scene sceneID="uqm-Ee-ykS">
@@ -1821,7 +1822,7 @@ The books will be delivered within 5 business days.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9U-1C-j34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="956"/>
+            <point key="canvasLocation" x="1285" y="700"/>
         </scene>
         <!--new Customer View Controller - Customer Registration-->
         <scene sceneID="xnb-Qh-55M">
@@ -2116,7 +2117,7 @@ The books will be delivered within 5 business days.</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2412" y="579"/>
+            <point key="canvasLocation" x="-2324" y="483"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wuo-dL-Bfc">
@@ -2954,6 +2955,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
+                <relationship kind="action" name="addToCartButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -3002,6 +3005,14 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_customerProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_customerProfileViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ZIPCodeTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="cancelButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="creditCardExpirationDateTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardNumberTouchDown:" candidateClass="UITextField"/>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stateSelectButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="updateButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="userDidTapOnBackground:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="PIN1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="PIN2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ZIPCode" candidateClass="UITextField"/>
@@ -3098,6 +3109,7 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_orderListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_orderListViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cancelButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cityStateAndZIPCodeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="creditCardTypeAndNumberLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="customerNameLabel" candidateClass="UILabel"/>
@@ -3114,6 +3126,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_proofOfPurchaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_proofOfPurchaseViewController.h"/>
             <relationships>
+                <relationship kind="action" name="newSearchButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="printButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buyDateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buyTimeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cityStateAndZIPCodeLabel" candidateClass="UILabel"/>
@@ -3156,6 +3170,9 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_updateBookViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_updateBookViewController.h"/>
             <relationships>
+                <relationship kind="action" name="creditCardTypeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="updateButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="userDidTapOnBackground:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="ISBNLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="authorField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="categoryButton" candidateClass="UIButton"/>

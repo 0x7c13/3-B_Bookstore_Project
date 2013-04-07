@@ -95,7 +95,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     OSU_modifyAndDeleteBooksSearchResultsViewController *resultVC = segue.destinationViewController;
-    resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:self.searchField.text
+    resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseByKeyword:self.searchField.text
                                                                                                    Category:titleOfCategories[indexOfCategory]
                                                                                                     RowName:titleOfRows[indexOfRow]];
     

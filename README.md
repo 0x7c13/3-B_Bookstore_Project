@@ -2,7 +2,7 @@ Best-Book-Buy Online Bookstore Project
 ======================================
 ## The Ohio State University CSE 3241 Database Project
 
-Current Progress: About 80% :(
+Current Progress: About 85% :(
 
 3-B_Bookstore_Project.app
 
@@ -46,6 +46,8 @@ ASDepthModal : https://github.com/autresphere/ASDepthModal
 KGStatusBar : https://github.com/kevingibbon/KGStatusBar
 
 PopoverView : https://github.com/runway20/PopoverView
+
+KGModal : https://github.com/kgn/KGModal
 
 --------------------------------
 

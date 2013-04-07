@@ -38,5 +38,6 @@
 - (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)index;
 
 - (BOOL)isInShoppingCart:(OSU_3BBook *)book;
+- (NSString *)getSmartCategory;
 
 @end

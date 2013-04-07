@@ -37,6 +37,8 @@
 		F771B5BC170FD5D6009CC952 /* OSU_3BModifyAndDeleteBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F771B5BB170FD5D6009CC952 /* OSU_3BModifyAndDeleteBookCell.m */; };
 		F771B5BF170FE937009CC952 /* OSU_updateBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F771B5BE170FE936009CC952 /* OSU_updateBookViewController.m */; };
 		F771B5C41710045F009CC952 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F771B5C21710045F009CC952 /* PopoverView.m */; };
+		F771B5C71711005F009CC952 /* OSU_3BOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = F771B5C61711005F009CC952 /* OSU_3BOrder.m */; };
+		F771B5CB17110B1D009CC952 /* KGModal.m in Sources */ = {isa = PBXBuildFile; fileRef = F771B5CA17110B1D009CC952 /* KGModal.m */; };
 		F775230F17027DF6004D7A4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775230E17027DF6004D7A4D /* UIKit.framework */; };
 		F775231117027DF6004D7A4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775231017027DF6004D7A4D /* Foundation.framework */; };
 		F775231917027DF6004D7A4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F775231717027DF6004D7A4D /* InfoPlist.strings */; };
@@ -124,6 +126,10 @@
 		F771B5C11710045F009CC952 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
 		F771B5C21710045F009CC952 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
 		F771B5C31710045F009CC952 /* PopoverView_Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView_Configuration.h; sourceTree = "<group>"; };
+		F771B5C51711005E009CC952 /* OSU_3BOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_3BOrder.h; sourceTree = "<group>"; };
+		F771B5C61711005F009CC952 /* OSU_3BOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BOrder.m; sourceTree = "<group>"; };
+		F771B5C917110B1D009CC952 /* KGModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGModal.h; sourceTree = "<group>"; };
+		F771B5CA17110B1D009CC952 /* KGModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGModal.m; sourceTree = "<group>"; };
 		F775230B17027DF6004D7A4D /* CSE3241_Bookstore_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE3241_Bookstore_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F775230E17027DF6004D7A4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F775231017027DF6004D7A4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -265,6 +271,15 @@
 			path = PopoverView;
 			sourceTree = "<group>";
 		};
+		F771B5C817110B1C009CC952 /* KGModal */ = {
+			isa = PBXGroup;
+			children = (
+				F771B5C917110B1D009CC952 /* KGModal.h */,
+				F771B5CA17110B1D009CC952 /* KGModal.m */,
+			);
+			path = KGModal;
+			sourceTree = "<group>";
+		};
 		F775230217027DF6004D7A4D = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +321,7 @@
 				F775232617027DF6004D7A4D /* MainStoryboard.storyboard */,
 				F775233E170283C6004D7A4D /* 3BClasses */,
 				F7752333170282CA004D7A4D /* ViewControllers */,
+				F771B5C817110B1C009CC952 /* KGModal */,
 				F771B5C01710045F009CC952 /* PopoverView */,
 				F7F94F97170E8A6900A34F69 /* KGStatusBar */,
 				F78E2701170D409300F2DFA6 /* ASDepthModal */,
@@ -391,6 +407,8 @@
 				F775234917028959004D7A4D /* OSU_3BBook.m */,
 				F75680B9170666660042BB55 /* OSU_3BBooks.h */,
 				F75680BA170666660042BB55 /* OSU_3BBooks.m */,
+				F771B5C51711005E009CC952 /* OSU_3BOrder.h */,
+				F771B5C61711005F009CC952 /* OSU_3BOrder.m */,
 			);
 			path = 3BClasses;
 			sourceTree = "<group>";
@@ -555,6 +573,8 @@
 				F771B5BC170FD5D6009CC952 /* OSU_3BModifyAndDeleteBookCell.m in Sources */,
 				F771B5BF170FE937009CC952 /* OSU_updateBookViewController.m in Sources */,
 				F771B5C41710045F009CC952 /* PopoverView.m in Sources */,
+				F771B5C71711005F009CC952 /* OSU_3BOrder.m in Sources */,
+				F771B5CB17110B1D009CC952 /* KGModal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

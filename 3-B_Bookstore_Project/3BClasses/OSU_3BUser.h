@@ -30,17 +30,20 @@ typedef enum {
 @property (copy, nonatomic, readonly) NSString *creditCardNumber;
 @property (copy, nonatomic, readonly) NSString *creditCardExpirationDate;
 
+// for returning customer use
+@property (copy, nonatomic) NSString *smartCategory;
+
 - (id)initWithUsername:(NSString *)username
-                             PIN:(NSString *)PIN
-                       firstName:(NSString *)firstName
-                        lastName:(NSString *)lastName
-                         address:(NSString *)address
-                            city:(NSString *)city
-                           state:(NSString *)state
-                         ZIPCode:(NSUInteger)ZIPCode
-                  creditCardType:(NSString *)creditCardType
-                creditCardNumber:(NSString *)creditCardNumber
-        creditCardExpirationDate:(NSString *)expirationDate;
+                   PIN:(NSString *)PIN
+             firstName:(NSString *)firstName
+              lastName:(NSString *)lastName
+               address:(NSString *)address
+                  city:(NSString *)city
+                 state:(NSString *)state
+               ZIPCode:(NSUInteger)ZIPCode
+        creditCardType:(NSString *)creditCardType
+      creditCardNumber:(NSString *)creditCardNumber
+creditCardExpirationDate:(NSString *)expirationDate;
 
 
 @end

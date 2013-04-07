@@ -96,7 +96,7 @@
     sqlite3_close (_3BBooksDataBase);
 }
 
-- (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber
+- (OSU_3BBook *)selectABookFromDatabaseByISBN:(NSString *)ISBNNumber
 {
     OSU_3BBook *book;
     NSString *queryString = [NSString stringWithFormat:@"SELECT * FROM Books WHERE ISBN = '%@'", ISBNNumber];
@@ -170,7 +170,7 @@
 }
 
 
-- (OSU_3BBooks *)selectBooksFromDatabaseWithKeyword:(NSString *)keyword
+- (OSU_3BBooks *)selectBooksFromDatabaseByKeyword:(NSString *)keyword
                                           Category:(NSString *)category
                                            RowName:(NSString *)row
 {
@@ -248,6 +248,59 @@
     return books;
 }
 
+-(OSU_3BBooks *)selectBooksFromDatabaseBySmartCategory:(NSString *)smartCategory
+{
+
+    OSU_3BBooks *books = [[OSU_3BBooks alloc]init];
+    
+    NSString *queryString;
+    
+    queryString = [NSString stringWithFormat:@"SELECT * FROM Books WHERE Category = '%@' INTERSECT SELECT * FROM Books WHERE Year = '2002' OR Year = '2003'", smartCategory];
+
+    //NSLog(@"%@",queryString);
+    
+    const char *sql = [queryString UTF8String];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
+        
+        NSLog(@"sql problem occured with: %s", sql);
+        NSLog(@"%s", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    else
+    {
+        
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            
+            
+            NSString *reviews;
+            if (!(char*)sqlite3_column_text(statement, 7)) {
+                reviews = @"";
+            }
+            else {
+                reviews = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 7)];
+            }
+            
+            OSU_3BBook *book = [[OSU_3BBook alloc] initWithISBN:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)]
+                                                          Title:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)]
+                                                         Author:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)]
+                                                      Publisher:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 3)]
+                                                           Year:(NSUInteger)sqlite3_column_int(statement, 4)
+                                                          Price:[[NSString stringWithFormat:@"%.2f",(double)sqlite3_column_double(statement, 5)] doubleValue]
+                                                       Category:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 6)]
+                                                        Reviews:reviews
+                                                 MinQtyRequired:(NSUInteger)sqlite3_column_int(statement, 8)];
+            
+            [books addABook:book];
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return books;
+
+}
+
 - (BOOL)usernameIsInDatabase:(NSString *)username
 {
     BOOL result = NO;
@@ -309,7 +362,7 @@
         
         if(insertStmt == nil)
         {
-            const char *sql = [@"INSERT INTO Customers (Username, PIN, FirstName, LastName, Address, City, State, ZIP, CreditCardType, CreditCardNumber, CreditCardExpirationDate) VALUES(?,?,?,?,?,?,?,?,?,?,?)" UTF8String];
+            const char *sql = [@"INSERT INTO Customers (Username, PIN, FirstName, LastName, Address, City, State, ZIP, CreditCardType, CreditCardNumber, CreditCardExpirationDate, SmartCategory) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)" UTF8String];
             
             if(sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &insertStmt, NULL) != SQLITE_OK)
                 NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(_3BBooksDataBase));
@@ -326,6 +379,7 @@
         sqlite3_bind_text(insertStmt, 9, [user.creditCardType UTF8String], -1, SQLITE_TRANSIENT);;
         sqlite3_bind_text(insertStmt, 10, [user.creditCardNumber UTF8String], -1, SQLITE_TRANSIENT);
         sqlite3_bind_text(insertStmt, 11, [user.creditCardExpirationDate UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(insertStmt, 12, [user.smartCategory UTF8String], -1, SQLITE_TRANSIENT);
         
         if(SQLITE_DONE != sqlite3_step(insertStmt))
             NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(_3BBooksDataBase));
@@ -439,6 +493,16 @@
                                        creditCardNumber:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 9)]
                                creditCardExpirationDate:[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 10)]];
             
+            NSString *smartCategory;
+            
+            if (!(char*)sqlite3_column_text(statement, 7)) {
+                smartCategory = @"";
+            }
+            else {
+                smartCategory = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 11)];
+            }
+            
+            user.smartCategory = smartCategory;
         }
     }
     sqlite3_finalize(statement);

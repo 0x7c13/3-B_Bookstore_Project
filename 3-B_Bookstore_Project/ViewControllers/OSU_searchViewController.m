@@ -10,6 +10,7 @@
 #import "OSU_3BShoppingCart.h"
 #import "OSU_3BSQLiteDatabaseHandler.h"
 #import "OSU_searchResultViewController.h"
+#import "KGModal.h"
 
 @interface OSU_searchViewController () {
     
@@ -18,6 +19,8 @@
     
     NSArray *titleOfCategories;
     NSInteger indexOfCategory;
+    
+    BOOL firstLoad;
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
@@ -36,6 +39,67 @@
     }
     return self;
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    if (firstLoad && ![[OSU_3BShoppingCart sharedInstance] isGuestMode]) {
+        
+        OSU_3BUser *currentUser = [[OSU_3BShoppingCart sharedInstance] getCurrentCustomer];
+
+        if (![currentUser.smartCategory isEqualToString:@""] ) {
+
+            BOOL existAtLeastOne = NO;
+            
+            OSU_3BBooks *suggestedBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseBySmartCategory:currentUser.smartCategory];
+            
+            for (int i = 0; i < [suggestedBooks count]; i++) {
+                [[OSU_3BShoppingCart sharedInstance] addItem:[suggestedBooks objectAtIndexedSubscript:i] withQuantity:1];
+                existAtLeastOne = YES;
+            }
+            
+            if (existAtLeastOne) {
+                UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 180)];
+                
+                CGRect welcomeLabelRect = contentView.bounds;
+                welcomeLabelRect.origin.y = 20;
+                welcomeLabelRect.size.height = 20;
+                UIFont *welcomeLabelFont = [UIFont boldSystemFontOfSize:17];
+                UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:welcomeLabelRect];
+                welcomeLabel.text = @"Welcome Back!";
+                welcomeLabel.font = welcomeLabelFont;
+                welcomeLabel.textColor = [UIColor whiteColor];
+                welcomeLabel.textAlignment = NSTextAlignmentCenter;
+                welcomeLabel.backgroundColor = [UIColor clearColor];
+                welcomeLabel.shadowColor = [UIColor blackColor];
+                welcomeLabel.shadowOffset = CGSizeMake(0, 1);
+                [contentView addSubview:welcomeLabel];
+                
+                CGRect infoLabelRect = CGRectInset(contentView.bounds, 5, 5);
+                infoLabelRect.origin.y = CGRectGetMaxY(welcomeLabelRect)+5;
+                infoLabelRect.size.height -= CGRectGetMinY(infoLabelRect);
+                UILabel *infoLabel = [[UILabel alloc] initWithFrame:infoLabelRect];
+                infoLabel.text = @"A list of suggested books has generated for you. Go to your shopping cart and have a look. Hope you like it!";
+                infoLabel.numberOfLines = 6;
+                infoLabel.textColor = [UIColor whiteColor];
+                infoLabel.textAlignment = NSTextAlignmentCenter;
+                infoLabel.backgroundColor = [UIColor clearColor];
+                infoLabel.shadowColor = [UIColor blackColor];
+                infoLabel.shadowOffset = CGSizeMake(0, 1);
+                [contentView addSubview:infoLabel];
+                
+                [[KGModal sharedInstance] showWithContentView:contentView andAnimated:YES];
+            }
+            
+            currentUser.smartCategory = @"";
+            [[OSU_3BShoppingCart sharedInstance]setCurrentCustomer:currentUser];
+        }
+        
+        firstLoad = NO;
+    }
+}
+
 
 - (void)viewDidLoad
 {
@@ -63,8 +127,7 @@
 
     self.navigationItem.leftBarButtonItem = itemLeft;
 
-    
-
+    firstLoad = YES;
 }
 
 - (void)addPickers;
@@ -104,7 +167,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     OSU_searchResultViewController *resultVC = segue.destinationViewController;
-    resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseWithKeyword:self.searchField.text
+    resultVC.resultBooks = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectBooksFromDatabaseByKeyword:self.searchField.text
                                                                                                    Category:titleOfCategories[indexOfCategory]
                                                                                                     RowName:titleOfRows[indexOfRow]];
 

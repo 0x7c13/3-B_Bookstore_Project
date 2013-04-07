@@ -11,6 +11,7 @@
 #import "OSU_3BBook.h"
 #import "OSU_3BBooks.h"
 #import "OSU_3BUser.h"
+#import "OSU_3BOrder.h"
 
 @interface OSU_3BSQLiteDatabaseHandler : NSObject{
 
@@ -29,11 +30,14 @@
 - (void)closeDatabase;
 - (NSArray *)getCategoriesFromDatabase;
 
-- (OSU_3BBook *)selectABookFromDatabaseWithISBN:(NSString *)ISBNNumber;
+- (OSU_3BBook *)selectABookFromDatabaseByISBN:(NSString *)ISBNNumber;
 
-- (OSU_3BBooks *)selectBooksFromDatabaseWithKeyword:(NSString *)keyword
+- (OSU_3BBooks *)selectBooksFromDatabaseByKeyword:(NSString *)keyword
                                            Category:(NSString *)category
                                             RowName:(NSString *)row;
+
+- (OSU_3BBooks *)selectBooksFromDatabaseBySmartCategory:(NSString *)smartCategory;
+
 
 - (void)insertNewUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
 - (void)updateUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType;
@@ -42,6 +46,8 @@
 - (void)insertNewBook:(OSU_3BBook *)book;
 - (void)updateBook:(OSU_3BBook *)book;
 - (void)deleteABookByISBN:(NSString *)ISBN;
+
+//- (void)insertAnOrder:(OSU_3BOrder *)order;
 
 - (OSU_3BUser *)selectUserFromDatabaseByUsername:(NSString *)username;
 

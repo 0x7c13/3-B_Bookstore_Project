@@ -16,6 +16,6 @@
 - (void)removeABook:(OSU_3BBook *)book;
 - (void)changeQuantityOfItem:(OSU_3BBook *)book
                 withQuantity:(NSUInteger)quantity;
-- (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)bookNumber;
+- (OSU_3BBook *)objectAtIndexedSubscript:(NSUInteger)index;
 
 @end

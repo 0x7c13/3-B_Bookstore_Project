@@ -7,6 +7,7 @@
 //
 
 #import "OSU_orderListViewController.h"
+#import "OSU_3BSQLiteDatabaseHandler.h"
 #import "OSU_3BShoppingCart.h"
 #import "OSU_3BOrderListCell.h"
 
@@ -68,6 +69,22 @@
     self.orderListTable.backgroundView = tempImageView;
     
 }
+
+- (IBAction)checkOutButtonPressed {
+    
+    // insert an order here...
+    
+    
+    // creat smart category of this customer
+    OSU_3BUser *currentCustomer = [[OSU_3BShoppingCart sharedInstance] getCurrentCustomer];
+    currentCustomer.smartCategory = [[OSU_3BShoppingCart sharedInstance] getSmartCategory];
+    
+    [[OSU_3BSQLiteDatabaseHandler sharedInstance] updateUser:currentCustomer withUserType:OSU_3BUserTypeCustomer];
+    
+}
+
+
+
 
 
 - (IBAction)cancelButtonPressed:(UIButton *)sender {

@@ -163,4 +163,15 @@
     return NO;
 }
 
+-(NSString *)getSmartCategory
+{
+    if ([self.books count] > 0) {
+    
+        return self.books[arc4random() % [self.books count]].Category;
+    }
+    else {
+        return @"";
+    }
+}
+
 @end

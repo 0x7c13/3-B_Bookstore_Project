@@ -88,10 +88,10 @@
         [self setup];
         
         // backgound
-        //UIImageView *bacground = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
-//        bacground.image = [UIImage imageNamed:@"pickerBackground@2x.png"];
-        //bacground.image = [UIImage imageNamed:@"black_bg2.png"];
-        //[self addSubview:bacground];
+        UIImageView *bacground = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
+        // bacground.image = [UIImage imageNamed:@"pickerBackground@2x.png"];
+        bacground.image = [UIImage imageNamed:@"login_bg.png"];
+        [self addSubview:bacground];
         
         // content
         contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
