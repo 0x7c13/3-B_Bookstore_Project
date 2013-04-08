@@ -103,7 +103,7 @@
     
     const char *sql = [queryString UTF8String];
     
-    sqlite3_stmt *statement;
+    static sqlite3_stmt *statement = nil;
     
     if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
         
@@ -135,7 +135,7 @@
         } 
     }
     sqlite3_finalize(statement);
-    
+    statement = nil;
     if (!book.ISBN) {
         NSLog(@"Book doesn't exist!");
     }
@@ -150,7 +150,7 @@
     
     const char *sql = [queryString UTF8String];
     
-    sqlite3_stmt *statement;
+    static sqlite3_stmt *statement = nil;
     
     if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
         
@@ -165,7 +165,7 @@
         }
     }
     sqlite3_finalize(statement);
-    
+    statement = nil;
     return (NSArray *)categories;
 }
 
@@ -209,7 +209,7 @@
     
     const char *sql = [queryString UTF8String];
     
-    sqlite3_stmt *statement;
+    static sqlite3_stmt *statement = nil;
     
     if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
         
@@ -244,7 +244,7 @@
         }
     }
     sqlite3_finalize(statement);
-
+    statement = nil;
     return books;
 }
 
@@ -261,7 +261,7 @@
     
     const char *sql = [queryString UTF8String];
     
-    sqlite3_stmt *statement;
+    static sqlite3_stmt *statement = nil;
     
     if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
         
@@ -296,6 +296,7 @@
         }
     }
     sqlite3_finalize(statement);
+    statement = nil;
     
     return books;
 
@@ -309,7 +310,7 @@
     
     const char *sql = [queryString UTF8String];
     
-    sqlite3_stmt *statement;
+    static sqlite3_stmt *statement = nil;
     
     if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
         
@@ -323,7 +324,7 @@
         }
     }
     sqlite3_finalize(statement);
-    
+    statement = nil;
     return result;
 }
 
@@ -335,7 +336,7 @@
     
     const char *sql = [queryString UTF8String];
     
-    sqlite3_stmt *statement;
+    static sqlite3_stmt *statement = nil;
     
     if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
         
@@ -349,7 +350,7 @@
         }
     }
     sqlite3_finalize(statement);
-    
+    statement = nil;
     return result;
 }
 
@@ -407,7 +408,7 @@
 
 - (void)deleteUser:(OSU_3BUser *)user withUserType:(OSU_3BUserUserTypes)userType
 {    
-    sqlite3_stmt* statement;
+    static sqlite3_stmt* statement = nil;
     
     // Create Query String.
     NSString* sqlStatement = [NSString stringWithFormat:@"DELETE FROM Customers WHERE Username ='%@'", user.username];
@@ -430,11 +431,12 @@
     
     // Finalize and close database.
     sqlite3_finalize(statement);
+    statement = nil;
 }
 
 - (void)deleteABookByISBN:(NSString *)ISBN
 {
-    sqlite3_stmt* statement;
+    static sqlite3_stmt* statement = nil;
     
     // Create Query String.
     NSString* sqlStatement = [NSString stringWithFormat:@"DELETE FROM Books WHERE ISBN ='%@'", ISBN];
@@ -457,7 +459,7 @@
     
     // Finalize and close database.
     sqlite3_finalize(statement);
-
+    statement = nil;
 }
 
 
@@ -470,7 +472,7 @@
     
     const char *sql = [queryString UTF8String];
     
-    sqlite3_stmt *statement;
+    static sqlite3_stmt *statement;
     
     if (sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &statement, NULL)!=SQLITE_OK){
         
@@ -506,7 +508,8 @@
         }
     }
     sqlite3_finalize(statement);
-    
+    statement = nil;
+
     return user;
 }
 
@@ -542,4 +545,37 @@
     insertStmt = nil;
     
 }
+
+-(void)insertAnOrder:(OSU_3BOrder *)order
+{
+
+    static sqlite3_stmt *insertStmt = nil;
+    
+    if(insertStmt == nil)
+    {
+        const char *sql = [@"INSERT INTO Orders (ISBN, Username, Date, Time, Quantity) VALUES(?,?,?,?,?)" UTF8String];
+        
+        if(sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &insertStmt, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    
+    sqlite3_bind_text(insertStmt, 1, [order.ISBN UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 2, [order.Username UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 3, [order.Date UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(insertStmt, 4, [order.Time UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_int (insertStmt, 5, (int)order.Quantity);
+
+    
+    if(SQLITE_DONE != sqlite3_step(insertStmt)) {
+        NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(_3BBooksDataBase));
+    }
+    else {
+        NSLog(@"New Order Inserted.");
+    }
+    
+    sqlite3_finalize(insertStmt);
+    insertStmt = nil;
+}
+
+
 @end

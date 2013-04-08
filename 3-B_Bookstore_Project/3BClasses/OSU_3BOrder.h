@@ -10,11 +10,11 @@
 
 @interface OSU_3BOrder : NSObject
 
-@property (copy, nonatomic) NSString *ISBN;
-@property (copy, nonatomic) NSString *Username;
-@property (copy, nonatomic) NSString *Date;
-@property (copy, nonatomic) NSString *Time;
-@property (nonatomic) NSUInteger Quantity;
+@property (copy, nonatomic, readonly) NSString *ISBN;
+@property (copy, nonatomic, readonly) NSString *Username;
+@property (copy, nonatomic, readonly) NSString *Date;
+@property (copy, nonatomic, readonly) NSString *Time;
+@property (nonatomic, readonly) NSUInteger Quantity;
 
 
 // default custom setter

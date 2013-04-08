@@ -8,6 +8,15 @@
 
 #import "OSU_3BOrder.h"
 
+@interface OSU_3BOrder ()
+
+@property (copy, nonatomic, readwrite) NSString *ISBN;
+@property (copy, nonatomic, readwrite) NSString *Username;
+@property (copy, nonatomic, readwrite) NSString *Date;
+@property (copy, nonatomic, readwrite) NSString *Time;
+@property (nonatomic, readwrite) NSUInteger Quantity;
+
+@end
 @implementation OSU_3BOrder
 
 

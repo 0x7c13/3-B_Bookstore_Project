@@ -47,7 +47,7 @@
 - (void)updateBook:(OSU_3BBook *)book;
 - (void)deleteABookByISBN:(NSString *)ISBN;
 
-//- (void)insertAnOrder:(OSU_3BOrder *)order;
+- (void)insertAnOrder:(OSU_3BOrder *)order;
 
 - (OSU_3BUser *)selectUserFromDatabaseByUsername:(NSString *)username;
 

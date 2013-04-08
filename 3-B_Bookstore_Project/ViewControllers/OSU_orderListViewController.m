@@ -70,10 +70,30 @@
     
 }
 
+
 - (IBAction)checkOutButtonPressed {
     
     // insert an order here...
-    
+    for (int i = 0; i < [[OSU_3BShoppingCart sharedInstance] numberOfDistinctItemsInShoppingCart]; i++) {
+        OSU_3BBook *book = [[OSU_3BShoppingCart sharedInstance] objectAtIndexedSubscript:i];
+        
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"MM/dd/yy"];
+        
+        NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+        [timeFormat setDateFormat:@"HH:mm:ss"];
+        
+        NSDate *now = [[NSDate alloc] init];
+        
+        NSString *theDate = [dateFormat stringFromDate:now];
+        NSString *theTime = [timeFormat stringFromDate:now];
+        
+        [[OSU_3BSQLiteDatabaseHandler sharedInstance] insertAnOrder:[[OSU_3BOrder alloc] initWithISBN:book.ISBN
+                                                                                             Username:[[OSU_3BShoppingCart sharedInstance] getCurrentCustomer].username
+                                                                                                 Date:theDate
+                                                                                                 Time:theTime
+                                                                                         withQuantity:book.Quantity]];
+    }
     
     // creat smart category of this customer
     OSU_3BUser *currentCustomer = [[OSU_3BShoppingCart sharedInstance] getCurrentCustomer];
