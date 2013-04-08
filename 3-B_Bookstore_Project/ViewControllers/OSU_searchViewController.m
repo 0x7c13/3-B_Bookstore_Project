@@ -109,6 +109,8 @@
     
     [self addPickers];
     
+    self.tabBarController.delegate = self;
+    
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
         [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavBar_gray.png"] forBarMetrics:UIBarMetricsDefault];
     }
@@ -238,6 +240,33 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {
 
     [searchBar resignFirstResponder]; 
+}
+
+
+#pragma - UITabBarControllerDelegate
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    NSArray *tabViewControllers = tabBarController.viewControllers;
+    UIView * fromView = tabBarController.selectedViewController.view;
+    UIView * toView = viewController.view;
+    if (fromView == toView) {
+        return false;
+    }
+    
+    NSUInteger fromIndex = [tabViewControllers indexOfObject:tabBarController.selectedViewController];
+    NSUInteger toIndex = [tabViewControllers indexOfObject:viewController];
+    
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.3
+                       options: toIndex > fromIndex ? UIViewAnimationOptionTransitionCrossDissolve : UIViewAnimationOptionTransitionCrossDissolve
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            tabBarController.selectedIndex = toIndex;
+                        }
+                    }];
+    return true;
 }
 
 

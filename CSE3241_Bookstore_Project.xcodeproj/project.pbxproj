@@ -75,6 +75,7 @@
 		F79870741709426E00CCD89C /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = F79870731709426E00CCD89C /* NIDropDown.m */; };
 		F7987077170A7E0400CCD89C /* OSU_3BUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F7987076170A7E0400CCD89C /* OSU_3BUser.m */; };
 		F798707A170BC56400CCD89C /* OSU_orderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7987079170BC56400CCD89C /* OSU_orderListViewController.m */; };
+		F7C9E7B2171267D400DD5F82 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C9E7B1171267D400DD5F82 /* trash.png */; };
 		F7F94F9A170E8A6900A34F69 /* KGStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F94F99170E8A6900A34F69 /* KGStatusBar.m */; };
 		F7F94F9E170E92D000A34F69 /* book_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F7F94F9D170E92D000A34F69 /* book_logo.png */; };
 		F7F94FA1170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F94FA0170F974600A34F69 /* OSU_manageBookstoreCatalogViewController.m */; };
@@ -185,6 +186,7 @@
 		F7987076170A7E0400CCD89C /* OSU_3BUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_3BUser.m; sourceTree = "<group>"; };
 		F7987078170BC56400CCD89C /* OSU_orderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSU_orderListViewController.h; sourceTree = "<group>"; };
 		F7987079170BC56400CCD89C /* OSU_orderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSU_orderListViewController.m; sourceTree = "<group>"; };
+		F7C9E7B1171267D400DD5F82 /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
 		F7F94F98170E8A6900A34F69 /* KGStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGStatusBar.h; sourceTree = "<group>"; };
 		F7F94F99170E8A6900A34F69 /* KGStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGStatusBar.m; sourceTree = "<group>"; };
 		F7F94F9D170E92D000A34F69 /* book_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book_logo.png; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				F798706B17092B4300CCD89C /* ExitButton.png */,
 				F7F94F9D170E92D000A34F69 /* book_logo.png */,
+				F7C9E7B1171267D400DD5F82 /* trash.png */,
 				F798706D1709341A00CCD89C /* CellBackground.png */,
 				F78E2705170D4A1D00F2DFA6 /* login_bg.png */,
 				F78E26F4170C6C5D00F2DFA6 /* black_bg.png */,
@@ -530,6 +533,7 @@
 				F78E2709170D4B3300F2DFA6 /* login_button.png in Resources */,
 				F78E270A170D4B3300F2DFA6 /* login_field.png in Resources */,
 				F7F94F9E170E92D000A34F69 /* book_logo.png in Resources */,
+				F7C9E7B2171267D400DD5F82 /* trash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

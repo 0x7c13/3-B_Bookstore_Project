@@ -135,6 +135,19 @@
     
 }
 
+
+- (IBAction)cleanButtonPressed:(UIButton *)sender {
+    
+    [[OSU_3BShoppingCart sharedInstance] cleanShoppingCart];
+    
+    [self.shoppingCartTableView reloadData];
+
+    [self updateShoppingCartInfo];
+    
+}
+
+
+
 - (void)Exit
 {
     [[OSU_3BShoppingCart sharedInstance] cleanShoppingCart];
@@ -167,6 +180,7 @@
     
     return cell;
 }
+
 
 - (void)userDidPressDeleteButton:(OSU_3BShoppingCartCell *)cell
 {

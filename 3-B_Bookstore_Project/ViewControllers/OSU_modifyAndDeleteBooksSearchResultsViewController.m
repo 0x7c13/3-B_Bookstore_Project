@@ -153,12 +153,14 @@
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
     
-    for (OSU_3BBook *pendingBook in self.pendingBooks) {
-        [[OSU_3BSQLiteDatabaseHandler sharedInstance] deleteABookByISBN:pendingBook.ISBN];
-    }
-    [self.pendingBooks removeAllObjects];
+    if ([self.pendingBooks count]) {
     
-    [KGStatusBar showSuccessWithStatus:@"Delete Successfully"];
+        for (OSU_3BBook *pendingBook in self.pendingBooks) {
+            [[OSU_3BSQLiteDatabaseHandler sharedInstance] deleteABookByISBN:pendingBook.ISBN];
+        }
+        [self.pendingBooks removeAllObjects];
+        [KGStatusBar showSuccessWithStatus:@"Delete Successfully"];
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
 }
