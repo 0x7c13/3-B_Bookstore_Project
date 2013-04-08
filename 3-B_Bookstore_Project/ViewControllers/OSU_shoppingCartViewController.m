@@ -138,12 +138,12 @@
 
 - (IBAction)cleanButtonPressed:(UIButton *)sender {
     
-    [[OSU_3BShoppingCart sharedInstance] cleanShoppingCart];
-    
-    [self.shoppingCartTableView reloadData];
-
-    [self updateShoppingCartInfo];
-    
+    if ([[OSU_3BShoppingCart sharedInstance] numberOfDistinctItemsInShoppingCart]) {
+        
+        [[OSU_3BShoppingCart sharedInstance] cleanShoppingCart];
+        [self.shoppingCartTableView reloadData];
+        [self updateShoppingCartInfo];
+    }
 }
 
 

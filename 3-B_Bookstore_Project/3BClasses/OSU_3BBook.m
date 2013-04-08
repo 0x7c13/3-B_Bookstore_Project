@@ -8,6 +8,22 @@
 
 #import "OSU_3BBook.h"
 
+@interface OSU_3BBook ()
+
+@property (copy, nonatomic, readwrite) NSString *ISBN;
+@property (copy, nonatomic, readwrite) NSString *Titile;
+@property (copy, nonatomic, readwrite) NSString *Author;
+@property (copy, nonatomic, readwrite) NSString *Publisher;
+@property (nonatomic, readwrite) NSUInteger Year;
+@property (nonatomic, readwrite) double Price;
+@property (copy, nonatomic, readwrite) NSString *Category;
+@property (nonatomic, readwrite) NSUInteger Quantity;
+@property (nonatomic, readwrite) NSUInteger MinQtyRequired;
+@property (copy, nonatomic, readwrite) NSString *Reviews;
+
+@end
+
+
 @implementation OSU_3BBook
 
 - (id)initWithISBN:(NSString *)ISBN

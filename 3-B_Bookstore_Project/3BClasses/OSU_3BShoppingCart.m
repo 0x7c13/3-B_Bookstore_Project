@@ -13,7 +13,7 @@
     NSUInteger _items;
     BOOL _isGuestMode;
 }
-    
+
 @property (strong, nonatomic) OSU_3BBooks *books;
 @property (strong, nonatomic) OSU_3BUser *currentCustomer;
 

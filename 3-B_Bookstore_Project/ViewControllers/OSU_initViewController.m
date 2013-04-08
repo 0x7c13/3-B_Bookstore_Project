@@ -162,6 +162,7 @@
                 
                 OSU_3BUser *returningCusotmer = [[OSU_3BSQLiteDatabaseHandler sharedInstance] selectUserFromDatabaseByUsername:self.usernameTextField.text];
                 if ([returningCusotmer.PIN isEqualToString:self.passwordTextField.text]) {
+                    returningCusotmer.isReturingCustomer = YES;
                     [[OSU_3BShoppingCart sharedInstance] setCurrentCustomer:returningCusotmer];
                     [KGStatusBar showSuccessWithStatus:@"Login Successfully"];
                     return YES;

@@ -13,7 +13,6 @@
 
 @interface OSU_3BShoppingCart : NSObject
 
-
 + (id)sharedInstance;
 
 - (void)setCurrentCustomer:(OSU_3BUser *)customer;

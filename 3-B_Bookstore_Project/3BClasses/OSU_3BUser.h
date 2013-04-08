@@ -32,6 +32,7 @@ typedef enum {
 
 // for returning customer use
 @property (copy, nonatomic) NSString *smartCategory;
+@property (nonatomic) BOOL isReturingCustomer;
 
 - (id)initWithUsername:(NSString *)username
                    PIN:(NSString *)PIN

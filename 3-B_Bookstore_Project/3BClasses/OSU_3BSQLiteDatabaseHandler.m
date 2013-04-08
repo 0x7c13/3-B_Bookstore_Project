@@ -518,12 +518,10 @@
 {
     static sqlite3_stmt *insertStmt = nil;
     
-    if(insertStmt == nil)
-    {
-        const char *sql = [@"INSERT INTO Books (ISBN, Title, Author, Publisher, Year, Price, Category, Reviews, MinQtyRequired) VALUES(?,?,?,?,?,?,?,?,?)" UTF8String];
-        
-        if(sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &insertStmt, NULL) != SQLITE_OK)
-            NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(_3BBooksDataBase));
+    const char *sql = [@"INSERT INTO Books (ISBN, Title, Author, Publisher, Year, Price, Category, Reviews, MinQtyRequired) VALUES(?,?,?,?,?,?,?,?,?)" UTF8String];
+    
+    if(sqlite3_prepare_v2(_3BBooksDataBase, sql, -1, &insertStmt, NULL) != SQLITE_OK) {
+        NSAssert1(0, @"Error while creating insert statement. '%s'", sqlite3_errmsg(_3BBooksDataBase));
     }
     
     sqlite3_bind_text(insertStmt, 1, [book.ISBN UTF8String], -1, SQLITE_TRANSIENT);

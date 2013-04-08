@@ -54,6 +54,7 @@
         _creditCardNumber = creditCardNumber;
         _creditCardExpirationDate = expirationDate;
         _smartCategory = @"";
+        _isReturingCustomer = NO;
     }
     
     return  self;

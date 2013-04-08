@@ -48,7 +48,7 @@
         
         OSU_3BUser *currentUser = [[OSU_3BShoppingCart sharedInstance] getCurrentCustomer];
 
-        if (![currentUser.smartCategory isEqualToString:@""] ) {
+        if (![currentUser.smartCategory isEqualToString:@""] && currentUser.isReturingCustomer) {
 
             BOOL existAtLeastOne = NO;
             
@@ -93,6 +93,7 @@
             }
             
             currentUser.smartCategory = @"";
+            currentUser.isReturingCustomer = NO;
             [[OSU_3BShoppingCart sharedInstance]setCurrentCustomer:currentUser];
             
         }

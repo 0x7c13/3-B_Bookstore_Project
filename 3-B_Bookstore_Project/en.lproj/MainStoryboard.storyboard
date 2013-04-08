@@ -2971,6 +2971,7 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BBookCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BBookCell.h"/>
             <relationships>
+                <relationship kind="action" name="reviewsButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
@@ -3006,6 +3007,8 @@ The books will be delivered within 5 business days.</string>
         <class className="OSU_3BShoppingCartCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSU_3BShoppingCartCell.h"/>
             <relationships>
+                <relationship kind="action" name="deleteButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="stepperPressed:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bookQuantity" candidateClass="UILabel"/>

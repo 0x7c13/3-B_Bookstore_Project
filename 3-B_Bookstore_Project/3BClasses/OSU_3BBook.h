@@ -10,16 +10,16 @@
 
 @interface OSU_3BBook : NSObject
 
-@property (copy, nonatomic) NSString *ISBN;
-@property (copy, nonatomic) NSString *Titile;
-@property (copy, nonatomic) NSString *Author;
-@property (copy, nonatomic) NSString *Publisher;
-@property (nonatomic) NSUInteger Year;
-@property (nonatomic) double Price;
-@property (copy, nonatomic) NSString *Category;
-@property (nonatomic) NSUInteger Quantity;
-@property (nonatomic) NSUInteger MinQtyRequired;
-@property (copy, nonatomic) NSString *Reviews;
+@property (copy, nonatomic, readonly) NSString *ISBN;
+@property (copy, nonatomic, readonly) NSString *Titile;
+@property (copy, nonatomic, readonly) NSString *Author;
+@property (copy, nonatomic, readonly) NSString *Publisher;
+@property (nonatomic, readonly) NSUInteger Year;
+@property (nonatomic, readonly) double Price;
+@property (copy, nonatomic, readonly) NSString *Category;
+@property (nonatomic, readonly) NSUInteger Quantity;
+@property (nonatomic, readonly) NSUInteger MinQtyRequired;
+@property (copy, nonatomic, readonly) NSString *Reviews;
 
 // custom setter
 - (id)initWithISBN:(NSString *)ISBN
@@ -34,5 +34,6 @@
 
 
 - (BOOL)isEqual:(id)object;
+- (void)setQuantity:(NSUInteger)Quantity;
 
 @end

@@ -52,7 +52,7 @@
 {
     for (OSU_3BBook *tmpBook in self.listOfBooks) {
         if ([book isEqual:tmpBook]) {
-            tmpBook.Quantity = quantity;
+            [tmpBook setQuantity:quantity];
             break;
         }
     }
