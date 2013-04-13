@@ -11,6 +11,8 @@
 
 @interface OSU_3BBooks : NSObject
 
+- (id)initWithBooks:(NSMutableArray *)arrayOfBooks;
+
 - (NSUInteger)count;
 - (void)addABook:(OSU_3BBook *)book;
 - (void)removeABook:(OSU_3BBook *)book;
